@@ -1,3 +1,3 @@
 # The_Complete_Recorder
 
-<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Miscellaneous/NotJustCode.png" width="400" height="790">
+<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Miscellaneous/NotJustCode.png" width="700" height="790">
