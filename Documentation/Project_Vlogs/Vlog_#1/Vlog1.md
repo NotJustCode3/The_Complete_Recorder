@@ -42,13 +42,13 @@
   - I quickly discovered that one of the biggest things that bugged me was that I couldn’t quite find the perfect recording app to fit 
     my needs. I needed an app that would allow me:
 
-   - (i)    Organize my recordings, rather than just piling them onto a list that I would later have to
+     - (i)    Organize my recordings, rather than just piling them onto a list that I would later have to
             play back to find the right one.
 
-   - (ii)   Allow me search for recordings I previously saved.
+     - (ii)   Allow me search for recordings I previously saved.
 
-   - (iii)  And lastly that would allow me to get into a recording folder i created and make a recording within that folder where it can 
-            be saved and searched for at a later time
+     - (iii)  And lastly that would allow me to get into a recording folder i created and make a recording within that folder where it can 
+              be saved and searched for at a later time
 
   - After a while of searching the app store, all the applications i came across just never quite reached the functionality i was looking for.
     So we decided to build one, that can accomplish all this and lots more.
