@@ -5,12 +5,10 @@
 ### Intro Vlog - [Watch Here :tv:](https://www.youtube.com/watch?v=a7bn-rRF3EM&ab_channel=NotAToaster94)
 <img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Miscellaneous/NotJustCode.png" width="500" height="350">
 
-### Link :tv: : <a href="https://www.youtube.com/watch?v=a7bn-rRF3EM&ab_channel=NotAToaster94" class="button primary">Watch Here</a>
 
-### Lo-fi Demonstration
+### Lo-fi Demonstration - [Watch Here :tv:](https://www.youtube.com/watch?v=4K3LN7YYGSw&ab_channel=NotAToaster94)
 <img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Miscellaneous/demo.png" width="500" height="350">
 
-### Link :tv: : https://www.youtube.com/watch?v=4K3LN7YYGSw&ab_channel=NotAToaster94
 
 ## Intro Vlog Transcript :scroll:
 
