@@ -1,9 +1,16 @@
-# Introduction Vlog - Vlog #1 :clapper:
+# Introduction Vlog - Vlog #1 :movie_camera:
 
-### Video (Youtube) :tv:
+## Videos (Youtube) :clapper:
+
+### Intro Vlog
+
+#### Link : https://www.youtube.com/watch?v=a7bn-rRF3EM&ab_channel=NotAToaster94
+<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Miscellaneous/NotJustCode.png" width="500" height="350">
 
 
+### Lo-fi Demonstration
 
+## Intro Vlog Transcript :scroll:
 
 **1. Vlogs (Part I):**
 
