@@ -1,7 +1,7 @@
 # Scrum_Reports
 Our scrum reports where we will meet with Dr. Tim Maciag and future mentor (bi-weekly) discussing about our progresses on the project ("The Complete Recorder").
 
-Based on Bi-Weekly Scrum Report provided by Dr. Tim Maciag (University of Regina, SK, CA).
+__Based on Bi-Weekly Scrum Report provided by Dr. Tim Maciag (University of Regina, SK, CA).__
 
 ## Scrum_#1
 **1.  Project Deats**
@@ -13,6 +13,7 @@ Based on Bi-Weekly Scrum Report provided by Dr. Tim Maciag (University of Regina
 **2.  Project and Documentation Review**
     
     - (i)   Project Initiation and Planning
+    
            - (a)   Business Case and Charter - the vision and rationale - the problem and "why"
            
            - (b)   Eliciting and documenting the groundwork of design (requirements, scope, scheduling, team, budget, and the like)
@@ -26,6 +27,7 @@ Based on Bi-Weekly Scrum Report provided by Dr. Tim Maciag (University of Regina
            - (f)   Picturing (software) architecture
     
     - (ii)  Project Execution
+    
            - (a)   Coding and Debugging
            
            - (b)   Testing (Code, Usability)
@@ -33,6 +35,7 @@ Based on Bi-Weekly Scrum Report provided by Dr. Tim Maciag (University of Regina
            - (c)   Deployment
     
     (iii) Github/Version control "stamp of approval"
+    
            - (a)   Our Github is readable, usable, and we confirm its “goodness”.
           
 **3.  Project Demo**
@@ -49,5 +52,5 @@ Based on Bi-Weekly Scrum Report provided by Dr. Tim Maciag (University of Regina
     
     - (iv)  Questions or concerns?
     
-Based on Bi-Weekly Scrum Report provided by Dr. Tim Maciag (University of Regina, SK, CA).
+__Based on Bi-Weekly Scrum Report provided by Dr. Tim Maciag (University of Regina, SK, CA).__
 
