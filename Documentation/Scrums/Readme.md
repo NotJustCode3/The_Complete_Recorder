@@ -1,5 +1,5 @@
 # Scrum_Reports
-Our scrum reports where we will meet with Dr. Tim Maciag and future mentor (bi-weekly) discussing about our progresses on the project ("The Complete Recorder").
+Our scrum reports where we will meet with Dr. Tim Maciag and future mentor (bi-weekly) discussing about our progresses on the project __The Complete Recorder__.
 
 __Based on Bi-Weekly Scrum Report provided by Dr. Tim Maciag (University of Regina, SK, CA).__
 
