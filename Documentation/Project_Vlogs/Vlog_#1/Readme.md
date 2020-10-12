@@ -1,4 +1,4 @@
-# Introduction Vlog - Vlog #1 :movie_camera:
+# Vlog #1 - Introduction :movie_camera:
 
 ## Videos :clapper:
 
