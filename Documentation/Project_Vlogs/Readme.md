@@ -1,10 +1,10 @@
-# Project Vlogs
+# Project Vlogs :movie_camera:
 
 The slight introduction of NotJustCode members and what we are bringing to the table. More Vlogs incoming that will show our progresses throughout these months.
 
 **Based on ENSE 400 list provided by Dr.Tim Maciag (University of Regina, SK, CA)**
 
-### Introduction Vlog - Vlog #1
+### Introduction Vlog - Vlog #1 :film_projector:
 
 **1.  Team member introductions**
 
