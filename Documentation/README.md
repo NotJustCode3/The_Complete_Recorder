@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:80503f28947d84a1212ec9eb32a402cc8f30a9113500cadc3d96d2406f863132
-size 179
+# Project-Vlogs
+
+The slight introduction of NotJustCode members and what we are bringing to the table. 
+More Vlogs incoming that will show our progresses throughout these months.
