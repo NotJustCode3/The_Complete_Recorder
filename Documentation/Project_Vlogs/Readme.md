@@ -1,13 +1,11 @@
-#Project Vlogs
+# Project Vlogs
 
 The slight introduction of NotJustCode members and what we are bringing to the table. 
 
 **Based on ENSE 400 list provided by Dr.Tim Maciag (University of Regina, SK, CA)**
 
-##Introduction Vlog
----------------------------------------------------------------------------------------------------------------
-**1.  Team member introductions**
-      
+## Introduction Vlog
+
       - (i)   Project roles and responsibilities
 
 **2.  Project background & business need/opportunity**
