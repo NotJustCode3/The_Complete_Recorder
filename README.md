@@ -1,3 +1,3 @@
 # The_Complete_Recorder
 
-![Image of Yaktocat](file:///C:/Users/Shafiq%20Zain/Desktop/NotJustCode.png)
+![NotJustCode](https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Miscellaneous/NotJustCode.png)
