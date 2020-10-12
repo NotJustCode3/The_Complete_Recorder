@@ -31,13 +31,13 @@
     As an artist myself, I find that I usually tend to have about roughly 10 recordings per week; which in a span of a few weeks 
     can be quite a lot. In a week i could have:
     
-   - (i)    5 song ideas
+     - (i)    5 song ideas
    
-   - (ii)   3 Recording of sermons in church
+     - (ii)   3 Recording of sermons in church
    
-   - (iii)  10 Choir rehearsal recordings
+     - (iii)  10 Choir rehearsal recordings
    
-   - (iv)   School lectures and lots more…
+     - (iv)   School lectures and lots more…
 
   - I quickly discovered that one of the biggest things that bugged me was that I couldn’t quite find the perfect recording app to fit 
     my needs. I needed an app that would allow me:
