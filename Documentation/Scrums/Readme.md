@@ -4,7 +4,7 @@ Our scrum reports where we will meet with Dr. Tim Maciag and future mentor (bi-w
 Based on Bi-Weekly Scrum Report provided by Dr. Tim Maciag (University of Regina, SK, CA).
 
 # Scrum_#1
-1.  Project Deats
+*1.  Project Deats*
     - (i)   Problem's we are trying to solve.
     
     - (ii)  What kind of innovation we are trying to introduce to the world.
