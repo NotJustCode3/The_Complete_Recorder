@@ -4,7 +4,9 @@ The slight introduction of NotJustCode members and what we are bringing to the t
 
 **Based on ENSE 400 list provided by Dr.Tim Maciag (University of Regina, SK, CA)**
 
-## Introduction Vlog
+### Introduction Vlog
+
+**1.  Team member introductions**
 
       - (i)   Project roles and responsibilities
 
