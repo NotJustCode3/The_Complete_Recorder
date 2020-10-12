@@ -1,6 +1,6 @@
 # Project Vlogs
 
-The slight introduction of NotJustCode members and what we are bringing to the table. 
+The slight introduction of NotJustCode members and what we are bringing to the table. More Vlogs incoming that will show our progresses throughout these months.
 
 **Based on ENSE 400 list provided by Dr.Tim Maciag (University of Regina, SK, CA)**
 
