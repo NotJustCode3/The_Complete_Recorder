@@ -5,11 +5,13 @@ Based on Bi-Weekly Scrum Report provided by Dr. Tim Maciag (University of Regina
 
 # Scrum_#1
 **1.  Project Deats**
+    
     - (i)   Problem's we are trying to solve.
     
     - (ii)  What kind of innovation we are trying to introduce to the world.
     
 **2.  Project and Documentation Review**
+    
     - (i)   Project Initiation and Planning
            - (a)   Business Case and Charter - the vision and rationale - the problem and "why"
            - (b)   Eliciting and documenting the groundwork of design (requirements, scope, scheduling, team, budget, and the like)
