@@ -1,3 +1,3 @@
 # The_Complete_Recorder
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of Yaktocat](file:///C:/Users/Shafiq%20Zain/Desktop/NotJustCode.png)
