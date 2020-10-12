@@ -6,14 +6,19 @@ This app is something which one of our group members has been looking for but se
 pile up recording into a list, without basic search functionality and organization to help users find a specific recording. As a user that records 
 about 12 recordings a week, sifting through a pile of recordings and playing each one of them just to find the one recording you're looking for can be a pain.
 
-## Deliverables
+## Deliverables :heavy_division_sign:
 
 **1. Project Vlogs**
   
-  - Vlog 1 - Introduction Vlog. 
+  - Vlog 1 - [Introduction Vlog](https://github.com/NotJustCode3/The_Complete_Recorder/tree/main/Documentation/Project_Vlogs/Vlog_%231)
   
   - Vlog 2 - TBD.
 
 **2. Scrum Reports**
 
-  - Scrum 1 - Scrum Report Out #1
+  - Scrum 1 - [Project Initiation, Initial Constraints](https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Scrums/Scrum%20Report%20Out%20%231.pdf)
+  
+  - Scrum 2 - TBD.
+  
+**3. Github IO**
+  - Fancy [Github]()  
