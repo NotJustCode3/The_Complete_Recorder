@@ -3,8 +3,9 @@
 ## Videos (Youtube) :clapper:
 
 ### Intro Vlog
-<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Miscellaneous/NotJustCode.png" width="500" height="350">
 #### Link : https://www.youtube.com/watch?v=a7bn-rRF3EM&ab_channel=NotAToaster94
+<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Miscellaneous/NotJustCode.png" width="500" height="350">
+
 
 ### Lo-fi Demonstration
 <img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Miscellaneous/demo.png" width="500" height="350">
