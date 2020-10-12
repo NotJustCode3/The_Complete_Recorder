@@ -21,4 +21,8 @@ about 12 recordings a week, sifting through a pile of recordings and playing eac
   - Scrum 2 - TBD.
   
 **3. Github IO**
-  - Fancy [Github]()  
+  
+  - Fancy [Github]()
+  
+## Legal Notices :heavy_check_mark:
+  - Copyright (C) 2020 Team NotJustCode, Azeezat Lawal, Mfonisoabasi James, Shafiq Zainuddin. 
