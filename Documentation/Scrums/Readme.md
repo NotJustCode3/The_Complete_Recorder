@@ -3,21 +3,20 @@ Our scrum reports where we will meet with Dr. Tim Maciag and future mentor (bi-w
 
 Based on Bi-Weekly Scrum Report provided by Dr. Tim Maciag (University of Regina, SK, CA).
 
-*____________________________________________________________________________________________________________________________________________________________________________*
 # Scrum_#1
 1.  Project Deats
-    (i)   Problem's we are trying to solve.
+    - (i)   Problem's we are trying to solve.
     
-    (ii)  What kind of innovation we are trying to introduce to the world.
+    - (ii)  What kind of innovation we are trying to introduce to the world.
     
 2.  Project and Documentation Review
-    (i)   Project Initiation and Planning
-          (a)   Business Case and Charter - the vision and rationale - the problem and "why"
-          (b)   Eliciting and documenting the groundwork of design (requirements, scope, scheduling, team, budget, and the like)
-          (c)   Stakeholders and Communication
-          (d)   Assumptions and Risk
-          (e)   Quality and Constraints
-          (f)   Picturing (software) architecture
+    - (i)   Project Initiation and Planning
+          - (a)   Business Case and Charter - the vision and rationale - the problem and "why"
+          - (b)   Eliciting and documenting the groundwork of design (requirements, scope, scheduling, team, budget, and the like)
+          - (c)   Stakeholders and Communication
+          - (d)   Assumptions and Risk
+          - (e)   Quality and Constraints
+          - (f)   Picturing (software) architecture
     
     (ii)  Project Execution
           (a)   Coding and Debugging
