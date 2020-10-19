@@ -1,16 +1,11 @@
-# Vlog #1 - Introduction Vlog :movie_camera:
+# Vlog #1 - Project Progress :movie_camera:
 
 ## Videos :clapper:
 
-### Intro Vlog - Watch it [here :tv:](https://www.youtube.com/watch?v=a7bn-rRF3EM&ab_channel=NotAToaster94)
-[<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Miscellaneous/NotJustCode.png" width="500" height="350">](https://www.youtube.com/watch?v=a7bn-rRF3EM&ab_channel=NotAToaster94)
+### Project Progress - Watch it [here :tv:](https://www.youtube.com/watch?v=dXORi3FTZzo&feature=emb_logo&ab_channel=NotAToaster94)
+[<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Miscellaneous/Vlog1_thumbnail.png" width="500" height="350">](https://www.youtube.com/watch?v=dXORi3FTZzo&feature=emb_logo&ab_channel=NotAToaster94)
 
-
-### Lo-fi Demonstration - Watch it [here :tv:](https://www.youtube.com/watch?v=4K3LN7YYGSw&ab_channel=NotAToaster94)
-[<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Miscellaneous/demo.png" width="500" height="350">](https://www.youtube.com/watch?v=4K3LN7YYGSw&ab_channel=NotAToaster94)
-
-
-## Intro Vlog Transcript :scroll:
+## Vlog #1 Transcript :scroll:
 
 **1. Vlogs (Part I):**
 
