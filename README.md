@@ -16,7 +16,8 @@ about 12 recordings a week, sifting through a pile of recordings and playing eac
 
 **2. Scrum Reports :scroll:**
   - Scrum 1 - [Project Initiation, Initial Constraints](https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Scrums/Scrum%20Report%20Out%20%231.pdf)
-  - Scrum 2 - TBD.
+  - Scrum 2 - [Scrum Report Out #2](https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Scrums/Scrum%20Report%20Out%20%232.pdf)
+  - Scrum 3 - TBD
   
 **3. Github IO :spider_web:**
   - Fancy [IO Webpage](https://zainshafiq.github.io/NotJustCode/) Webpage.
