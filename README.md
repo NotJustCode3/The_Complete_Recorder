@@ -13,6 +13,7 @@ about 12 recordings a week, sifting through a pile of recordings and playing eac
 **1. Project Vlogs :movie_camera:**
   - Vlog 0 - [Introduction Vlog](https://github.com/NotJustCode3/The_Complete_Recorder/tree/main/Documentation/Project_Vlogs/Vlog_%231)
   - Vlog 1 - [Project Progress](https://github.com/NotJustCode3/The_Complete_Recorder/tree/main/Documentation/Project_Vlogs/Vlog_%231)
+  - Vlog 2 - [TBD](https://github.com/NotJustCode3/The_Complete_Recorder/edit/main/README.md)
 
 **2. Scrum Reports :scroll:**
   - Scrum 1 - [Project Initiation, Initial Constraints](https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Scrums/Scrum%20Report%20Out%20%231.pdf)
