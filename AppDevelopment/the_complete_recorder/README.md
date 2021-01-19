@@ -1,6 +1,6 @@
 # the_complete_recorder
 
-A new Flutter application.
+A new Flutter application. Testing Application.
 
 ## Getting Started
 
