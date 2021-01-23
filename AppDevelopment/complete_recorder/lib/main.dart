@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+      home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      //Accessing the home of the material widget and drawing the scaffold onto it
-      home: Scaffold(
-        backgroundColor:
-            Colors.white, //the background color of the scaffold is white
-        body: SafeArea(
-          //creating a sfe area to start drawing elements on to the scaffold widget
-          child: Column (
-            children: <Widget>[
-              Card(
+    return Scaffold(
+      backgroundColor:
+      Colors.white, //the background color of the scaffold is white
+      body: SafeArea(
+        //creating a sfe area to start drawing elements on to the scaffold widget
+        child: Column(
+          children: [
+            Card(
               //creating a child relationship with the safe area to include our card widget
               //card widget properties
               elevation: 3.0, //this gives it a slight drop shadow effect
@@ -42,62 +41,109 @@ class MyApp extends StatelessWidget {
               ),
             ),
             Row(
-              children: <Widget>[
-                Button(),
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  width: 100,
+                  height: 30,
+                  child: RaisedButton(
+                    child: Text('Enabled Button 1',
+                        overflow: TextOverflow.ellipsis),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NewPage()));
+                      },
+                    // padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                    // hoverColor: Colors.red,
+                  ),
+                ),
+                Container(
+                  width: 100,
+                  height: 30,
+                  child: RaisedButton(
+                    onPressed: () {},
+                    child: Text('Enabled Button 2',
+                        overflow: TextOverflow.ellipsis),
+                    padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                  ),
+                ),
+                Container(
+                  width: 100,
+                  height: 30,
+                  child: RaisedButton(
+                    onPressed: () {},
+                    child: Text('Enabled Button 3',
+                        overflow: TextOverflow.ellipsis),
+                    padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                  ),
+                ),
               ],
-            )
+            ),
+            SizedBox(
+              height: 20.0,
+              child: Divider(
+                color: Colors.grey,
+              ),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      width: 100.0,
+                      height: 100.0,
+                      color: Colors.orange[200],
+                    ),
+                    Container(
+                      width: 100.0,
+                      height: 100.0,
+                      color: Colors.orange[200],
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      width: 100.0,
+                      height: 100.0,
+                      color: Colors.orange[200],
+                    ),
+                    Container(
+                      width: 100.0,
+                      height: 100.0,
+                      color: Colors.orange[200],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ],
         ),
       ),
-      )
     );
   }
 }
 
 
-class Button extends StatefulWidget {
-  @override
-  _ButtonState createState() => _ButtonState();
-}
-
-class _ButtonState extends State<Button> {
+class NewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Expanded(
-          child: RaisedButton(
-            onPressed: () {},
-            child: Text('Enabled Button'),
-            // padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("New Page"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Go back!'),
         ),
-        Expanded(
-          child: RaisedButton(
-            onPressed: () {},
-            child: Text('Enabled Button'),
-            // padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          ),
-        ),
-        Expanded(
-          child: RaisedButton(
-            onPressed: () {},
-            child: Text('Enabled Button'),
-            // padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          ),
-        ),
-        // RaisedButton(
-        //   onPressed: () {},
-        //   child: Text('Enabled Button 2'),
-        //   padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-        // ),
-        // RaisedButton(
-        //   onPressed: () {},
-        //   child: Text('Enabled Button 3'),
-        //   padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-        // ),
-      ],
+      ),
     );
   }
 }
