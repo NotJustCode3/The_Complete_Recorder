@@ -54,8 +54,6 @@ class MyApp extends StatelessWidget {
                         context,
                         MaterialPageRoute(builder: (context) => NewPage()));
                       },
-                    // padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
-                    // hoverColor: Colors.red,
                   ),
                 ),
                 Container(
@@ -65,7 +63,6 @@ class MyApp extends StatelessWidget {
                     onPressed: () {},
                     child: Text('Enabled Button 2',
                         overflow: TextOverflow.ellipsis),
-                    padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
                   ),
                 ),
                 Container(
@@ -75,7 +72,6 @@ class MyApp extends StatelessWidget {
                     onPressed: () {},
                     child: Text('Enabled Button 3',
                         overflow: TextOverflow.ellipsis),
-                    padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
                   ),
                 ),
               ],
