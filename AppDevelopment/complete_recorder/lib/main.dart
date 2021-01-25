@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(MyApp());
@@ -147,12 +148,13 @@ class MyApp extends StatelessWidget {
             child: Container(
               alignment: Alignment.topLeft,
               margin: EdgeInsets.fromLTRB(20, 10, 20, 5),
-              padding: EdgeInsets.fromLTRB(20, 0, 20, 150),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 70),
               child: Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
+                    children: <Widget> [
+                      //Text('Folder', style: TextStyle(color: Colors.white),),
                       Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,),
                       Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,),
                       Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,)
@@ -160,10 +162,20 @@ class MyApp extends StatelessWidget {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,),
-                      Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,),
-                      Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,)
+                    children: <Widget> [
+                      //Text('Folder', style: TextStyle(color: Colors.white),),
+                      Icon(Icons.folder_rounded, color: Colors.orange[200], size: 100.0,),
+                      Icon(Icons.folder_rounded, color: Colors.orange[200], size: 100.0,),
+                      Icon(Icons.folder_rounded, color: Colors.orange[200], size: 100.0,)
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget> [
+                      //Text('Folder', style: TextStyle(color: Colors.white),),
+                      Icon(Icons.folder_rounded, color: Colors.white38, size: 100.0,),
+                      Icon(Icons.folder_rounded, color: Colors.white38, size: 100.0,),
+                      Icon(Icons.folder_rounded, color: Colors.white38, size: 100.0,)
                     ],
                   ),
                 ],
@@ -198,6 +210,7 @@ class MyApp extends StatelessWidget {
                   iconSize: 35.0,
                   color: Colors.white,
                   highlightColor: Colors.grey,
+                  //splashColor: Colors.grey,
                   onPressed: () {},
                 ),
               ),
