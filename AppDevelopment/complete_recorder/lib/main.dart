@@ -156,7 +156,7 @@ class MyApp extends StatelessWidget {
                     children: <Widget> [
                       //Text('Folder', style: TextStyle(color: Colors.white),),
                       Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,),
-                      Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,),
+                      Icon(Icons.folder_open_rounded, color: Colors.blue[500], size: 100.0,),
                       Icon(Icons.folder_shared_rounded, color: Colors.blue[500], size: 100.0,)
                     ],
                   ),
@@ -166,7 +166,7 @@ class MyApp extends StatelessWidget {
                       //Text('Folder', style: TextStyle(color: Colors.white),),
                       Icon(Icons.folder_rounded, color: Colors.orange[200], size: 100.0,),
                       Icon(Icons.create_new_folder_outlined, color: Colors.orange[200], size: 100.0,),
-                      Icon(Icons.folder_rounded, color: Colors.orange[200], size: 100.0,)
+                      Icon(Icons.folder_sharp, color: Colors.orange[200], size: 100.0,)
                     ],
                   ),
                   Row(
