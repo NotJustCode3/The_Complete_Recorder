@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
                 'Search',
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 25.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Roboto',
                     letterSpacing: 0.5),
@@ -143,18 +143,19 @@ class MyApp extends StatelessWidget {
 
           //NEW ROW; SAFE AREA WITH BORDER
           SafeArea(
-              child: Container(
-            margin: const EdgeInsets.fromLTRB(20, 10, 20, 5),
-            padding: EdgeInsets.fromLTRB(20, 185, 20, 185),
-            decoration: BoxDecoration(
-              border: Border(
-                top: BorderSide(width: 3.0, color: Colors.white),
-                bottom: BorderSide(width: 3.0, color: Colors.white),
-                right: BorderSide(width: 3.0, color: Colors.white),
-                left: BorderSide(width: 3.0, color: Colors.white),
+            child: Container(
+              margin: const EdgeInsets.fromLTRB(20, 10, 20, 5),
+              padding: EdgeInsets.fromLTRB(20, 185, 20, 185),
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(width: 3.0, color: Colors.white),
+                  bottom: BorderSide(width: 3.0, color: Colors.white),
+                  right: BorderSide(width: 3.0, color: Colors.white),
+                  left: BorderSide(width: 3.0, color: Colors.white),
+                ),
               ),
-            ),
-          )),
+            )
+          ),
 
           //RECORDING BUTTON
           Container(
