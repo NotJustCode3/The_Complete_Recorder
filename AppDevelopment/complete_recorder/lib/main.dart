@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -145,7 +146,16 @@ class MyApp extends StatelessWidget {
           SafeArea(
             child: Container(
               margin: const EdgeInsets.fromLTRB(20, 10, 20, 5),
-              padding: EdgeInsets.fromLTRB(20, 185, 20, 185),
+              padding: EdgeInsets.fromLTRB(20, 150, 20, 100),
+              alignment: Alignment(1.0, 3.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Icon(Icons.folder_rounded, color: CupertinoColors.activeBlue, size: 90.0,),
+                  Icon(Icons.folder_rounded, color: CupertinoColors.activeBlue, size: 90.0,),
+                  Icon(Icons.folder_rounded, color: CupertinoColors.activeBlue, size: 90.0,)
+                ],
+              ),
               decoration: BoxDecoration(
                 border: Border(
                   top: BorderSide(width: 3.0, color: Colors.white),
