@@ -148,7 +148,7 @@ class MyApp extends StatelessWidget {
             child: Container(
               alignment: Alignment.topLeft,
               margin: EdgeInsets.fromLTRB(20, 10, 20, 5),
-              padding: EdgeInsets.fromLTRB(20, 0, 20, 70),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 50),
               child: Column(
                 children: [
                   Row(
@@ -159,6 +159,14 @@ class MyApp extends StatelessWidget {
                       Icon(Icons.folder_open_rounded, color: Colors.blue[500], size: 100.0,),
                       Icon(Icons.folder_shared_rounded, color: Colors.blue[500], size: 100.0,)
                     ],
+                  ),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget> [
+                        Text('Folder', style: TextStyle(color: Colors.white, fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
+                        Text('Folder', style: TextStyle(color: Colors.white, fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
+                        Text('Folder', style: TextStyle(color: Colors.white, fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
+                      ]
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
