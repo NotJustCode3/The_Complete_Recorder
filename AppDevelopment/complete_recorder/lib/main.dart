@@ -147,13 +147,25 @@ class MyApp extends StatelessWidget {
             child: Container(
               alignment: Alignment.topLeft,
               margin: EdgeInsets.fromLTRB(20, 10, 20, 5),
-              padding: EdgeInsets.fromLTRB(20, 0, 20, 100),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 150),
+              child: Column(
                 children: [
-                  Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,),
-                  Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,),
-                  Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,),
+                      Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,),
+                      Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,)
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,),
+                      Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,),
+                      Icon(Icons.folder_rounded, color: Colors.blue[500], size: 100.0,)
+                    ],
+                  ),
                 ],
               ),
               decoration: BoxDecoration(
