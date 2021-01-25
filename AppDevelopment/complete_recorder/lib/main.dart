@@ -22,30 +22,42 @@ class MyApp extends StatelessWidget {
             //creating a child relationship with the safe area to include our card widget
             //card widget properties
             elevation: 3.0, //this gives it a slight drop shadow effect
-            color: Colors.grey,
+            color: Colors.grey[600],
             margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
             //creating another child to draw elements onto the card widget
-            child: ListTile(
-              //this widget houses the elements inside the card widget
-              leading: Icon(Icons.menu,
-                  color: Colors
-                      .white), //the leading property takes care of the elements to the left of the card
-              //a simple text widget to write and style our text
-              title: Text(
-                'Search',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Roboto',
-                    letterSpacing: 0.5),
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(width: 2.0, color: Colors.white),
+                  bottom: BorderSide(width: 2.0, color: Colors.white),
+                  right: BorderSide(width: 2.0, color: Colors.white),
+                  left: BorderSide(width: 2.0, color: Colors.white),
+                ),
               ),
-              trailing: Icon(Icons.create_new_folder_outlined,
-                  size: 30.0,
-                  color: Colors
-                      .white), //the trailing property takes care of elements to the right of the card
+              child: ListTile(
+                //this widget houses the elements inside the card widget
+                leading: Icon(Icons.menu,
+                    color: Colors
+                        .white), //the leading property takes care of the elements to the left of the card
+                //a simple text widget to write and style our text
+                title: Text(
+                  'Search',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Roboto',
+                      letterSpacing: 0.5),
+                ),
+                trailing: Icon(Icons.create_new_folder_outlined,
+                    size: 30.0,
+                    color: Colors
+                        .white), //the trailing property takes care of elements to the right of the card
+              ),
             ),
           ),
+
+          // ROW 1 FEATURES BUTTONS
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -109,14 +121,14 @@ class MyApp extends StatelessWidget {
 
           // LINE DIVIDER
           const Divider(
-            color: Colors.white,
+            color: Colors.redAccent,
             height: 20,
-            thickness: 2,
+            thickness: 3,
             indent: 25,
             endIndent: 25,
           ),
 
-          //NEW ROW
+          //ROW 2 MORE FEATURES BUTTONS ('ex: MORE RECENT, ETC...')
           Row(
             children: [
               Container(
@@ -143,12 +155,20 @@ class MyApp extends StatelessWidget {
             ],
           ),
 
-          //NEW ROW; SAFE AREA WITH BORDER
+          //ROW 3; SAFE AREA, CONTAINER WITH BORDER THAT CONTAIN FILES
           SafeArea(
             child: Container(
-              alignment: Alignment.topLeft,
-              margin: EdgeInsets.fromLTRB(20, 10, 20, 5),
-              padding: EdgeInsets.fromLTRB(20, 0, 20, 50),
+              alignment: Alignment.topCenter,
+              margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
+              padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(width: 3.0, color: Colors.green),
+                  bottom: BorderSide(width: 3.0, color: Colors.yellow),
+                  right: BorderSide(width: 3.0, color: Colors.blue),
+                  left: BorderSide(width: 3.0, color: Colors.redAccent),
+                ),
+              ),
               child: Column(
                 children: [
                   Row(
@@ -160,12 +180,13 @@ class MyApp extends StatelessWidget {
                       Icon(Icons.folder_shared_rounded, color: Colors.blue[500], size: 100.0,)
                     ],
                   ),
+                  //TEXT LABEL
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget> [
-                        Text('Folder', style: TextStyle(color: Colors.white, fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
-                        Text('Folder', style: TextStyle(color: Colors.white, fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
-                        Text('Folder', style: TextStyle(color: Colors.white, fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
+                        Text('Folder 1', style: TextStyle(color: Colors.white, fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
+                        Text('Folder 2', style: TextStyle(color: Colors.white, fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
+                        Text('Folder 3', style: TextStyle(color: Colors.white, fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
                       ]
                   ),
                   Row(
@@ -177,6 +198,15 @@ class MyApp extends StatelessWidget {
                       Icon(Icons.folder_sharp, color: Colors.orange[200], size: 100.0,)
                     ],
                   ),
+                  //TEXT LABEL
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget> [
+                        Text('Folder 4', style: TextStyle(color: Colors.blue[200], fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
+                        Text('Folder 5', style: TextStyle(color: Colors.blue[200], fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
+                        Text('Folder 6', style: TextStyle(color: Colors.blue[200], fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
+                      ]
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget> [
@@ -186,22 +216,22 @@ class MyApp extends StatelessWidget {
                       Icon(Icons.create_new_folder_rounded, color: Colors.white70, size: 100.0,)
                     ],
                   ),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget> [
+                        Text('Folder 7', style: TextStyle(color: Colors.white, fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
+                        Text('Folder 8', style: TextStyle(color: Colors.white, fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
+                        Text('Folder 9', style: TextStyle(color: Colors.white, fontSize: 15.0, fontFamily: 'Roboto', fontWeight: FontWeight.bold),),
+                      ]
+                  ),
                 ],
-              ),
-              decoration: BoxDecoration(
-                border: Border(
-                  top: BorderSide(width: 3.0, color: Colors.white),
-                  bottom: BorderSide(width: 3.0, color: Colors.white),
-                  right: BorderSide(width: 3.0, color: Colors.white),
-                  left: BorderSide(width: 3.0, color: Colors.white),
-                ),
               ),
             )
           ),
 
-          //RECORDING BUTTON
+          //ROW 4: RECORDING BUTTON THAT RECORDS
           Container(
-            margin: EdgeInsets.only(top: 10.0, bottom: 5.0),
+            margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
             child: Center(
               child: Ink(
                 decoration: BoxDecoration(
