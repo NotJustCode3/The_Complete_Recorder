@@ -5,12 +5,12 @@ import 'package:flutter/rendering.dart';
 void main() {
   runApp(
       MaterialApp(
-        home: Record()
+        home: Homepage()
       )
   );
 }
 
-class Record extends StatelessWidget {
+class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -86,7 +86,7 @@ class Record extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Library())
+                        MaterialPageRoute(builder: (context) => Record())
                     );
                   },
                 ),
@@ -395,5 +395,75 @@ class Library extends StatelessWidget {
         ])),
       ),
     );
+  }
+}
+
+
+class Record extends StatefulWidget {
+  @override
+  _RecordPageState createState() => _RecordPageState();
+}
+
+class _RecordPageState extends State<Record>
+    with SingleTickerProviderStateMixin {
+  AnimationController _animationController;
+  bool isPlaying = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 450));
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _animationController.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: Text('Studio',
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Roboto',
+              letterSpacing: 0.5,
+          ),
+        ),
+        backgroundColor: Colors.grey[600],
+        centerTitle: true,
+      ),
+      body: Container(
+        child: Center(
+          child: IconButton(
+            iconSize:200,
+            splashColor:Colors.redAccent,
+
+            icon: AnimatedIcon(
+              icon: AnimatedIcons.play_pause,
+              progress: _animationController,
+              color: Colors.redAccent,
+
+            ),
+            onPressed: () => _handleOnPressed(),
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _handleOnPressed() {
+    setState(() {
+      isPlaying = !isPlaying;
+      isPlaying
+          ? _animationController.forward()
+          : _animationController.reverse();
+    });
   }
 }
