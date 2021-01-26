@@ -10,6 +10,7 @@ void main() {
   );
 }
 
+//HOMEPAGE - RECORD & LIBRARY
 class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -53,19 +54,18 @@ class Homepage extends StatelessWidget {
                 letterSpacing: 0.5),
               ),
               trailing: Icon(Icons.create_new_folder_outlined,
-              size: 30.0,
-              color: Colors
-              .white
+                size: 30.0,
+                color: Colors.white
               ), //the trailing property takes care of elements to the right of the card
             ),
           ),
         ),
 
-        //ROW 4: RECORDING BUTTON THAT RECORDS
+        //ROW 1: GO TO RECORD PAGE
         Container(
           margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
           child: Container(
-            margin: EdgeInsets.only(top: 100.0, bottom: 20.0),
+            margin: EdgeInsets.only(top: 60.0, bottom: 60.0),
             child: Center(
               child: Ink(
                 decoration: BoxDecoration(
@@ -79,7 +79,7 @@ class Homepage extends StatelessWidget {
                 ),
                 child: IconButton(
                   icon: Icon(Icons.mic),
-                  iconSize: 70.0,
+                  iconSize: 80.0,
                   color: Colors.white,
                   highlightColor: Colors.grey,
                   //splashColor: Colors.grey,
@@ -98,15 +98,15 @@ class Homepage extends StatelessWidget {
         const Divider(
           color: Colors.redAccent,
           height: 20,
-          thickness: 3,
-          indent: 60,
-          endIndent: 60,
+          thickness: 5,
+          indent: 20,
+          endIndent: 20,
         ),
 
           Container(
             margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
             child: Container(
-              margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
+              margin: EdgeInsets.only(top: 60.0, bottom: 60.0),
               child: Center(
                 child: Ink(
                   decoration: BoxDecoration(
@@ -120,7 +120,7 @@ class Homepage extends StatelessWidget {
                   ),
                   child: IconButton(
                     icon: Icon(Icons.library_books),
-                    iconSize: 70.0,
+                    iconSize: 80.0,
                     color: Colors.white,
                     highlightColor: Colors.grey,
                     //splashColor: Colors.grey,
@@ -141,7 +141,7 @@ class Homepage extends StatelessWidget {
   }
 }
 
-
+//PAGE 2 - LIBRARY, FOLDERS, ETC...
 class Library extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -398,28 +398,29 @@ class Library extends StatelessWidget {
   }
 }
 
-
+//PAGE 3 - RECORDING (1 of 2)
 class Record extends StatefulWidget {
   @override
   _RecordPageState createState() => _RecordPageState();
 }
 
+//PAGE 3 - RECORDING (2 of 2)
 class _RecordPageState extends State<Record>
     with SingleTickerProviderStateMixin {
   AnimationController _animationController;
   bool isPlaying = false;
 
   @override
+  void dispose() {
+    super.dispose();
+    _animationController.dispose();
+  }
+
+  @override
   void initState() {
     super.initState();
     _animationController =
         AnimationController(vsync: this, duration: Duration(milliseconds: 450));
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _animationController.dispose();
   }
 
   @override
@@ -442,15 +443,13 @@ class _RecordPageState extends State<Record>
       body: Container(
         child: Center(
           child: IconButton(
-            iconSize:200,
-            splashColor:Colors.redAccent,
-
             icon: AnimatedIcon(
               icon: AnimatedIcons.play_pause,
               progress: _animationController,
               color: Colors.redAccent,
-
             ),
+            iconSize:200,
+            splashColor:Colors.redAccent,
             onPressed: () => _handleOnPressed(),
           ),
         ),
