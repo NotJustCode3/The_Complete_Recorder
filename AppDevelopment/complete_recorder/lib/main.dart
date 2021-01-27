@@ -283,22 +283,39 @@ class Library extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    //Text('Folder', style: TextStyle(color: Colors.white),),
-                    Icon(
-                      Icons.folder_rounded,
+                    IconButton(
+                      icon: Icon(Icons.folder_rounded),
+                      iconSize: 80.0,
                       color: Colors.blue[500],
-                      size: 100.0,
+                      //highlightColor: Colors.grey,
+                      splashColor: Colors.grey,
+                      onPressed: () {
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Folder()));
+                      },
                     ),
-                    Icon(
-                      Icons.folder_open_rounded,
+                    IconButton(
+                      icon: Icon(Icons.folder_rounded),
+                      iconSize: 80.0,
                       color: Colors.blue[500],
-                      size: 100.0,
+                      //highlightColor: Colors.grey,
+                      splashColor: Colors.grey,
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Folder()));
+                      },
                     ),
-                    Icon(
-                      Icons.folder_shared_rounded,
+                    IconButton(
+                      icon: Icon(Icons.folder_rounded),
+                      iconSize: 80.0,
                       color: Colors.blue[500],
-                      size: 100.0,
-                    )
+                      //highlightColor: Colors.grey,
+                      splashColor: Colors.grey,
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Folder()));
+                      },
+                    ),
                   ],
                 ),
                 //TEXT LABEL
@@ -306,7 +323,7 @@ class Library extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Text(
-                        'Folder 1',
+                        'CLICK ME!',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 15.0,
@@ -314,7 +331,7 @@ class Library extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'Folder 2',
+                        'CLICK ME!',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 15.0,
@@ -322,7 +339,7 @@ class Library extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'Folder 3',
+                        'CLICK ME!',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 15.0,
@@ -334,21 +351,39 @@ class Library extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     //Text('Folder', style: TextStyle(color: Colors.white),),
-                    Icon(
-                      Icons.folder_rounded,
+                    IconButton(
+                      icon: Icon(Icons.folder_rounded),
+                      iconSize: 80.0,
                       color: Colors.orange[200],
-                      size: 100.0,
+                      //highlightColor: Colors.grey,
+                      splashColor: Colors.grey,
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Folder()));
+                      },
                     ),
-                    Icon(
-                      Icons.create_new_folder_outlined,
+                    IconButton(
+                      icon: Icon(Icons.folder_sharp),
+                      iconSize: 80.0,
                       color: Colors.orange[200],
-                      size: 100.0,
+                      //highlightColor: Colors.grey,
+                      splashColor: Colors.grey,
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Folder()));
+                      },
                     ),
-                    Icon(
-                      Icons.folder_sharp,
+                    IconButton(
+                      icon: Icon(Icons.folder_open_rounded),
+                      iconSize: 80.0,
                       color: Colors.orange[200],
-                      size: 100.0,
-                    )
+                      //highlightColor: Colors.grey,
+                      splashColor: Colors.grey,
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Folder()));
+                      },
+                    ),
                   ],
                 ),
                 //TEXT LABEL
@@ -356,7 +391,7 @@ class Library extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Text(
-                        'Folder 4',
+                        '클릭 세요!',
                         style: TextStyle(
                             color: Colors.blue[200],
                             fontSize: 15.0,
@@ -364,7 +399,7 @@ class Library extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'Folder 5',
+                        '클릭 세요!',
                         style: TextStyle(
                             color: Colors.blue[200],
                             fontSize: 15.0,
@@ -372,7 +407,7 @@ class Library extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'Folder 6',
+                        '클릭 세요!',
                         style: TextStyle(
                             color: Colors.blue[200],
                             fontSize: 15.0,
@@ -384,28 +419,46 @@ class Library extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     //Text('Folder', style: TextStyle(color: Colors.white),),
-                    Icon(
-                      Icons.folder_special_rounded,
+                    IconButton(
+                      icon: Icon(Icons.folder_rounded),
+                      iconSize: 80.0,
                       color: Colors.white70,
-                      size: 100.0,
+                      //highlightColor: Colors.grey,
+                      splashColor: Colors.grey,
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Folder()));
+                      },
                     ),
-                    Icon(
-                      Icons.folder_open_rounded,
+                    IconButton(
+                      icon: Icon(Icons.folder_special_rounded),
+                      iconSize: 80.0,
                       color: Colors.white70,
-                      size: 100.0,
+                      //highlightColor: Colors.grey,
+                      splashColor: Colors.grey,
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Folder()));
+                      },
                     ),
-                    Icon(
-                      Icons.create_new_folder_rounded,
+                    IconButton(
+                      icon: Icon(Icons.folder_open_sharp),
+                      iconSize: 80.0,
                       color: Colors.white70,
-                      size: 100.0,
-                    )
+                      //highlightColor: Colors.grey,
+                      splashColor: Colors.grey,
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Folder()));
+                      },
+                    ),
                   ],
                 ),
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Text(
-                        'Folder 7',
+                        'Нажми меня!',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 15.0,
@@ -413,7 +466,7 @@ class Library extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'Folder 8',
+                        'Нажми меня!',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 15.0,
@@ -421,7 +474,7 @@ class Library extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'Folder 9',
+                        'Нажми меня!',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 15.0,
