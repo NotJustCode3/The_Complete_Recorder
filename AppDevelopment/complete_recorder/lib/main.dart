@@ -295,7 +295,7 @@ class Library extends StatelessWidget {
                       },
                     ),
                     IconButton(
-                      icon: Icon(Icons.folder_rounded),
+                      icon: Icon(Icons.create_new_folder_rounded),
                       iconSize: 80.0,
                       color: Colors.blue[500],
                       //highlightColor: Colors.grey,
@@ -458,25 +458,25 @@ class Library extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Text(
-                        'Нажми меня!',
+                        'Нжи меня!',
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.deepOrange,
                             fontSize: 15.0,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'Нажми меня!',
+                        'Нжи меня!',
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.orange[800],
                             fontSize: 15.0,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'Нажми меня!',
+                        'Нжи меня!',
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.deepOrangeAccent,
                             fontSize: 15.0,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold),
