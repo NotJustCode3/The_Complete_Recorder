@@ -445,23 +445,23 @@ class Homepage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Text(
-                        'Нaжи меня!',
+                        'Нжи меня!',
                         style: TextStyle(
-                            color: Colors.deepOrange,
+                            color: Colors.deepOrangeAccent,
                             fontSize: 15.0,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'Нaжи меня!',
+                        'Нжи меня!',
                         style: TextStyle(
-                            color: Colors.orange[800],
+                            color: Colors.deepOrangeAccent,
                             fontSize: 15.0,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'Нaжи меня!',
+                        'Нжи меня!',
                         style: TextStyle(
                             color: Colors.deepOrangeAccent,
                             fontSize: 15.0,
