@@ -458,7 +458,7 @@ class Library extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Text(
-                        'Нжи меня!',
+                        'Нaжи меня!',
                         style: TextStyle(
                             color: Colors.deepOrange,
                             fontSize: 15.0,
@@ -466,7 +466,7 @@ class Library extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'Нжи меня!',
+                        'Нaжи меня!',
                         style: TextStyle(
                             color: Colors.orange[800],
                             fontSize: 15.0,
@@ -474,7 +474,7 @@ class Library extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'Нжи меня!',
+                        'Нaжи меня!',
                         style: TextStyle(
                             color: Colors.deepOrangeAccent,
                             fontSize: 15.0,
