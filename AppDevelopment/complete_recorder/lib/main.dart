@@ -460,7 +460,7 @@ class Library extends StatelessWidget {
                       Text(
                         'Нжи меня!',
                         style: TextStyle(
-                            color: Colors.deepOrange,
+                            color: Colors.deepOrangeAccent,
                             fontSize: 15.0,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold),
@@ -468,7 +468,7 @@ class Library extends StatelessWidget {
                       Text(
                         'Нжи меня!',
                         style: TextStyle(
-                            color: Colors.orange[800],
+                            color: Colors.deepOrangeAccent,
                             fontSize: 15.0,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold),
