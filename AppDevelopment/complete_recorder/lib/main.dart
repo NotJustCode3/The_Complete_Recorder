@@ -6,106 +6,106 @@ void main() {
   runApp(MaterialApp(home: Homepage()));
 }
 
-//HOMEPAGE - RECORD & LIBRARY
-class Homepage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      //Accessing the home of the material widget and drawing the scaffold onto it
-      home: Scaffold(
-        backgroundColor:
-            Colors.black, //the background color of the scaffold is white
-        appBar: AppBar(
-          backgroundColor: Colors.pink[900],    //grey[600],
-          centerTitle: true,
-          title: Text(
-            'THE COMPLETE RECORDER',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 23.0,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Roboto',
-              letterSpacing: 0.5,
-            ),
-          ),
-        ),
-        body: SafeArea(
-          //creating a sfe area to start drawing elements on to the scaffold widget
-          child: Column(children: [
-            //ROW 1: GO TO RECORD PAGE
-            Container(
-              margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
-              child: Container(
-                margin: EdgeInsets.only(top: 80.0, bottom: 50.0),
-                child: Center(
-                  child: Ink(
-                    decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(100),
-                        border: Border.all(
-                          width: 5,
-                          color: Colors.white,
-                        )),
-                    child: IconButton(
-                      icon: Icon(Icons.mic),
-                      iconSize: 100.0,
-                      color: Colors.white,
-                      highlightColor: Colors.grey,
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Record()));
-                      },
-                    ),
-                  ),
-                ),
-              ),
-            ),
-
-            const Divider(
-              color: Colors.redAccent,
-              height: 20,
-              thickness: 5,
-              indent: 20,
-              endIndent: 20,
-            ),
-
-            //ROW 2 - LIBRARY BUTTONS, GO FOR FILES
-            Container(
-              margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
-              child: Container(
-                margin: EdgeInsets.only(top: 60.0, bottom: 50.0),
-                child: Center(
-                  child: Ink(
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(100),
-                        border: Border.all(
-                          width: 5,
-                          color: Colors.white70,
-                        )),
-                    child: IconButton(
-                      icon: Icon(Icons.library_books),
-                      iconSize: 100.0,
-                      color: Colors.white,
-                      highlightColor: Colors.grey,
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Library()));
-                      },
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ]),
-        ),
-      ),
-    );
-  }
-}
+// //HOMEPAGE - RECORD & LIBRARY
+// class Homepage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       //Accessing the home of the material widget and drawing the scaffold onto it
+//       home: Scaffold(
+//         backgroundColor:
+//             Colors.black, //the background color of the scaffold is white
+//         appBar: AppBar(
+//           backgroundColor: Colors.pink[900], //grey[600],
+//           centerTitle: true,
+//           title: Text(
+//             'THE COMPLETE RECORDER',
+//             style: TextStyle(
+//               color: Colors.white,
+//               fontSize: 23.0,
+//               fontWeight: FontWeight.bold,
+//               fontFamily: 'Roboto',
+//               letterSpacing: 0.5,
+//             ),
+//           ),
+//         ),
+//         body: SafeArea(
+//           //creating a sfe area to start drawing elements on to the scaffold widget
+//           child: Column(children: [
+//             //ROW 1: GO TO RECORD PAGE
+//             Container(
+//               margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
+//               child: Container(
+//                 margin: EdgeInsets.only(top: 80.0, bottom: 50.0),
+//                 child: Center(
+//                   child: Ink(
+//                     decoration: BoxDecoration(
+//                         color: Colors.red,
+//                         borderRadius: BorderRadius.circular(100),
+//                         border: Border.all(
+//                           width: 5,
+//                           color: Colors.white,
+//                         )),
+//                     child: IconButton(
+//                       icon: Icon(Icons.mic),
+//                       iconSize: 100.0,
+//                       color: Colors.white,
+//                       highlightColor: Colors.grey,
+//                       onPressed: () {
+//                         Navigator.push(context,
+//                             MaterialPageRoute(builder: (context) => Record()));
+//                       },
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ),
+//
+//             const Divider(
+//               color: Colors.redAccent,
+//               height: 20,
+//               thickness: 5,
+//               indent: 20,
+//               endIndent: 20,
+//             ),
+//
+//             //ROW 2 - LIBRARY BUTTONS, GO FOR FILES
+//             Container(
+//               margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
+//               child: Container(
+//                 margin: EdgeInsets.only(top: 60.0, bottom: 50.0),
+//                 child: Center(
+//                   child: Ink(
+//                     decoration: BoxDecoration(
+//                         color: Colors.blue,
+//                         borderRadius: BorderRadius.circular(100),
+//                         border: Border.all(
+//                           width: 5,
+//                           color: Colors.white70,
+//                         )),
+//                     child: IconButton(
+//                       icon: Icon(Icons.library_books),
+//                       iconSize: 100.0,
+//                       color: Colors.white,
+//                       highlightColor: Colors.grey,
+//                       onPressed: () {
+//                         Navigator.push(context,
+//                             MaterialPageRoute(builder: (context) => Library()));
+//                       },
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ]),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 //PAGE 2 - LIBRARY, FOLDERS, ETC...
-class Library extends StatelessWidget {
+class Homepage extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -113,7 +113,7 @@ class Library extends StatelessWidget {
       //Accessing the home of the material widget and drawing the scaffold onto it
       home: Scaffold(
         backgroundColor:
-            Colors.black, //the background color of the scaffold is white
+            Colors.white, //the background color of the scaffold is white
         body: SafeArea(
             //creating a sfe area to start drawing elements on to the scaffold widget
             child: Column(children: [
@@ -121,48 +121,35 @@ class Library extends StatelessWidget {
             //creating a child relationship with the safe area to include our card widget
             //card widget properties
             elevation: 3.0, //this gives it a slight drop shadow effect
-            color: Colors.grey[600],
-            margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+            color: Colors.white,
+            margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
             //creating another child to draw elements onto the card widget
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border(
-                  top: BorderSide(width: 2.0, color: Colors.white),
-                  bottom: BorderSide(width: 2.0, color: Colors.white),
-                  right: BorderSide(width: 2.0, color: Colors.white),
-                  left: BorderSide(width: 2.0, color: Colors.white),
-                ),
-              ),
-              child: ListTile(
-                //this widget houses the elements inside the card widget
-                leading: IconButton(
+            child: ListTile(
+              //this widget houses the elements inside the card widget
+              leading: IconButton(
                   icon: Icon(Icons.menu),
-                  iconSize: 30.0,
-                  color: Colors.white,
-                  highlightColor: Colors.grey,
+                  //iconSize: 30.0,
+                  color: Colors.grey,
+                  //highlightColor: Colors.grey,
                   onPressed: () {
                     Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Folder()));
-                  }
-                ),
-                title: Text(
-                  'Search',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Roboto',
-                      letterSpacing: 0.5),
-                ),
-                trailing: IconButton(
-                  icon: Icon(Icons.create_new_folder_outlined),
-                  iconSize: 30.0,
-                  color: Colors.white,
-                  highlightColor: Colors.grey,
-                  onPressed: () {
-                    //Navigator.push(context,MaterialPageRoute(builder: (context) => Folder()));
-                  },
-                ),
+                        MaterialPageRoute(builder: (context) => Folder()));
+                  }),
+              title: Text(
+                'Search',
+                style: TextStyle(
+                    color: Colors.grey,
+                    fontFamily: 'Roboto',
+                    letterSpacing: 0.5),
+              ),
+              trailing: IconButton(
+                icon: Icon(Icons.create_new_folder_outlined),
+                //iconSize: 30.0,
+                color: Colors.grey,
+                //highlightColor: Colors.grey,
+                onPressed: () {
+                  //Navigator.push(context,MaterialPageRoute(builder: (context) => Folder()));
+                },
               ),
             ),
           ),
@@ -176,14 +163,14 @@ class Library extends StatelessWidget {
                 shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(10.0),
                     side: BorderSide(color: Colors.white, width: 2.0)),
-                color: Colors.black,
+                color: Colors.white,
                 highlightColor: Colors.red,
                 child: Text(
                   'Feature 1',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       //fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+                      // fontWeight: FontWeight.bold,
                       fontFamily: 'Roboto',
                       letterSpacing: 0.5),
                 ),
@@ -191,7 +178,7 @@ class Library extends StatelessWidget {
               ),
               RaisedButton(
                 onPressed: () {},
-                color: Colors.black,
+                color: Colors.white,
                 highlightColor: Colors.red,
                 shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(10.0),
@@ -199,9 +186,9 @@ class Library extends StatelessWidget {
                 child: Text(
                   'Feature 2',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       //fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+                      //fontWeight: FontWeight.bold,
                       fontFamily: 'Roboto',
                       letterSpacing: 0.5),
                 ),
@@ -209,17 +196,17 @@ class Library extends StatelessWidget {
               ),
               RaisedButton(
                 onPressed: () {},
-                color: Colors.black,
+                color: Colors.white,
                 highlightColor: Colors.red,
                 shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(10.0),
                     side: BorderSide(color: Colors.white, width: 2.0)),
                 child: Text(
-                  'Extras',
+                  'Feature 3',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       //fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+                      //fontWeight: FontWeight.bold,
                       fontFamily: 'Roboto',
                       letterSpacing: 0.5),
                 ),
@@ -229,39 +216,29 @@ class Library extends StatelessWidget {
           ),
 
           // LINE DIVIDER
-          const Divider(
-            color: Colors.redAccent,
-            height: 20,
-            thickness: 3,
-            indent: 25,
-            endIndent: 25,
+          Padding(
+            padding: const EdgeInsets.all(6.0),
+            child: const Divider(
+              color: Colors.grey,
+            ),
           ),
 
-          //ROW 2 MORE FEATURES BUTTONS ('ex: MORE RECENT, ETC...')
-          Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(left: 20.0),
-                child: RaisedButton(
-                  onPressed: () {},
-                  color: Colors.black,
-                  highlightColor: Colors.red,
-                  shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(10.0),
-                      side: BorderSide(color: Colors.white, width: 2.0)),
-                  child: Text(
-                    'Extras',
-                    style: TextStyle(
-                        color: Colors.white,
-                        //fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Roboto',
-                        letterSpacing: 0.5),
+          //Row 2 'Most recent'
+          Padding(
+            padding: const EdgeInsets.fromLTRB(21, 1, 1, 1),
+            child: Container(
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'Most Recent',
+                  style: TextStyle(
+                    letterSpacing: 0.5,
+                    fontFamily: 'Roboto',
+                    fontSize: 16,
                   ),
-                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                 ),
               ),
-            ],
+            ),
           ),
 
           //ROW 3; SAFE AREA, CONTAINER WITH BORDER THAT CONTAIN FILES
@@ -272,10 +249,10 @@ class Library extends StatelessWidget {
             padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
             decoration: BoxDecoration(
               border: Border(
-                top: BorderSide(width: 3.0, color: Colors.green),
-                bottom: BorderSide(width: 3.0, color: Colors.yellow),
-                right: BorderSide(width: 3.0, color: Colors.blue),
-                left: BorderSide(width: 3.0, color: Colors.redAccent),
+                top: BorderSide(width: 1.0, color: Colors.grey),
+                bottom: BorderSide(width: 1.0, color: Colors.grey),
+                right: BorderSide(width: 1.0, color: Colors.grey),
+                left: BorderSide(width: 1.0, color: Colors.grey),
               ),
             ),
             child: Column(
@@ -287,15 +264,16 @@ class Library extends StatelessWidget {
                       icon: Icon(Icons.folder_rounded),
                       iconSize: 80.0,
                       color: Colors.blue[500],
+
                       //highlightColor: Colors.grey,
                       splashColor: Colors.grey,
                       onPressed: () {
                         Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Folder()));
+                            MaterialPageRoute(builder: (context) => Folder()));
                       },
                     ),
                     IconButton(
-                      icon: Icon(Icons.create_new_folder_rounded),
+                      icon: Icon(Icons.folder_rounded),
                       iconSize: 80.0,
                       color: Colors.blue[500],
                       //highlightColor: Colors.grey,
@@ -325,7 +303,7 @@ class Library extends StatelessWidget {
                       Text(
                         'CLICK ME!',
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 15.0,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold),
@@ -508,7 +486,7 @@ class Library extends StatelessWidget {
                   //splashColor: Colors.grey,
                   onPressed: () {
                     Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Homepage()));
+                        MaterialPageRoute(builder: (context) => Homepage()));
                   },
                 ),
               ),
@@ -641,14 +619,14 @@ class Folder extends StatelessWidget {
                       letterSpacing: 0.5),
                 ),
                 trailing: IconButton(
-                    icon: Icon(Icons.create_new_folder_outlined),
-                    iconSize: 30.0,
-                    color: Colors.white,
-                    highlightColor: Colors.grey,
-                    onPressed: () {
+                  icon: Icon(Icons.create_new_folder_outlined),
+                  iconSize: 30.0,
+                  color: Colors.white,
+                  highlightColor: Colors.grey,
+                  onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Library()));
-                    },
+                        MaterialPageRoute(builder: (context) => Homepage()));
+                  },
                 ),
               ),
             ),
@@ -754,149 +732,149 @@ class Folder extends StatelessWidget {
 
           //ROW 3; SAFE AREA, CONTAINER WITH BORDER
           SafeArea(
-            child: Container(
-              alignment: Alignment.topCenter,
-              margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
-              padding: EdgeInsets.only(bottom: 10.0),
-              decoration: BoxDecoration(
-                border: Border(
-                  top: BorderSide(width: 3.0, color: Colors.green),
-                  bottom: BorderSide(width: 3.0, color: Colors.yellow),
-                  right: BorderSide(width: 3.0, color: Colors.blue),
-                  left: BorderSide(width: 3.0, color: Colors.redAccent),
+              child: Container(
+            alignment: Alignment.topCenter,
+            margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
+            padding: EdgeInsets.only(bottom: 10.0),
+            decoration: BoxDecoration(
+              border: Border(
+                top: BorderSide(width: 3.0, color: Colors.green),
+                bottom: BorderSide(width: 3.0, color: Colors.yellow),
+                right: BorderSide(width: 3.0, color: Colors.blue),
+                left: BorderSide(width: 3.0, color: Colors.redAccent),
+              ),
+            ),
+            child: Column(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(width: 3.0, color: Colors.white),
+                    ),
+                  ),
+                  child: Row(children: <Widget>[
+                    Container(
+                      child: IconButton(
+                        icon: Icon(Icons.play_circle_fill_rounded),
+                        iconSize: 80.0,
+                        color: Colors.redAccent,
+                        highlightColor: Colors.grey,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Record()));
+                        },
+                      ),
+                    ),
+                    Text(
+                      'Stomachache',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Roboto',
+                          letterSpacing: 0.5),
+                    ),
+                    Text('             '),
+                    Text(
+                      '5.09M   4:43',
+                      style: TextStyle(
+                          color: Colors.lightBlueAccent,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Roboto',
+                          letterSpacing: 0.5),
+                    ),
+                  ]),
                 ),
-              ),
-              child: Column(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(width: 3.0, color: Colors.white),
-                      ),
-                    ),
-                    child: Row(
-                      children: <Widget>[                        
-                        Container(
-                          child: IconButton(
-                            icon: Icon(Icons.play_circle_fill_rounded),
-                            iconSize: 80.0,
-                            color: Colors.redAccent,
-                            highlightColor: Colors.grey,
-                            onPressed: () {
-                              Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => Record()));
-                            },
-                          ),
-                        ),
-                        Text('Stomachache',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Roboto',
-                              letterSpacing: 0.5
-                          ),
-                        ),
-                        Text('             '),
-                        Text('5.09M   4:43',
-                          style: TextStyle(
-                              color: Colors.lightBlueAccent,
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Roboto',
-                              letterSpacing: 0.5
-                          ),
-                        ),
-                      ]
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(width: 3.0, color: Colors.white),
                     ),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(width: 3.0, color: Colors.white),
+                  child: Row(children: <Widget>[
+                    Container(
+                      child: IconButton(
+                        icon: Icon(Icons.play_circle_fill_rounded),
+                        iconSize: 80.0,
+                        color: Colors.redAccent,
+                        highlightColor: Colors.grey,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Record()));
+                        },
                       ),
                     ),
-                    child: Row(
-                      children: <Widget>[
-                        Container(
-                          child: IconButton(
-                            icon: Icon(Icons.play_circle_fill_rounded),
-                            iconSize: 80.0,
-                            color: Colors.redAccent,
-                            highlightColor: Colors.grey,
-                            onPressed: () {
-                              Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => Record()));
-                            },
-                          ),
-                        ),
-                        Text('Sorry Not Sorry',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 17.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Roboto',
-                            letterSpacing: 0.5
-                          ),
-                        ),
-                        Text('         '),
-                        Text('4.45M   4:43',
-                          style: TextStyle(
-                              color: Colors.lightBlueAccent,
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Roboto',
-                              letterSpacing: 0.5
-                          ),
-                        ),
-                      ]
+                    Text(
+                      'Sorry Not Sorry',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Roboto',
+                          letterSpacing: 0.5),
                     ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border(
+                    Text('         '),
+                    Text(
+                      '4.45M   4:43',
+                      style: TextStyle(
+                          color: Colors.lightBlueAccent,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Roboto',
+                          letterSpacing: 0.5),
+                    ),
+                  ]),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border(
                         //bottom: BorderSide(width: 3.0, color: Colors.white),
+                        ),
+                  ),
+                  child: Row(children: <Widget>[
+                    Container(
+                      child: IconButton(
+                        icon: Icon(Icons.play_circle_fill_rounded),
+                        iconSize: 80.0,
+                        color: Colors.redAccent,
+                        highlightColor: Colors.grey,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Record()));
+                        },
                       ),
                     ),
-                    child: Row(
-                      children: <Widget>[
-                        Container(
-                          child: IconButton(
-                            icon: Icon(Icons.play_circle_fill_rounded),
-                            iconSize: 80.0,
-                            color: Colors.redAccent,
-                            highlightColor: Colors.grey,
-                            onPressed: () {
-                              Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => Record()));
-                            },
-                          ),
-                        ),
-                        Text('Never Say Never',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Roboto',
-                              letterSpacing: 0.5
-                          ),
-                        ),
-                        Text('      '),
-                        Text('5.09M   4:43',
-                          style: TextStyle(
-                              color: Colors.lightBlueAccent,
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Roboto',
-                              letterSpacing: 0.5
-                          ),
-                        ),
-                      ]
+                    Text(
+                      'Never Say Never',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Roboto',
+                          letterSpacing: 0.5),
                     ),
-                  ),
-                ],
-              ),
-            )),
+                    Text('      '),
+                    Text(
+                      '5.09M   4:43',
+                      style: TextStyle(
+                          color: Colors.lightBlueAccent,
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Roboto',
+                          letterSpacing: 0.5),
+                    ),
+                  ]),
+                ),
+              ],
+            ),
+          )),
         ])),
       ),
     );
