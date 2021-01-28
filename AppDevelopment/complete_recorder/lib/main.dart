@@ -270,7 +270,6 @@ class Homepage extends StatelessWidget {
                       icon: Icon(Icons.folder_rounded),
                       iconSize: 80.0,
                       color: Colors.blue[500],
-
                       //highlightColor: Colors.grey,
                       splashColor: Colors.grey,
                       onPressed: () {
@@ -307,160 +306,25 @@ class Homepage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Text(
-                        'CLICK ME!',
+                        'Choir!',
                         style: TextStyle(
-                            color: Colors.black,
+                            color: Colors.grey,
                             fontSize: 15.0,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'CLICK ME!',
+                        'School',
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.grey,
                             fontSize: 15.0,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'CLICK ME!',
+                        'Anything',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15.0,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ]),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    //Text('Folder', style: TextStyle(color: Colors.white),),
-                    IconButton(
-                      icon: Icon(Icons.folder_rounded),
-                      iconSize: 80.0,
-                      color: Colors.orange[200],
-                      //highlightColor: Colors.grey,
-                      splashColor: Colors.grey,
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Folder()));
-                      },
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.folder_sharp),
-                      iconSize: 80.0,
-                      color: Colors.orange[200],
-                      //highlightColor: Colors.grey,
-                      splashColor: Colors.grey,
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Folder()));
-                      },
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.folder_open_rounded),
-                      iconSize: 80.0,
-                      color: Colors.orange[200],
-                      //highlightColor: Colors.grey,
-                      splashColor: Colors.grey,
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Folder()));
-                      },
-                    ),
-                  ],
-                ),
-                //TEXT LABEL
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      Text(
-                        '클릭 세요!',
-                        style: TextStyle(
-                            color: Colors.blue[200],
-                            fontSize: 15.0,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        '클릭 세요!',
-                        style: TextStyle(
-                            color: Colors.blue[200],
-                            fontSize: 15.0,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        '클릭 세요!',
-                        style: TextStyle(
-                            color: Colors.blue[200],
-                            fontSize: 15.0,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ]),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    //Text('Folder', style: TextStyle(color: Colors.white),),
-                    IconButton(
-                      icon: Icon(Icons.folder_rounded),
-                      iconSize: 80.0,
-                      color: Colors.white70,
-                      //highlightColor: Colors.grey,
-                      splashColor: Colors.grey,
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Folder()));
-                      },
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.folder_special_rounded),
-                      iconSize: 80.0,
-                      color: Colors.white70,
-                      //highlightColor: Colors.grey,
-                      splashColor: Colors.grey,
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Folder()));
-                      },
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.folder_open_sharp),
-                      iconSize: 80.0,
-                      color: Colors.white70,
-                      //highlightColor: Colors.grey,
-                      splashColor: Colors.grey,
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Folder()));
-                      },
-                    ),
-                  ],
-                ),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      Text(
-                        'Нжи меня!',
-                        style: TextStyle(
-                            color: Colors.deepOrangeAccent,
-                            fontSize: 15.0,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        'Нжи меня!',
-                        style: TextStyle(
-                            color: Colors.deepOrangeAccent,
-                            fontSize: 15.0,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        'Нжи меня!',
-                        style: TextStyle(
-                            color: Colors.deepOrangeAccent,
+                            color: Colors.grey,
                             fontSize: 15.0,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold),
@@ -471,24 +335,25 @@ class Homepage extends StatelessWidget {
           )),
 
           //ROW 4: RECORDING BUTTON THAT RECORDS
-          Expanded(
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0.0, 300.0, 0.0, 0.0),
             child: Container(
               margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
               child: Center(
                 child: Ink(
                   decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(100),
                       border: Border.all(
-                        width: 5,
-                        color: Colors.white,
+                        width: 1,
+                        color: Colors.grey,
                       )
                       //shape: CircleBorder(),
                       ),
                   child: IconButton(
-                    icon: Icon(Icons.mic),
-                    iconSize: 50.0,
-                    color: Colors.white,
+                    icon: Icon(Icons.fiber_manual_record),
+                    iconSize: 70.0,
+                    color: Colors.red,
                     highlightColor: Colors.grey,
                     //splashColor: Colors.grey,
                     onPressed: () {
