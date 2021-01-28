@@ -476,7 +476,7 @@ class Library extends StatelessWidget {
                       Text(
                         'Нжи меня!',
                         style: TextStyle(
-                            color: Colors.yellow,
+                            color: Colors.deepOrangeAccent,
                             fontSize: 15.0,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold),
