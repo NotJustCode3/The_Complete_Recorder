@@ -1,10 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_sound/flutter_sound.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'demo/demo.dart';
+import 'simple_playback/simple_playback.dart';
+import 'simple_recorder/simple_recorder.dart';
 
 void main() {
   runApp(MaterialApp(home: Homepage()));
 }
+
 
 // //HOMEPAGE - RECORD & LIBRARY
 // class Homepage extends StatelessWidget {
@@ -465,29 +471,31 @@ class Homepage extends StatelessWidget {
           )),
 
           //ROW 4: RECORDING BUTTON THAT RECORDS
-          Container(
-            margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
-            child: Center(
-              child: Ink(
-                decoration: BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(100),
-                    border: Border.all(
-                      width: 5,
-                      color: Colors.white,
-                    )
-                    //shape: CircleBorder(),
-                    ),
-                child: IconButton(
-                  icon: Icon(Icons.mic),
-                  iconSize: 35.0,
-                  color: Colors.white,
-                  highlightColor: Colors.grey,
-                  //splashColor: Colors.grey,
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Homepage()));
-                  },
+          Expanded(
+            child: Container(
+              margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
+              child: Center(
+                child: Ink(
+                  decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(100),
+                      border: Border.all(
+                        width: 5,
+                        color: Colors.white,
+                      )
+                      //shape: CircleBorder(),
+                      ),
+                  child: IconButton(
+                    icon: Icon(Icons.mic),
+                    iconSize: 50.0,
+                    color: Colors.white,
+                    highlightColor: Colors.grey,
+                    //splashColor: Colors.grey,
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => ExamplesApp()));
+                    },
+                  ),
                 ),
               ),
             ),
@@ -876,6 +884,255 @@ class Folder extends StatelessWidget {
             ),
           )),
         ])),
+      ),
+    );
+  }
+}
+
+
+//PAGE 5 - RECORDING PAGE
+class Recording extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("New Recording"),
+      ),
+      body: SafeArea(
+        //creating a sfe area to start drawing elements on to the scaffold widget
+        child: Column(children: [
+          RaisedButton(
+            onPressed: () {Navigator.pop(context);},
+            child: Text('Go back!'),
+          ),
+
+        ]),
+      ),
+    );
+  }
+}
+
+//FLUTTER SOUND INSTANTIATION
+const int tNotWeb = 1;
+
+class Example {
+  final String title;
+  final String subTitle;
+  final String description;
+  final WidgetBuilder route;
+  final int flags;
+
+  /* ctor */ Example(
+      {this.title, this.subTitle, this.description, this.flags, this.route});
+  void go(BuildContext context) =>
+      Navigator.push(context, MaterialPageRoute<void>(builder: route));
+}
+
+final List<Example> exampleTable = [
+  Example(
+    title: 'Demo',
+    subTitle: 'Flutter Sound capabilities',
+    flags: 0,
+    route: (_) => Demo(),
+    description:
+    '''This is a Demo of what it is possible to do with Flutter Sound.
+The code of this Demo app is not so simple and unfortunately not very clean :-( .
+
+Flutter Sound beginners : you probably should look to `[SimplePlayback]`  and `[SimpleRecorder]` 
+
+The biggest interest of this Demo is that it shows most of the features of Flutter Sound :
+
+- Plays from various media with various codecs
+- Records to various media with various codecs
+- Pause and Resume control from recording or playback
+- Shows how to use a Stream for getting the playback (or recoding) events
+- Shows how to specify a callback function when a playback is terminated,
+- Shows how to record to a Stream or playback from a stream
+- Can show controls on the iOS or Android lock-screen
+- ...
+
+This Demo does not make use of the Flutter Sound UI Widgets.
+
+It would be really great if someone rewrite this demo soon'''),
+
+
+  Example(
+    title: 'simplePlayback',
+    subTitle: 'A very simple example',
+    flags: 0,
+    route: (_) => SimplePlayback(),
+    description: '''
+    This is a very simple example for Flutter Sound beginners,
+    that shows how to play a remote file.
+    ''',
+  ),
+
+  Example(
+    title: 'simpleRecorder',
+    subTitle: 'A very simple example',
+    flags: 0,
+    route: (_) => SimpleRecorder(),
+    description: '''
+    This is a very simple example for Flutter Sound beginners,
+    that shows how to record, and then playback a file.
+    ''',
+  ),
+];
+
+class ExamplesApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Sound Examples',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: ExamplesAppHomePage(title: 'Flutter Sound Examples'),
+    );
+  }
+}
+
+///
+class ExamplesAppHomePage extends StatefulWidget {
+  ///
+  ExamplesAppHomePage({Key key, this.title}) : super(key: key);
+  final String title;
+  @override
+  _ExamplesHomePageState createState() => _ExamplesHomePageState();
+}
+
+class _ExamplesHomePageState extends State<ExamplesAppHomePage> {
+  Example selectedExample;
+
+  @override
+  void initState() {
+    selectedExample = exampleTable[0];
+    super.initState();
+    //_scrollController = ScrollController( );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    Widget cardBuilder(BuildContext context, int index) {
+      var isSelected = (exampleTable[index] == selectedExample);
+      return GestureDetector(
+        onTap: () => setState(() {
+          selectedExample = exampleTable[index];
+        }),
+        child: Card(
+          shape: RoundedRectangleBorder(),
+          child: Container(
+            margin: const EdgeInsets.all(3),
+            padding: const EdgeInsets.all(3),
+            decoration: BoxDecoration(
+              color: isSelected ? Colors.indigo : Color(0xFFFAF0E6),
+              border: Border.all(
+                color: Colors.white,
+                width: 3,
+              ),
+            ),
+
+            height: 50,
+
+            //color: isSelected ? Colors.indigo : Colors.cyanAccent,
+            child:
+            Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Text(exampleTable[index].title,
+                  style: TextStyle(
+                      color: isSelected ? Colors.white : Colors.black)),
+              Text(exampleTable[index].subTitle,
+                  style: TextStyle(
+                      color: isSelected ? Colors.white : Colors.black)),
+            ]),
+          ),
+          borderOnForeground: false,
+          elevation: 3.0,
+        ),
+      );
+    }
+
+    Widget makeBody() {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              margin: const EdgeInsets.all(3),
+              padding: const EdgeInsets.all(3),
+              decoration: BoxDecoration(
+                color: Color(0xFFFAF0E6),
+                border: Border.all(
+                  color: Colors.indigo,
+                  width: 3,
+                ),
+              ),
+              child: ListView.builder(
+                  itemCount: exampleTable.length, itemBuilder: cardBuilder),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              margin: const EdgeInsets.all(3),
+              padding: const EdgeInsets.all(3),
+              decoration: BoxDecoration(
+                color: Color(0xFFFAF0E6),
+                border: Border.all(
+                  color: Colors.indigo,
+                  width: 3,
+                ),
+              ),
+              child: SingleChildScrollView(
+                child: Text(selectedExample.description),
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: makeBody(),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.blue,
+        child: Container(
+            margin: const EdgeInsets.all(3),
+            padding: const EdgeInsets.all(3),
+            height: 40,
+            decoration: BoxDecoration(
+              color: Color(0xFFFAF0E6),
+              border: Border.all(
+                color: Colors.indigo,
+                width: 3,
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text((kIsWeb && (selectedExample.flags & tNotWeb != 0))
+                    ? 'Not supported on Flutter Web '
+                    : ''),
+                RaisedButton(
+                  onPressed: (kIsWeb && (selectedExample.flags & tNotWeb != 0))
+                      ? null
+                      : () => selectedExample.go(context),
+                  color: Colors.indigo,
+                  child: Text(
+                    'GO',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                RaisedButton(
+                  onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage()));},
+                  child: Text('Homepage')
+                ),
+              ],
+            )),
       ),
     );
   }
