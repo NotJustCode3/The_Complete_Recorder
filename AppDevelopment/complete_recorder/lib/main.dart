@@ -424,7 +424,7 @@ class Library extends StatelessWidget {
                       iconSize: 80.0,
                       color: Colors.white70,
                       //highlightColor: Colors.grey,
-                      splashColor: Colors.grey[200],
+                      splashColor: Colors.grey,
                       onPressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => Folder()));
