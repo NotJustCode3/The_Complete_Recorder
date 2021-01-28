@@ -163,14 +163,14 @@ class Homepage extends StatelessWidget {
                 shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(10.0),
                     side: BorderSide(color: Colors.white, width: 2.0)),
-                color: Colors.black,
+                color: Colors.white,
                 highlightColor: Colors.red,
                 child: Text(
                   'Feature 1',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       //fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+                      // fontWeight: FontWeight.bold,
                       fontFamily: 'Roboto',
                       letterSpacing: 0.5),
                 ),
@@ -178,7 +178,7 @@ class Homepage extends StatelessWidget {
               ),
               RaisedButton(
                 onPressed: () {},
-                color: Colors.black,
+                color: Colors.white,
                 highlightColor: Colors.red,
                 shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(10.0),
@@ -186,9 +186,9 @@ class Homepage extends StatelessWidget {
                 child: Text(
                   'Feature 2',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       //fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+                      //fontWeight: FontWeight.bold,
                       fontFamily: 'Roboto',
                       letterSpacing: 0.5),
                 ),
@@ -196,17 +196,17 @@ class Homepage extends StatelessWidget {
               ),
               RaisedButton(
                 onPressed: () {},
-                color: Colors.black,
+                color: Colors.white,
                 highlightColor: Colors.red,
                 shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(10.0),
                     side: BorderSide(color: Colors.white, width: 2.0)),
                 child: Text(
-                  'Extras',
+                  'Feature 3',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       //fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
+                      //fontWeight: FontWeight.bold,
                       fontFamily: 'Roboto',
                       letterSpacing: 0.5),
                 ),
@@ -216,39 +216,29 @@ class Homepage extends StatelessWidget {
           ),
 
           // LINE DIVIDER
-          const Divider(
-            color: Colors.redAccent,
-            height: 20,
-            thickness: 3,
-            indent: 25,
-            endIndent: 25,
+          Padding(
+            padding: const EdgeInsets.all(6.0),
+            child: const Divider(
+              color: Colors.grey,
+            ),
           ),
 
-          //ROW 2 MORE FEATURES BUTTONS ('ex: MORE RECENT, ETC...')
-          Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(left: 20.0),
-                child: RaisedButton(
-                  onPressed: () {},
-                  color: Colors.black,
-                  highlightColor: Colors.red,
-                  shape: new RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(10.0),
-                      side: BorderSide(color: Colors.white, width: 2.0)),
-                  child: Text(
-                    'Extras',
-                    style: TextStyle(
-                        color: Colors.white,
-                        //fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Roboto',
-                        letterSpacing: 0.5),
+          //Row 2 'Most recent'
+          Padding(
+            padding: const EdgeInsets.fromLTRB(21, 1, 1, 1),
+            child: Container(
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'Most Recent',
+                  style: TextStyle(
+                    letterSpacing: 0.5,
+                    fontFamily: 'Roboto',
+                    fontSize: 16,
                   ),
-                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                 ),
               ),
-            ],
+            ),
           ),
 
           //ROW 3; SAFE AREA, CONTAINER WITH BORDER THAT CONTAIN FILES
@@ -259,10 +249,10 @@ class Homepage extends StatelessWidget {
             padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
             decoration: BoxDecoration(
               border: Border(
-                top: BorderSide(width: 3.0, color: Colors.green),
-                bottom: BorderSide(width: 3.0, color: Colors.yellow),
-                right: BorderSide(width: 3.0, color: Colors.blue),
-                left: BorderSide(width: 3.0, color: Colors.redAccent),
+                top: BorderSide(width: 1.0, color: Colors.grey),
+                bottom: BorderSide(width: 1.0, color: Colors.grey),
+                right: BorderSide(width: 1.0, color: Colors.grey),
+                left: BorderSide(width: 1.0, color: Colors.grey),
               ),
             ),
             child: Column(
@@ -274,6 +264,7 @@ class Homepage extends StatelessWidget {
                       icon: Icon(Icons.folder_rounded),
                       iconSize: 80.0,
                       color: Colors.blue[500],
+
                       //highlightColor: Colors.grey,
                       splashColor: Colors.grey,
                       onPressed: () {
@@ -282,7 +273,7 @@ class Homepage extends StatelessWidget {
                       },
                     ),
                     IconButton(
-                      icon: Icon(Icons.create_new_folder_rounded),
+                      icon: Icon(Icons.folder_rounded),
                       iconSize: 80.0,
                       color: Colors.blue[500],
                       //highlightColor: Colors.grey,
@@ -312,7 +303,7 @@ class Homepage extends StatelessWidget {
                       Text(
                         'CLICK ME!',
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 15.0,
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold),
