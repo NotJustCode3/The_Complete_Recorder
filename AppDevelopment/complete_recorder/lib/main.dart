@@ -11,7 +11,6 @@ void main() {
   runApp(MaterialApp(home: Homepage()));
 }
 
-
 // //HOMEPAGE - RECORD & LIBRARY
 // class Homepage extends StatelessWidget {
 //   @override
@@ -336,7 +335,7 @@ class Homepage extends StatelessWidget {
 
           //ROW 4: RECORDING BUTTON THAT RECORDS
           Padding(
-            padding: const EdgeInsets.fromLTRB(0.0, 300.0, 0.0, 0.0),
+            padding: const EdgeInsets.fromLTRB(0.0, 200.0, 0.0, 0.0),
             child: Container(
               margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
               child: Center(
@@ -357,8 +356,10 @@ class Homepage extends StatelessWidget {
                     highlightColor: Colors.grey,
                     //splashColor: Colors.grey,
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => ExamplesApp()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ExamplesApp()));
                     },
                   ),
                 ),
@@ -754,7 +755,6 @@ class Folder extends StatelessWidget {
   }
 }
 
-
 //PAGE 5 - RECORDING PAGE
 class Recording extends StatelessWidget {
   @override
@@ -767,10 +767,11 @@ class Recording extends StatelessWidget {
         //creating a sfe area to start drawing elements on to the scaffold widget
         child: Column(children: [
           RaisedButton(
-            onPressed: () {Navigator.pop(context);},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             child: Text('Go back!'),
           ),
-
         ]),
       ),
     );
@@ -795,12 +796,12 @@ class Example {
 
 final List<Example> exampleTable = [
   Example(
-    title: 'Demo',
-    subTitle: 'Flutter Sound capabilities',
-    flags: 0,
-    route: (_) => Demo(),
-    description:
-    '''This is a Demo of what it is possible to do with Flutter Sound.
+      title: 'Demo',
+      subTitle: 'Flutter Sound capabilities',
+      flags: 0,
+      route: (_) => Demo(),
+      description:
+          '''This is a Demo of what it is possible to do with Flutter Sound.
 The code of this Demo app is not so simple and unfortunately not very clean :-( .
 
 Flutter Sound beginners : you probably should look to `[SimplePlayback]`  and `[SimpleRecorder]` 
@@ -819,8 +820,6 @@ The biggest interest of this Demo is that it shows most of the features of Flutt
 This Demo does not make use of the Flutter Sound UI Widgets.
 
 It would be really great if someone rewrite this demo soon'''),
-
-
   Example(
     title: 'simplePlayback',
     subTitle: 'A very simple example',
@@ -831,7 +830,6 @@ It would be really great if someone rewrite this demo soon'''),
     that shows how to play a remote file.
     ''',
   ),
-
   Example(
     title: 'simpleRecorder',
     subTitle: 'A very simple example',
@@ -903,7 +901,7 @@ class _ExamplesHomePageState extends State<ExamplesAppHomePage> {
 
             //color: isSelected ? Colors.indigo : Colors.cyanAccent,
             child:
-            Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(exampleTable[index].title,
                   style: TextStyle(
                       color: isSelected ? Colors.white : Colors.black)),
@@ -993,9 +991,11 @@ class _ExamplesHomePageState extends State<ExamplesAppHomePage> {
                   ),
                 ),
                 RaisedButton(
-                  onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage()));},
-                  child: Text('Homepage')
-                ),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Homepage()));
+                    },
+                    child: Text('Homepage')),
               ],
             )),
       ),
