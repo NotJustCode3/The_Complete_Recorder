@@ -1,57 +1,90 @@
-# Vlog #3 - End of Year Progress :movie_camera:
+# Vlog #4 - February Progress :movie_camera:
 
 ## Videos :clapper:
 
-### Project Progress - Watch it [here :tv:](https://www.youtube.com/watch?v=tVs_teoBS_A&ab_channel=NotAToaster94)
-[<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Documentation/Miscellaneous/vlog3_thumbnail.png" width="500" height="350">](https://www.youtube.com/watch?v=tVs_teoBS_A&ab_channel=NotAToaster94)
+### Project Progress - Watch it [here :tv:](https://www.youtube.com/watch?v=72oQbTF8Z2M&list=PLYe3W-KlyGmhn3UW-h5u9xt7_pnBl_03l&index=7&ab_channel=NotAToaster94)
+[<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Documentation/Miscellaneous/vlog4_thumbnail.png" width="500" height="350">](https://www.youtube.com/watch?v=72oQbTF8Z2M&list=PLYe3W-KlyGmhn3UW-h5u9xt7_pnBl_03l&index=7&ab_channel=NotAToaster94)
 
-## Vlog #3 Transcript :scroll:
+## Vlog #4 Transcript :scroll:
 
-### **1. (Re)Introduce the team and (re)state roles and responsibilities (if they have changed or stayed the same):**
-
-  - (i)    MJ - Product designer
-  
-  - (ii)   Shafiq - Documentation and Github specialist
-
-  - (iii)  Azeezat - Research and DevOps Manager
-
-### **2. Team's Progress:**
-
-MJ - Introduce us!
-Hello everyone. We are once again NotJustCode, and this is our final reflection of our recording app for the semester.
-
-This project started as a passion project in my head. Through the help of my great friends, who are now also team members, they hopped on board with the same passion and zeal I had and we began to work. And so far, it has been an awesome learning experience, though it’s had its own set of challenges.
-
-Zeezee - The goal of our application is to build a fully featured recording application with deep organizational features to help users keep their recordings organized, and find them quickly as well. 
-
-After much discussion and research on how we would stand out from the competition in the same app category, we started sketching and designing our ideas. 
-
-We had some issues as we had a lot of features we wanted to include in our app, but with time constraints, we didn’t really know how we could implement them all. We expressed this constraint during our team/instructor scrums, and how we can work to eliminate it. The feedback we received from Tim and our mentor, Yasser, was to highlight MVPs, so that we can work within our time constraints, and that’s exactly what we did.
-
-Shafiq - We went through about 3 iterations before stumbling on a design we felt we were happy with. For our MVPs we knew we wanted to get the app to record, which is probably an important part of a recording app, add organizational features, and get the search functionality right, so we designed all possible interactions around search and folder organization. 
-
-Azeezat - A very important thing to us was also organizing and keeping up with ourselves as a group. We knew that as students in our final year, there would be work load from other classes as well. 
-
-So we set up a group for ourselves and consistent meeting times throughout the week to meet and talk through ideas together. We also created a project timeline for ourselves in addition to the semester’s timeline, so we can be sure we are keeping up with both our project timelines, as well as personal timelines.
-
-MJ - we created sprints for each meeting we had towards our MVP and we kept our meeting logs and progress up to date on github. 
-
-Few weeks out we were able to build our first lo-fi interactive prototype of our design to better visualize user interaction. 
-
-We have had to listen to feedback and critique from some of our implementations and have had to go back to the designing phase to tweak so of those feedbacks and implement better features. 
-
-Shafiq- After much prototyping we were ready to start building and developing. But it wasn't without it’s obstacles as well. We initially wanted to start off as an android platform as it was more accessible to us as a team working remotely, before moving over to ios.
-
-But again with good critiques from our profs, we weren't aware of multi-platform solutions like xamarin, react native and flutter. 
-
-After much research, we ended up going with flutter. And we had to go back to the drawing board as a team time together testing the new waters of a platform we were unprepared for.
-
+### Project progress vlog #4 requirements
+Preliminary
+Your capstone vlogs are all to be posted on your team's GitHub and URCourses team project wikis by the due date (timestamps will be confirmed). This team vlog will reintroduce your team and selected projects to the world and discuss your progress thus far as per the guidelines below. With respect to vlog duration, think a minimum of 8 minutes to a maximum of 15 minutes in length.
+Due: February 4, 2021, @ 2:30 pm in your team's GitHub and URCourses team project wiki (under "Vlogs" - post a link to your video)
+ 
+Shafiq
+### Team member (re)introductions: (Re)Introduce the team and (re)state roles and responsibilities (if they have changed or stayed the same)
+Azeezat: Documentation, scrum, development
+Shafiq: Design and Front End development
+MJ: UI/UX development, design and development (Development Lead)
+ 
+### Brief project blurb: Briefly restate what your team is doing, the business needs and/or the opportunity/innovation that your team's project idea will introduce into the world
+Once again, we are NotJustCode and we are working on our Complete Recorder application. 
+We decided to create the most fully featured recording application which is built on the foundation of deep search functionality and folder structure  integration.
+Recording
+Organizational features
+The ability to search throughout the app.
+A text to speech feature which transcribes the recording.
+So we decided to build an app with all these functionalities, and we hope to add more later on.
+ 
+Azeezat
+### Scrum dates: State the start date and end date of this scrum
+Our scrum started on January 11th and ended on January 30th, however, we have had to move some of the work items from the previous scrum to our current scrum, which is from February 1st to February 19th.
+ 
+### Last Scrum Work items:
+Complete Flutter course
+Set up Github
+Build different screens, kind of based on our lo fi prototypes we had at the very beginning, and giving them some functionalities
+Start recording functionality of the application
+Documentation, to track our work
+Current Scrum Work items:
+Complete recording functionality of the application
+Begin the organizational functionalities
+Documentation
+ 
+### Status description: As a team, provide an overview of the project’s current status (green=good, yellow=slightly off track, red=off track). If the status is yellow or red, indicate:
+The reason(s) that the status is yellow or red
+As a team, we feel like our status is currently yellow. Like I mentioned, we weren’t able to finish what we had planned for the previous scrum, which was mainly to complete developing the recording functionality of the application.
+Our setback was also due to one of our group members getting ill, however, the 2 remaining
+The planned action(s) that will bring the project back to a green status.
+We have done a lot of research on the different packages available for use in order to complete the recording functionality so we have been testing and researching to get it to work. 
+ 
+Each member takes their part
+### Team members must also individually speak to their contributions over the stated scrum dates. What did everyone do to contribute to where the project is at? NOTE: I want to hear (and hopefully see in the video) team members in the video (this is about professionalism here folks)
+MJ: UI/UX development, design and development (Development Lead)
+I try my best to direct everyone on what we need to accomplish, while also doing the same or different tasks on the side and Yea what shafiq said.
+Shafiq: Design and Front End Development
+Based on our UI design and illustration provided/assigned by MJ, I try to achieve as close as possible to what he as the UI developer/Dev. Lead in NotJustCode wants as the final product. Utilizing Flutter and Darts to create what our app pages are gonna look like.  All commits, results will be reviewed by  MJ and Azeezat for code quality, bugs fixing, etc. Currently working with both of my colleagues in figuring out which sound application packages work best for us.             
+Azeezat: Documentation, scrum, development
+I started the documentation, have been handling/putting together the scrums and planning, getting us up to date on what is due, and figuring out expectations. I have also been working on the development side of things.
+ 
+To begin, our working technique was pair programming, and then branched off to try different ideas and packages to implement the different tasks we needed to complete
+ 
 MJ
-As a team some of the challenges we’ve faced after deciding what platform we’ll use was, have flutter crashing and not working properly for a few of us and also making sure that we are able to collaborate with one another while developing together. Most of those issues have been ironed out, and we are moving forward. 
-
-Azeezat - It’s been an exciting experience for us as we are already familiar with how we work together as a team, and what works for each of us individually. Also, we get to learn a new programming language, so that’s always a good thing! We have invested in the recommendation made by Tim about a flutter 2020 bootcamp on Udemy, and it is our current trajectory over the next month to complete the course, while porting concepts learned over to our project. And we are looking towards starting major MVP developments in January. 
-
-And that’s it from us here at NotJustCode. Thank you all! And we wish you a
-
-ALL
-merry christmas and a happy new year
+### Ensure to address any comments that came up in the previous scrum/meeting time
+The comment we were given during our scrum was basically a challenge to have something ready for demo using the platform we are utilizing for our application, and we are ready to show off what we’ve got.
+ 
+Project issues: List any issues from the Issue Log that are significant and should be shared with the audience of this report. If any related work has been done or decisions have been made, a summary should be provided.
+Not applicable
+ 
+Project changes: List any project changes that were approved since the last vlog, team/instructor scrum, or project bazaar day
+Not applicable
+ 
+### Project demo: Demo what ya got working as-is
+Shooooooooooow off
+ 
+Azeezat
+### Next up: Discuss your team's plan for the next several weeks with respect to software design and development activities. Discuss the overall team plan but also (again), team members must individually speak to their contributions that are planned by the next meeting (regardless if it is a project bazaar day, vlog, or team/instructor scrum)
+We are hoping to continue working on our recording functionality and making it better, as well as refactoring the code as it is a bit messy right now, from all the testing. Also, we want to get rid of redundancy and use functions/classes to make things cleaner. Our next MVP is to have the organizational functionalities completed. These are the folders and tags that we will be adding onto the recordings, we will see what works best given the platform we are using, as well as what we believe users will prefer. Then we want to have some user testing to see what they think so far.
+ 
+Shafiq
+### Team reflection
+Discuss:
+Does the team feel "on track"? (reiterate the above colour status)
+Again, we feel like our status is currently yellow, just because we didn’t really complete the tasks we had set for ourselves to complete.
+What progress does the team particularly feel good (great) about?
+We feel really good about staying on track with completing the Flutter/Dart course. It really helped us with the best practices and easiest ways of working with Dart/Flutter
+What barriers (if any) does the team feel is a current impediment to success?
+Not really barriers, but there are so many different packages in Flutter and it’s very frustrating to try them all out to find out which works best to suit our needs. But we hope to have everything sorted soon.
+What help, questions or concerns does the team have (if any)?
+No questions or concerns as of now, but, we would like some feedback as to how we are doing so far.
