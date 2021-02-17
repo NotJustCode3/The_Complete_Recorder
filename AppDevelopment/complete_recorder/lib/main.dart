@@ -7,6 +7,7 @@ void main() {
   runApp(MaterialApp(home: Homepage()));
 }
 
+
 //PAGE 2 - LIBRARY, FOLDERS, ETC...
 class Homepage extends StatelessWidget {
   // This widget is the root of your application.
@@ -36,13 +37,7 @@ class Homepage extends StatelessWidget {
                       color: Colors.grey,
                       //highlightColor: Colors.grey,
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Homepage()));
-                      }),
-                  title: Text(
-                    'Search',
+
                     style: TextStyle(
                         color: Colors.grey,
                         fontFamily: 'Roboto',
@@ -272,10 +267,10 @@ class Homepage extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-            ],
+
           ),
         ),
+
       ),
     );
   }
