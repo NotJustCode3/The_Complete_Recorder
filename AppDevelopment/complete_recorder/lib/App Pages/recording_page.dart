@@ -1,22 +1,19 @@
-import 'package:complete_recorder/App%20Pages/recording_page.dart';
-import 'package:complete_recorder/App%20Pages/test_recording.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:complete_recorder/main.dart';
 
-void main() {
-  runApp(MaterialApp(home: Homepage()));
+class RecordingPage extends StatefulWidget {
+  @override
+  _RecordingPageState createState() => _RecordingPageState();
 }
 
-//PAGE 2 - LIBRARY, FOLDERS, ETC...
-class Homepage extends StatelessWidget {
-  // This widget is the root of your application.
+class _RecordingPageState extends State<RecordingPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       //Accessing the home of the material widget and drawing the scaffold onto it
       home: Scaffold(
         backgroundColor:
-            Colors.white, //the background color of the scaffold is white
+            Colors.black, //the background color of the scaffold is white
         body: SafeArea(
           //creating a sfe area to start drawing elements on to the scaffold widget
           child: Column(
@@ -129,117 +126,6 @@ class Homepage extends StatelessWidget {
                 ),
               ),
 
-              //Row 2 'Most recent'
-              Padding(
-                padding: const EdgeInsets.fromLTRB(21, 1, 1, 1),
-                child: Container(
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      'Most Recent',
-                      style: TextStyle(
-                        letterSpacing: 0.5,
-                        fontFamily: 'Roboto',
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-
-              //ROW 3; SAFE AREA, CONTAINER WITH BORDER THAT CONTAIN FILES
-              SafeArea(
-                  child: Container(
-                alignment: Alignment.topCenter,
-                margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                decoration: BoxDecoration(
-                  border: Border(
-                    top: BorderSide(width: 1.0, color: Colors.grey),
-                    bottom: BorderSide(width: 1.0, color: Colors.grey),
-                    right: BorderSide(width: 1.0, color: Colors.grey),
-                    left: BorderSide(width: 1.0, color: Colors.grey),
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        IconButton(
-                          icon: Icon(Icons.folder_rounded),
-                          iconSize: 80.0,
-                          color: Colors.blue[500],
-                          //highlightColor: Colors.grey,
-                          splashColor: Colors.grey,
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Homepage()));
-                          },
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.folder_rounded),
-                          iconSize: 80.0,
-                          color: Colors.blue[500],
-                          //highlightColor: Colors.grey,
-                          splashColor: Colors.grey,
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Homepage()));
-                          },
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.folder_rounded),
-                          iconSize: 80.0,
-                          color: Colors.blue[500],
-                          //highlightColor: Colors.grey,
-                          splashColor: Colors.grey,
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Homepage()));
-                          },
-                        ),
-                      ],
-                    ),
-                    //TEXT LABEL
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: <Widget>[
-                          Text(
-                            'Choir!',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 15.0,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            'School',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 15.0,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            'Anything',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 15.0,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ]),
-                  ],
-                ),
-              )),
-
               //ROW 4: RECORDING BUTTON THAT RECORDS
               Padding(
                 padding: const EdgeInsets.fromLTRB(0.0, 200.0, 0.0, 0.0),
@@ -255,9 +141,10 @@ class Homepage extends StatelessWidget {
                             color: Colors.grey,
                           )
                           //shape: CircleBorder(),
+                          //shape: CircleBorder(),
                           ),
                       child: IconButton(
-                        icon: Icon(Icons.fiber_manual_record),
+                        icon: Icon(Icons.stop),
                         iconSize: 70.0,
                         color: Colors.red,
                         highlightColor: Colors.grey,
@@ -266,7 +153,7 @@ class Homepage extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => TestRecording()));
+                                  builder: (context) => RecordingPage()));
                         },
                       ),
                     ),
