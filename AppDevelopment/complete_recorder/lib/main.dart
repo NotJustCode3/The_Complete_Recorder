@@ -7,7 +7,6 @@ void main() {
   runApp(MaterialApp(home: Homepage()));
 }
 
-
 //PAGE 2 - LIBRARY, FOLDERS, ETC...
 class Homepage extends StatelessWidget {
   // This widget is the root of your application.
@@ -37,7 +36,13 @@ class Homepage extends StatelessWidget {
                       color: Colors.grey,
                       //highlightColor: Colors.grey,
                       onPressed: () {
-
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Homepage()));
+                      }),
+                  title: Text(
+                    'Search',
                     style: TextStyle(
                         color: Colors.grey,
                         fontFamily: 'Roboto',
@@ -144,96 +149,97 @@ class Homepage extends StatelessWidget {
 
               //ROW 3; SAFE AREA, CONTAINER WITH BORDER THAT CONTAIN FILES
               SafeArea(
-                  child: Container(
-                alignment: Alignment.topCenter,
-                margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                decoration: BoxDecoration(
-                  border: Border(
-                    top: BorderSide(width: 1.0, color: Colors.grey),
-                    bottom: BorderSide(width: 1.0, color: Colors.grey),
-                    right: BorderSide(width: 1.0, color: Colors.grey),
-                    left: BorderSide(width: 1.0, color: Colors.grey),
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        IconButton(
-                          icon: Icon(Icons.folder_rounded),
-                          iconSize: 80.0,
-                          color: Colors.blue[500],
-                          //highlightColor: Colors.grey,
-                          splashColor: Colors.grey,
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Homepage()));
-                          },
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.folder_rounded),
-                          iconSize: 80.0,
-                          color: Colors.blue[500],
-                          //highlightColor: Colors.grey,
-                          splashColor: Colors.grey,
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Homepage()));
-                          },
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.folder_rounded),
-                          iconSize: 80.0,
-                          color: Colors.blue[500],
-                          //highlightColor: Colors.grey,
-                          splashColor: Colors.grey,
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Homepage()));
-                          },
-                        ),
-                      ],
+                child: Container(
+                  alignment: Alignment.topCenter,
+                  margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      top: BorderSide(width: 1.0, color: Colors.grey),
+                      bottom: BorderSide(width: 1.0, color: Colors.grey),
+                      right: BorderSide(width: 1.0, color: Colors.grey),
+                      left: BorderSide(width: 1.0, color: Colors.grey),
                     ),
-                    //TEXT LABEL
-                    Row(
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          Text(
-                            'Choir!',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 15.0,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold),
+                          IconButton(
+                            icon: Icon(Icons.folder_rounded),
+                            iconSize: 80.0,
+                            color: Colors.blue[500],
+                            //highlightColor: Colors.grey,
+                            splashColor: Colors.grey,
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Homepage()));
+                            },
                           ),
-                          Text(
-                            'School',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 15.0,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold),
+                          IconButton(
+                            icon: Icon(Icons.folder_rounded),
+                            iconSize: 80.0,
+                            color: Colors.blue[500],
+                            //highlightColor: Colors.grey,
+                            splashColor: Colors.grey,
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Homepage()));
+                            },
                           ),
-                          Text(
-                            'Anything',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 15.0,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold),
+                          IconButton(
+                            icon: Icon(Icons.folder_rounded),
+                            iconSize: 80.0,
+                            color: Colors.blue[500],
+                            //highlightColor: Colors.grey,
+                            splashColor: Colors.grey,
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Homepage()));
+                            },
                           ),
-                        ]),
-                  ],
+                        ],
+                      ),
+                      //TEXT LABEL
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Text(
+                              'Choir!',
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 15.0,
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              'School',
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 15.0,
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              'Anything',
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 15.0,
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ]),
+                    ],
+                  ),
                 ),
-              )),
+              ),
 
               //ROW 4: RECORDING BUTTON THAT RECORDS
               Padding(
@@ -267,10 +273,10 @@ class Homepage extends StatelessWidget {
                     ),
                   ),
                 ),
-
+              ),
+            ],
           ),
         ),
-
       ),
     );
   }
