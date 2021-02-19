@@ -2,6 +2,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
+
 class RecordListView extends StatefulWidget {
   final List<String> records;
   const RecordListView({
@@ -29,7 +30,7 @@ class _RecordListViewState extends State<RecordListView> {
         return ExpansionTile(
           title: Text('New recoding ${widget.records.length - i}'),
           subtitle: Text(
-              _getDateFromFilePatah(filePath: widget.records.elementAt(i))),
+              _getDateFromFilePath(filePath: widget.records.elementAt(i))),
           onExpansionChanged: ((newState) {
             if (newState) {
               setState(() {
@@ -101,7 +102,7 @@ class _RecordListViewState extends State<RecordListView> {
     }
   }
 
-  String _getDateFromFilePatah({@required String filePath}) {
+  String _getDateFromFilePath({@required String filePath}) {
     String fromEpoch = filePath.substring(
         filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('.'));
 

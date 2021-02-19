@@ -1,169 +1,162 @@
+// TODO Implement this library.
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:complete_recorder/main.dart';
+import 'package:flutter_audio_recorder/flutter_audio_recorder.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:complete_recorder/App Pages/record_list.dart';
 
-class RecordingPage extends StatefulWidget {
+class RecordPage extends StatefulWidget {
+  final Function onSaved;
+
+  const RecordPage({Key key, @required this.onSaved}) : super(key: key);
   @override
-  _RecordingPageState createState() => _RecordingPageState();
+  _RecordPageState createState() => _RecordPageState();
 }
 
-class _RecordingPageState extends State<RecordingPage> {
+//checks on recording state
+enum RecordingState {
+  /// Recording not initialized
+  UnSet,
+
+  /// Ready for start recording
+  Set,
+
+  /// Currently recording
+  Recording,
+
+  /// This specific recording Stopped, cannot be start again
+  Stopped,
+}
+
+class _RecordPageState extends State<RecordPage> {
+  IconData _recordIcon = Icons.mic_none;
+  String _recordText = 'Click to start';
+  RecordingState _recordingState = RecordingState.UnSet;
+
+  //Recorder Properties
+  FlutterAudioRecorder audioRecorder;
+
+  @override
+  void initState() {
+    super.initState();
+
+    FlutterAudioRecorder.hasPermissions.then((hasPermission) {
+      if (hasPermission) {
+        _recordingState = RecordingState.Set;
+        _recordIcon = Icons.mic;
+        _recordText = 'Record';
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _recordingState = RecordingState.UnSet;
+    audioRecorder = null;
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      //Accessing the home of the material widget and drawing the scaffold onto it
-      home: Scaffold(
-        backgroundColor:
-            Colors.black, //the background color of the scaffold is white
-        body: SafeArea(
-          //creating a sfe area to start drawing elements on to the scaffold widget
-          child: Column(
-            children: [
-              Card(
-                //creating a child relationship with the safe area to include our card widget
-                //card widget properties
-                elevation: 3.0, //this gives it a slight drop shadow effect
-                color: Colors.white,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                //creating another child to draw elements onto the card widget
-                child: ListTile(
-                  //this widget houses the elements inside the card widget
-                  leading: IconButton(
-                      icon: Icon(Icons.menu),
-                      //iconSize: 30.0,
-                      color: Colors.grey,
-                      //highlightColor: Colors.grey,
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Homepage()));
-                      }),
-                  title: Text(
-                    'Search',
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontFamily: 'Roboto',
-                        letterSpacing: 0.5),
-                  ),
-                  trailing: IconButton(
-                    icon: Icon(Icons.create_new_folder_outlined),
-                    //iconSize: 30.0,
-                    color: Colors.grey,
-                    //highlightColor: Colors.grey,
-                    onPressed: () {
-                      //Navigator.push(context,MaterialPageRoute(builder: (context) => Folder()));
-                    },
-                  ),
-                ),
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        SizedBox(
+          width: 100,
+          child: RaisedButton(
+            onPressed: () async {
+              await _onRecordButtonPressed();
+              setState(() {});
+            },
+            shape: CircleBorder(
+              //borderRadius: BorderRadius.circular(30),
+            ),
+            child: Container(
+              width: 150,
+              height: 150,
+              child: Icon(
+                _recordIcon,
+                size: 50,
               ),
-
-              // ROW 1 FEATURES BUTTONS
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  RaisedButton(
-                    onPressed: () {},
-                    shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(10.0),
-                        side: BorderSide(color: Colors.white, width: 2.0)),
-                    color: Colors.white,
-                    highlightColor: Colors.red,
-                    child: Text(
-                      'Feature 1',
-                      style: TextStyle(
-                          color: Colors.black,
-                          //fontSize: 20.0,
-                          // fontWeight: FontWeight.bold,
-                          fontFamily: 'Roboto',
-                          letterSpacing: 0.5),
-                    ),
-                    padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                  ),
-                  RaisedButton(
-                    onPressed: () {},
-                    color: Colors.white,
-                    highlightColor: Colors.red,
-                    shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(10.0),
-                        side: BorderSide(color: Colors.white, width: 2.0)),
-                    child: Text(
-                      'Feature 2',
-                      style: TextStyle(
-                          color: Colors.black,
-                          //fontSize: 20.0,
-                          //fontWeight: FontWeight.bold,
-                          fontFamily: 'Roboto',
-                          letterSpacing: 0.5),
-                    ),
-                    padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                  ),
-                  RaisedButton(
-                    onPressed: () {},
-                    color: Colors.white,
-                    highlightColor: Colors.red,
-                    shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(10.0),
-                        side: BorderSide(color: Colors.white, width: 2.0)),
-                    child: Text(
-                      'Feature 3',
-                      style: TextStyle(
-                          color: Colors.black,
-                          //fontSize: 20.0,
-                          //fontWeight: FontWeight.bold,
-                          fontFamily: 'Roboto',
-                          letterSpacing: 0.5),
-                    ),
-                    padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                  ),
-                ],
-              ),
-
-              // LINE DIVIDER
-              Padding(
-                padding: const EdgeInsets.all(6.0),
-                child: const Divider(
-                  color: Colors.grey,
-                ),
-              ),
-
-              //ROW 4: RECORDING BUTTON THAT RECORDS
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 200.0, 0.0, 0.0),
-                child: Container(
-                  margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
-                  child: Center(
-                    child: Ink(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(100),
-                          border: Border.all(
-                            width: 1,
-                            color: Colors.grey,
-                          )
-                          //shape: CircleBorder(),
-                          //shape: CircleBorder(),
-                          ),
-                      child: IconButton(
-                        icon: Icon(Icons.stop),
-                        iconSize: 70.0,
-                        color: Colors.red,
-                        highlightColor: Colors.grey,
-                        //splashColor: Colors.grey,
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => RecordingPage()));
-                        },
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
         ),
-      ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            child: Text(_recordText),
+            padding: const EdgeInsets.all(8),
+          ),
+        )
+      ],
     );
+  }
+
+  Future<void> _onRecordButtonPressed() async {
+    switch (_recordingState) {
+      case RecordingState.Set:
+        await _recordVoice();
+        break;
+
+      case RecordingState.Recording:
+        await _stopRecording();
+        _recordingState = RecordingState.Stopped;
+        _recordIcon = Icons.fiber_manual_record;
+        _recordText = 'Record new one';
+        break;
+
+      case RecordingState.Stopped:
+        await _recordVoice();
+        break;
+
+      case RecordingState.UnSet:
+        Scaffold.of(context).hideCurrentSnackBar();
+        Scaffold.of(context).showSnackBar(SnackBar(
+          content: Text('Please allow recording from settings.'),
+        ));
+        break;
+    }
+  }
+
+  Future<void> _recordVoice() async {
+    if (await FlutterAudioRecorder.hasPermissions) {
+      await _initRecorder();
+
+      await _startRecording();
+      _recordingState = RecordingState.Recording;
+      _recordIcon = Icons.stop;
+      _recordText = 'Recording';
+    } else {
+      Scaffold.of(context).hideCurrentSnackBar();
+      Scaffold.of(context).showSnackBar(SnackBar(
+        content: Text('Please allow recording from settings.'),
+      ));
+    }
+  }
+
+  _initRecorder() async {
+    Directory appDirectory = await getApplicationDocumentsDirectory();
+    String filePath = appDirectory.path +
+        '/' +
+        DateTime.now().millisecondsSinceEpoch.toString() +
+        '.aac';
+
+    audioRecorder =
+        FlutterAudioRecorder(filePath, audioFormat: AudioFormat.AAC);
+    await audioRecorder.initialized;
+  }
+
+  _startRecording() async {
+    await audioRecorder.start();
+    // await audioRecorder.current(channel: 0);
+  }
+
+  _stopRecording() async {
+    await audioRecorder.stop();
+    widget.onSaved();
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => RecordList()));
   }
 }
