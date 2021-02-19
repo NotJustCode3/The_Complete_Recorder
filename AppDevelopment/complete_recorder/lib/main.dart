@@ -16,7 +16,7 @@ class Homepage extends StatelessWidget {
         backgroundColor:
             Colors.black, //the background color of the scaffold is white
         appBar: AppBar(
-          backgroundColor: Colors.pink[900],    //grey[600],
+          backgroundColor: Colors.pink[800],    //grey[600],
           centerTitle: true,
           title: Text(
             'THE COMPLETE RECORDER',
