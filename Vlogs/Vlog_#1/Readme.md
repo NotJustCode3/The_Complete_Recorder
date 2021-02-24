@@ -4,9 +4,6 @@
 
 ### Project Progress - Watch it [here :tv:](https://www.youtube.com/watch?v=dXORi3FTZzo&feature=emb_logo&ab_channel=NotAToaster94)
 [<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/develop/Miscellaneous/Vlog1_thumbnail.png" width="500" height="350">](https://www.youtube.com/watch?v=dXORi3FTZzo&feature=emb_logo&ab_channel=NotAToaster94)
-=======
-[<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Documentation/Miscellaneous/Vlog1_thumbnail.png" width="500" height="350">](https://www.youtube.com/watch?v=dXORi3FTZzo&feature=emb_logo&ab_channel=NotAToaster94)
->>>>>>> master:Documentation/Project_Vlogs/Vlog_#1/Readme.md
 
 ## Vlog #1 Transcript :scroll:
 
