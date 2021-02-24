@@ -3,11 +3,19 @@
 ## Videos :clapper:
 
 ### Intro Vlog - Watch it [here :tv:](https://www.youtube.com/watch?v=a7bn-rRF3EM&ab_channel=NotAToaster94)
+<<<<<<< HEAD:Vlogs/Vlog_#0/Readme.md
+[<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/develop/Miscellaneous/NotJustCode.png" width="500" height="350">](https://www.youtube.com/watch?v=a7bn-rRF3EM&ab_channel=NotAToaster94)
+
+
+### Lo-fi Demonstration - Watch it [here :tv:](https://www.youtube.com/watch?v=4K3LN7YYGSw&ab_channel=NotAToaster94)
+[<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/develop/Miscellaneous/demo.png" width="500" height="350">](https://www.youtube.com/watch?v=4K3LN7YYGSw&ab_channel=NotAToaster94)
+=======
 [<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Documentation/Miscellaneous/NotJustCode.png" width="500" height="350">](https://www.youtube.com/watch?v=a7bn-rRF3EM&ab_channel=NotAToaster94)
 
 
 ### Lo-fi Demonstration - Watch it [here :tv:](https://www.youtube.com/watch?v=4K3LN7YYGSw&ab_channel=NotAToaster94)
 [<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Documentation/Miscellaneous/demo.png" width="500" height="350">](https://www.youtube.com/watch?v=4K3LN7YYGSw&ab_channel=NotAToaster94)
+>>>>>>> master:Documentation/Project_Vlogs/Vlog_#0/Readme.md
 
 
 ## Intro Vlog Transcript :scroll:
