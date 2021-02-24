@@ -11,7 +11,7 @@ about 15 recordings a week, sifting through a pile of recordings and playing eac
 ## Deliverables :heavy_division_sign:
 
 **1. Project Vlogs :movie_camera:**
-  - Vlog 0 - [Introduction Vlog](https://github.com/NotJustCode3/The_Complete_Recorder/tree/main/Documentation/Project_Vlogs/Vlog_%231)
+  - Vlog 0 - [Introduction Vlog](https://github.com/NotJustCode3/The_Complete_Recorder/tree/main/Documentation/Project_Vlogs/Vlog_%230)
   - Vlog 1 - [Project Progress](https://github.com/NotJustCode3/The_Complete_Recorder/tree/main/Documentation/Project_Vlogs/Vlog_%231)
   - Vlog 2 - [November Progress](https://github.com/NotJustCode3/The_Complete_Recorder/tree/main/Documentation/Project_Vlogs/Vlog_%232)
   - Vlog 3 - [End of Year Progress](https://github.com/NotJustCode3/The_Complete_Recorder/blob/main/Documentation/Project_Vlogs/Vlog_%233)
