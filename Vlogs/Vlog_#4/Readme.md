@@ -88,4 +88,3 @@ What barriers (if any) does the team feel is a current impediment to success?
 Not really barriers, but there are so many different packages in Flutter and it’s very frustrating to try them all out to find out which works best to suit our needs. But we hope to have everything sorted soon.
 What help, questions or concerns does the team have (if any)?
 No questions or concerns as of now, but, we would like some feedback as to how we are doing so far.
-
