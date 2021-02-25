@@ -3,7 +3,6 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart'; //for datetime formatting
 
-
 class RecordListView extends StatefulWidget {
   final List<String> records;
   const RecordListView({
@@ -28,22 +27,7 @@ class _RecordListViewState extends State<RecordListView> {
       shrinkWrap: true,
       reverse: true,
       itemBuilder: (BuildContext context, int i) {
-        return PopupMenuButton(
-          itemBuilder: (BuildContext bc) => [
-            PopupMenuItem(child:
-              Row(
-                children: <Widget>[
-                  Text("Rename  "),
-                  Icon(Icons.drive_file_rename_outline),
-                ]
-              ),
-            ),
-            PopupMenuItem(child:
-              Row(
-                children: <Widget>[
-                  Text("Delete  "),
-                  Icon(Icons.delete_forever_rounded),
-                ]
+
               ),
             ),
           ],
@@ -128,7 +112,7 @@ class _RecordListViewState extends State<RecordListView> {
         filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('.'));
 
     DateTime recordedDate =
-    DateTime.fromMillisecondsSinceEpoch(int.parse(fromEpoch));
+        DateTime.fromMillisecondsSinceEpoch(int.parse(fromEpoch));
     // int year = recordedDate.year;
     // int month = recordedDate.month;
     // int day = recordedDate.day;
@@ -139,6 +123,6 @@ class _RecordListViewState extends State<RecordListView> {
     final DateFormat formatter = DateFormat('yyyy-MM-dd hh:mm:ss a');
     final String formatted = formatter.format(recordedDate);
 
-    return (formatted);//('$year-$month-$day $hour:$minute:$second');
+    return (formatted); //('$year-$month-$day $hour:$minute:$second');
   }
 }
