@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:complete_recorder/homepage.dart';
+import 'package:complete_recorder/App Pages/search_brain.dart';
 
 class SearchButton extends StatefulWidget {
   @override
@@ -25,16 +26,12 @@ class _SearchButtonState extends State<SearchButton> {
             //highlightColor: Colors.grey,
             onPressed: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => HomePage()));
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
             }),
         title: Text(
           'Search',
           style: TextStyle(
-              color: Colors.grey,
-              fontFamily: 'Roboto',
-              letterSpacing: 0.5),
+              color: Colors.grey, fontFamily: 'Roboto', letterSpacing: 0.5),
         ),
         trailing: IconButton(
           icon: Icon(Icons.create_new_folder_outlined),
@@ -42,6 +39,7 @@ class _SearchButtonState extends State<SearchButton> {
           color: Colors.grey,
           //highlightColor: Colors.grey,
           onPressed: () {
+            showSearch(context: context, delegate: DataSearch());
             //Navigator.push(context,MaterialPageRoute(builder: (context) => Folder()));
           },
         ),
