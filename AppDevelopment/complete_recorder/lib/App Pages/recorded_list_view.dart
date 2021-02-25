@@ -7,7 +7,8 @@ class RecordListView extends StatefulWidget {
   final List<String> records;
   const RecordListView({
     Key key,
-    this.records, children,
+    this.records,
+    children,
   }) : super(key: key);
   @override
   _RecordListViewState createState() => _RecordListViewState();
@@ -27,48 +28,59 @@ class _RecordListViewState extends State<RecordListView> {
       shrinkWrap: true,
       reverse: true,
       itemBuilder: (BuildContext context, int i) {
-
-              ),
+        return PopupMenuButton(
+          itemBuilder: (BuildContext bc) => [
+            PopupMenuItem(
+              child: Row(children: <Widget>[
+                Text("Rename  "),
+                Icon(Icons.drive_file_rename_outline),
+              ]),
+            ),
+            PopupMenuItem(
+              child: Row(children: <Widget>[
+                Text("Delete  "),
+                Icon(Icons.delete_forever_rounded),
+              ]),
             ),
           ],
           child: ExpansionTile(
-              title: Text('New Recording ${widget.records.length - i}'),
-              subtitle: Text(
-                  _getDateFromFilePath(filePath: widget.records.elementAt(i))),
-              onExpansionChanged: ((newState) {
-                if (newState) {
-                  setState(() {
-                    _selectedIndex = i;
-                  });
-                }
-              }),
-              children: [
-                Container(
-                  height: 100,
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      LinearProgressIndicator(
-                        minHeight: 5,
-                        backgroundColor: Colors.black,
-                        valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-                        value: _selectedIndex == i ? _completedPercentage : 0,
-                      ),
-                      IconButton(
-                        icon: _selectedIndex == i
-                            ? _isPlaying
-                                ? Icon(Icons.pause)
-                                : Icon(Icons.play_arrow)
-                            : Icon(Icons.play_arrow),
-                        onPressed: () => _onPlay(
-                            filePath: widget.records.elementAt(i), index: i),
-                      ),
-                    ],
-                  ),
+            title: Text('New Recording ${widget.records.length - i}'),
+            subtitle: Text(
+                _getDateFromFilePath(filePath: widget.records.elementAt(i))),
+            onExpansionChanged: ((newState) {
+              if (newState) {
+                setState(() {
+                  _selectedIndex = i;
+                });
+              }
+            }),
+            children: [
+              Container(
+                height: 100,
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    LinearProgressIndicator(
+                      minHeight: 5,
+                      backgroundColor: Colors.black,
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                      value: _selectedIndex == i ? _completedPercentage : 0,
+                    ),
+                    IconButton(
+                      icon: _selectedIndex == i
+                          ? _isPlaying
+                              ? Icon(Icons.pause)
+                              : Icon(Icons.play_arrow)
+                          : Icon(Icons.play_arrow),
+                      onPressed: () => _onPlay(
+                          filePath: widget.records.elementAt(i), index: i),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
+          ),
         );
       },
     ));
