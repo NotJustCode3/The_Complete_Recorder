@@ -55,9 +55,9 @@ class _RecordListState extends State<RecordList> {
           Expanded(
             child: RecordListView(
               records: records,
-            ),
+            )
           ),
-        ],
+          ],
       ),
     );
   }
