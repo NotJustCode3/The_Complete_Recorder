@@ -235,7 +235,7 @@ class _MyAppState extends State<Demo> {
     await playerModule.setSubscriptionDuration(Duration(milliseconds: 10));
     await recorderModule.setSubscriptionDuration(Duration(milliseconds: 10));
     await initializeDateFormatting();
-    await setCodec(_codec);
+    // await setCodec(_codec);
   }
 
   Future<void> init() async {
@@ -431,228 +431,228 @@ class _MyAppState extends State<Demo> {
     return await File(path).exists();
   }
 
-  // In this simple example, we just load a file in memory.This is stupid but just for demonstration  of startPlayerFromBuffer()
-  Future<Uint8List> makeBuffer(String path) async {
-    try {
-      if (!await fileExists(path)) return null;
-      var file = File(path);
-      file.openRead();
-      var contents = await file.readAsBytes();
-      print('The file is ${contents.length} bytes long.');
-      return contents;
-    } on Exception catch (e) {
-      print(e);
-      return null;
-    }
-  }
-
-  void _addListeners() {
-    cancelPlayerSubscriptions();
-    _playerSubscription = playerModule.onProgress.listen((e) {
-      if (e != null) {
-        maxDuration = e.duration.inMilliseconds.toDouble();
-        if (maxDuration <= 0) maxDuration = 0.0;
-
-        sliderCurrentPosition =
-            min(e.position.inMilliseconds.toDouble(), maxDuration);
-        if (sliderCurrentPosition < 0.0) {
-          sliderCurrentPosition = 0.0;
-        }
-
-        var date = DateTime.fromMillisecondsSinceEpoch(
-            e.position.inMilliseconds,
-            isUtc: true);
-        var txt = DateFormat('mm:ss:SS', 'en_GB').format(date);
-        setState(() {
-          _playerTxt = txt.substring(0, 8);
-        });
-      }
-    });
-  }
-
-  Future<Uint8List> _readFileByte(String filePath) async {
-    var myUri = Uri.parse(filePath);
-    var audioFile = File.fromUri(myUri);
-    Uint8List bytes;
-    var b = await audioFile.readAsBytes();
-    bytes = Uint8List.fromList(b);
-    print('reading of bytes is completed');
-    return bytes;
-  }
-
-  Future<Uint8List> getAssetData(String path) async {
-    var asset = await rootBundle.load(path);
-    return asset.buffer.asUint8List();
-  }
-
-  /*
-  Future<void> feedHim(String path) async {
-    var data = await _readFileByte(path);
-    return await playerModule.feedFromStream(data);
-  }
-*/
-
-  final int blockSize = 4096;
-  Future<void> feedHim(String path) async {
-    var buffer = await _readFileByte(path);
-    //var buffer = await getAssetData('assets/samples/sample.pcm');
-
-    var lnData = 0;
-    var totalLength = buffer.length;
-    while (totalLength > 0 && !playerModule.isStopped) {
-      var bsize = totalLength > blockSize ? blockSize : totalLength;
-      await playerModule
-          .feedFromStream(buffer.sublist(lnData, lnData + bsize)); // await !!!!
-      lnData += bsize;
-      totalLength -= bsize;
-    }
-  }
-
-  Future<void> startPlayer() async {
-    try {
-      Uint8List dataBuffer;
-      String audioFilePath;
-      var codec = _codec;
-      if (_media == Media.asset) {
-        dataBuffer = (await rootBundle.load(assetSample[codec.index]))
-            .buffer
-            .asUint8List();
-      } else if (_media == Media.file || _media == Media.stream) {
-        // Do we want to play from buffer or from file ?
-        if (kIsWeb || await fileExists(_path[codec.index])) {
-          audioFilePath = _path[codec.index];
-        }
-      } else if (_media == Media.buffer) {
-        // Do we want to play from buffer or from file ?
-        if (await fileExists(_path[codec.index])) {
-          dataBuffer = await makeBuffer(_path[codec.index]);
-          if (dataBuffer == null) {
-            throw Exception('Unable to create the buffer');
-          }
-        }
-      } else if (_media == Media.remoteExampleFile) {
-        // We have to play an example audio file loaded via a URL
-        audioFilePath = remoteSample[_codec.index];
-      }
-
-      // Check whether the user wants to use the audio player features
-      if (_isAudioPlayer) {
-        String albumArtUrl;
-        String albumArtAsset;
-        String albumArtFile;
-        if (_media == Media.remoteExampleFile) {
-          albumArtUrl = albumArtPathRemote;
-        } else if (!kIsWeb) {
-          albumArtFile =
-          '${await playerModule.getResourcePath()}/assets/canardo.png';
-          print(albumArtFile);
-        } else {}
-
-        final track = Track(
-          trackPath: audioFilePath,
-          codec: _codec,
-          dataBuffer: dataBuffer,
-          trackTitle: 'This is a record',
-          trackAuthor: 'from flutter_sound',
-          albumArtUrl: albumArtUrl,
-          albumArtAsset: albumArtAsset,
-          albumArtFile: albumArtFile,
-        );
-        await playerModule.startPlayerFromTrack(track,
-            defaultPauseResume: false,
-            removeUIWhenStopped: true, whenFinished: () {
-              print('I hope you enjoyed listening to this song');
-              setState(() {});
-            }, onSkipBackward: () {
-              print('Skip backward');
-              stopPlayer();
-              startPlayer();
-            }, onSkipForward: () {
-              print('Skip forward');
-              stopPlayer();
-              startPlayer();
-            }, onPaused: (b) {
-              if (b) {
-                playerModule.pausePlayer();
-              } else {
-                playerModule.resumePlayer();
-              }
-            });
-      } else if (_media == Media.stream) {
-        await playerModule.startPlayerFromStream(
-          codec: Codec.pcm16, //_codec,
-          numChannels: 1,
-          sampleRate: tSTREAMSAMPLERATE, //tSAMPLERATE,
-        );
-        _addListeners();
-        setState(() {});
-        await feedHim(audioFilePath);
-        //await finishPlayer();
-        await stopPlayer();
-        return;
-      } else {
-        if (audioFilePath != null) {
-          await playerModule.startPlayer(
-              fromURI: audioFilePath,
-              codec: codec,
-              sampleRate: tSTREAMSAMPLERATE,
-              whenFinished: () {
-                print('Play finished');
-                setState(() {});
-              });
-        } else if (dataBuffer != null) {
-          if (codec == Codec.pcm16) {
-            dataBuffer = await flutterSoundHelper.pcmToWaveBuffer(
-              inputBuffer: dataBuffer,
-              numChannels: 1,
-              sampleRate: (_codec == Codec.pcm16 && _media == Media.asset)
-                  ? 48000
-                  : tSAMPLERATE,
-            );
-            codec = Codec.pcm16WAV;
-          }
-          await playerModule.startPlayer(
-              fromDataBuffer: dataBuffer,
-              sampleRate: tSAMPLERATE,
-              codec: codec,
-              whenFinished: () {
-                print('Play finished');
-                setState(() {});
-              });
-        }
-      }
-      _addListeners();
-      setState(() {});
-      print('<--- startPlayer');
-    } on Exception catch (err) {
-      print('error: $err');
-    }
-  }
-
-  Future<void> stopPlayer() async {
-    try {
-      await playerModule.stopPlayer();
-      print('stopPlayer');
-      if (_playerSubscription != null) {
-        await _playerSubscription.cancel();
-        _playerSubscription = null;
-      }
-      sliderCurrentPosition = 0.0;
-    } on Exception catch (err) {
-      print('error: $err');
-    }
-    setState(() {});
-  }
-
-  void pauseResumePlayer() async {
-    if (playerModule.isPlaying) {
-      await playerModule.pausePlayer();
-    } else {
-      await playerModule.resumePlayer();
-    }
-    setState(() {});
-  }
-
+//   // In this simple example, we just load a file in memory.This is stupid but just for demonstration  of startPlayerFromBuffer()
+//   Future<Uint8List> makeBuffer(String path) async {
+//     try {
+//       if (!await fileExists(path)) return null;
+//       var file = File(path);
+//       file.openRead();
+//       var contents = await file.readAsBytes();
+//       print('The file is ${contents.length} bytes long.');
+//       return contents;
+//     } on Exception catch (e) {
+//       print(e);
+//       return null;
+//     }
+//   }
+//
+//   void _addListeners() {
+//     cancelPlayerSubscriptions();
+//     _playerSubscription = playerModule.onProgress.listen((e) {
+//       if (e != null) {
+//         maxDuration = e.duration.inMilliseconds.toDouble();
+//         if (maxDuration <= 0) maxDuration = 0.0;
+//
+//         sliderCurrentPosition =
+//             min(e.position.inMilliseconds.toDouble(), maxDuration);
+//         if (sliderCurrentPosition < 0.0) {
+//           sliderCurrentPosition = 0.0;
+//         }
+//
+//         var date = DateTime.fromMillisecondsSinceEpoch(
+//             e.position.inMilliseconds,
+//             isUtc: true);
+//         var txt = DateFormat('mm:ss:SS', 'en_GB').format(date);
+//         setState(() {
+//           _playerTxt = txt.substring(0, 8);
+//         });
+//       }
+//     });
+//   }
+//
+//   Future<Uint8List> _readFileByte(String filePath) async {
+//     var myUri = Uri.parse(filePath);
+//     var audioFile = File.fromUri(myUri);
+//     Uint8List bytes;
+//     var b = await audioFile.readAsBytes();
+//     bytes = Uint8List.fromList(b);
+//     print('reading of bytes is completed');
+//     return bytes;
+//   }
+//
+//   Future<Uint8List> getAssetData(String path) async {
+//     var asset = await rootBundle.load(path);
+//     return asset.buffer.asUint8List();
+//   }
+//
+//   /*
+//   Future<void> feedHim(String path) async {
+//     var data = await _readFileByte(path);
+//     return await playerModule.feedFromStream(data);
+//   }
+// */
+//
+//   final int blockSize = 4096;
+//   Future<void> feedHim(String path) async {
+//     var buffer = await _readFileByte(path);
+//     //var buffer = await getAssetData('assets/samples/sample.pcm');
+//
+//     var lnData = 0;
+//     var totalLength = buffer.length;
+//     while (totalLength > 0 && !playerModule.isStopped) {
+//       var bsize = totalLength > blockSize ? blockSize : totalLength;
+//       await playerModule
+//           .feedFromStream(buffer.sublist(lnData, lnData + bsize)); // await !!!!
+//       lnData += bsize;
+//       totalLength -= bsize;
+//     }
+//   }
+//
+//   Future<void> startPlayer() async {
+//     try {
+//       Uint8List dataBuffer;
+//       String audioFilePath;
+//       var codec = _codec;
+//       if (_media == Media.asset) {
+//         dataBuffer = (await rootBundle.load(assetSample[codec.index]))
+//             .buffer
+//             .asUint8List();
+//       } else if (_media == Media.file || _media == Media.stream) {
+//         // Do we want to play from buffer or from file ?
+//         if (kIsWeb || await fileExists(_path[codec.index])) {
+//           audioFilePath = _path[codec.index];
+//         }
+//       } else if (_media == Media.buffer) {
+//         // Do we want to play from buffer or from file ?
+//         if (await fileExists(_path[codec.index])) {
+//           dataBuffer = await makeBuffer(_path[codec.index]);
+//           if (dataBuffer == null) {
+//             throw Exception('Unable to create the buffer');
+//           }
+//         }
+//       } else if (_media == Media.remoteExampleFile) {
+//         // We have to play an example audio file loaded via a URL
+//         audioFilePath = remoteSample[_codec.index];
+//       }
+//
+//       // Check whether the user wants to use the audio player features
+//       if (_isAudioPlayer) {
+//         String albumArtUrl;
+//         String albumArtAsset;
+//         String albumArtFile;
+//         if (_media == Media.remoteExampleFile) {
+//           albumArtUrl = albumArtPathRemote;
+//         } else if (!kIsWeb) {
+//           albumArtFile =
+//           '${await playerModule.getResourcePath()}/assets/canardo.png';
+//           print(albumArtFile);
+//         } else {}
+//
+//         final track = Track(
+//           trackPath: audioFilePath,
+//           codec: _codec,
+//           dataBuffer: dataBuffer,
+//           trackTitle: 'This is a record',
+//           trackAuthor: 'from flutter_sound',
+//           albumArtUrl: albumArtUrl,
+//           albumArtAsset: albumArtAsset,
+//           albumArtFile: albumArtFile,
+//         );
+//         await playerModule.startPlayerFromTrack(track,
+//             defaultPauseResume: false,
+//             removeUIWhenStopped: true, whenFinished: () {
+//               print('I hope you enjoyed listening to this song');
+//               setState(() {});
+//             }, onSkipBackward: () {
+//               print('Skip backward');
+//               stopPlayer();
+//               startPlayer();
+//             }, onSkipForward: () {
+//               print('Skip forward');
+//               stopPlayer();
+//               startPlayer();
+//             }, onPaused: (b) {
+//               if (b) {
+//                 playerModule.pausePlayer();
+//               } else {
+//                 playerModule.resumePlayer();
+//               }
+//             });
+//       } else if (_media == Media.stream) {
+//         await playerModule.startPlayerFromStream(
+//           codec: Codec.pcm16, //_codec,
+//           numChannels: 1,
+//           sampleRate: tSTREAMSAMPLERATE, //tSAMPLERATE,
+//         );
+//         _addListeners();
+//         setState(() {});
+//         await feedHim(audioFilePath);
+//         //await finishPlayer();
+//         await stopPlayer();
+//         return;
+//       } else {
+//         if (audioFilePath != null) {
+//           await playerModule.startPlayer(
+//               fromURI: audioFilePath,
+//               codec: codec,
+//               sampleRate: tSTREAMSAMPLERATE,
+//               whenFinished: () {
+//                 print('Play finished');
+//                 setState(() {});
+//               });
+//         } else if (dataBuffer != null) {
+//           if (codec == Codec.pcm16) {
+//             dataBuffer = await flutterSoundHelper.pcmToWaveBuffer(
+//               inputBuffer: dataBuffer,
+//               numChannels: 1,
+//               sampleRate: (_codec == Codec.pcm16 && _media == Media.asset)
+//                   ? 48000
+//                   : tSAMPLERATE,
+//             );
+//             codec = Codec.pcm16WAV;
+//           }
+//           await playerModule.startPlayer(
+//               fromDataBuffer: dataBuffer,
+//               sampleRate: tSAMPLERATE,
+//               codec: codec,
+//               whenFinished: () {
+//                 print('Play finished');
+//                 setState(() {});
+//               });
+//         }
+//       }
+//       _addListeners();
+//       setState(() {});
+//       print('<--- startPlayer');
+//     } on Exception catch (err) {
+//       print('error: $err');
+//     }
+//   }
+//
+//   Future<void> stopPlayer() async {
+//     try {
+//       await playerModule.stopPlayer();
+//       print('stopPlayer');
+//       if (_playerSubscription != null) {
+//         await _playerSubscription.cancel();
+//         _playerSubscription = null;
+//       }
+//       sliderCurrentPosition = 0.0;
+//     } on Exception catch (err) {
+//       print('error: $err');
+//     }
+//     setState(() {});
+//   }
+//
+//   void pauseResumePlayer() async {
+//     if (playerModule.isPlaying) {
+//       await playerModule.pausePlayer();
+//     } else {
+//       await playerModule.resumePlayer();
+//     }
+//     setState(() {});
+//   }
+//
   void pauseResumeRecorder() async {
     if (recorderModule.isPaused) {
       await recorderModule.resumeRecorder();
@@ -662,175 +662,175 @@ class _MyAppState extends State<Demo> {
     }
     setState(() {});
   }
-
-  void seekToPlayer(int milliSecs) async {
-    //print('-->seekToPlayer');
-    if (playerModule.isPlaying) {
-      await playerModule.seekToPlayer(Duration(milliseconds: milliSecs));
-    }
-    //print('<--seekToPlayer');
-  }
-
-  Widget makeDropdowns(BuildContext context) {
-    final mediaDropdown = Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(right: 16.0),
-          child: Text('Media:'),
-        ),
-        DropdownButton<Media>(
-          value: _media,
-          onChanged: (newMedia) {
-            _media = newMedia;
-            getDuration();
-            setState(() {});
-          },
-          items: <DropdownMenuItem<Media>>[
-            DropdownMenuItem<Media>(
-              value: Media.file,
-              child: Text('File'),
-            ),
-            DropdownMenuItem<Media>(
-              value: Media.buffer,
-              child: Text('Buffer'),
-            ),
-            DropdownMenuItem<Media>(
-              value: Media.asset,
-              child: Text('Asset'),
-            ),
-            DropdownMenuItem<Media>(
-              value: Media.remoteExampleFile,
-              child: Text('Remote Example File'),
-            ),
-            DropdownMenuItem<Media>(
-              value: Media.stream,
-              child: Text('Dart Stream'),
-            ),
-          ],
-        ),
-      ],
-    );
-
-    final codecDropdown = Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(right: 16.0),
-          child: Text('Codec:'),
-        ),
-        DropdownButton<Codec>(
-          value: _codec,
-          onChanged: (newCodec) {
-            setCodec(newCodec);
-            _codec = newCodec;
-            getDuration();
-            setState(() {});
-          },
-          items: <DropdownMenuItem<Codec>>[
-            DropdownMenuItem<Codec>(
-              value: Codec.aacADTS,
-              child: Text('AAC/ADTS'),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.opusOGG,
-              child: Text('Opus/OGG'),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.opusCAF,
-              child: Text('Opus/CAF'),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.mp3,
-              child: Text('MP3'),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.vorbisOGG,
-              child: Text('Vorbis/OGG'),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.pcm16,
-              child: Text('PCM16'),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.pcm16WAV,
-              child: Text('PCM16/WAV'),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.pcm16AIFF,
-              child: Text('PCM16/AIFF'),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.pcm16CAF,
-              child: Text('PCM16/CAF'),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.flac,
-              child: Text('FLAC'),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.aacMP4,
-              child: Text('AAC/MP4'),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.amrNB,
-              child: Text('AMR-NB'),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.amrWB,
-              child: Text('AMR-WB '),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.pcm8,
-              child: Text('PCM8 '),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.pcmFloat32,
-              child: Text('PCM Float32 '),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.pcmWebM,
-              child: Text('PCM/WebM '),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.opusWebM,
-              child: Text('Opus/WebM '),
-            ),
-            DropdownMenuItem<Codec>(
-              value: Codec.vorbisWebM,
-              child: Text('Vorbis/WebM '),
-            ),
-          ],
-        ),
-      ],
-    );
-
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(bottom: 16.0),
-            child: mediaDropdown,
-          ),
-          codecDropdown,
-        ],
-      ),
-    );
-  }
-
-  void Function() onPauseResumePlayerPressed() {
-    if (playerModule == null) return null;
-    if (playerModule.isPaused || playerModule.isPlaying) {
-      return pauseResumePlayer;
-    }
-    return null;
-  }
-
+//
+//   void seekToPlayer(int milliSecs) async {
+//     //print('-->seekToPlayer');
+//     if (playerModule.isPlaying) {
+//       await playerModule.seekToPlayer(Duration(milliseconds: milliSecs));
+//     }
+//     //print('<--seekToPlayer');
+//   }
+//
+//   Widget makeDropdowns(BuildContext context) {
+//     final mediaDropdown = Row(
+//       mainAxisAlignment: MainAxisAlignment.start,
+//       crossAxisAlignment: CrossAxisAlignment.center,
+//       children: <Widget>[
+//         Padding(
+//           padding: const EdgeInsets.only(right: 16.0),
+//           child: Text('Media:'),
+//         ),
+//         DropdownButton<Media>(
+//           value: _media,
+//           onChanged: (newMedia) {
+//             _media = newMedia;
+//             getDuration();
+//             setState(() {});
+//           },
+//           items: <DropdownMenuItem<Media>>[
+//             DropdownMenuItem<Media>(
+//               value: Media.file,
+//               child: Text('File'),
+//             ),
+//             DropdownMenuItem<Media>(
+//               value: Media.buffer,
+//               child: Text('Buffer'),
+//             ),
+//             DropdownMenuItem<Media>(
+//               value: Media.asset,
+//               child: Text('Asset'),
+//             ),
+//             DropdownMenuItem<Media>(
+//               value: Media.remoteExampleFile,
+//               child: Text('Remote Example File'),
+//             ),
+//             DropdownMenuItem<Media>(
+//               value: Media.stream,
+//               child: Text('Dart Stream'),
+//             ),
+//           ],
+//         ),
+//       ],
+//     );
+//
+//     final codecDropdown = Row(
+//       mainAxisAlignment: MainAxisAlignment.start,
+//       crossAxisAlignment: CrossAxisAlignment.center,
+//       children: <Widget>[
+//         Padding(
+//           padding: const EdgeInsets.only(right: 16.0),
+//           child: Text('Codec:'),
+//         ),
+//         DropdownButton<Codec>(
+//           value: _codec,
+//           onChanged: (newCodec) {
+//             setCodec(newCodec);
+//             _codec = newCodec;
+//             getDuration();
+//             setState(() {});
+//           },
+//           items: <DropdownMenuItem<Codec>>[
+//             DropdownMenuItem<Codec>(
+//               value: Codec.aacADTS,
+//               child: Text('AAC/ADTS'),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.opusOGG,
+//               child: Text('Opus/OGG'),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.opusCAF,
+//               child: Text('Opus/CAF'),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.mp3,
+//               child: Text('MP3'),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.vorbisOGG,
+//               child: Text('Vorbis/OGG'),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.pcm16,
+//               child: Text('PCM16'),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.pcm16WAV,
+//               child: Text('PCM16/WAV'),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.pcm16AIFF,
+//               child: Text('PCM16/AIFF'),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.pcm16CAF,
+//               child: Text('PCM16/CAF'),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.flac,
+//               child: Text('FLAC'),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.aacMP4,
+//               child: Text('AAC/MP4'),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.amrNB,
+//               child: Text('AMR-NB'),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.amrWB,
+//               child: Text('AMR-WB '),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.pcm8,
+//               child: Text('PCM8 '),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.pcmFloat32,
+//               child: Text('PCM Float32 '),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.pcmWebM,
+//               child: Text('PCM/WebM '),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.opusWebM,
+//               child: Text('Opus/WebM '),
+//             ),
+//             DropdownMenuItem<Codec>(
+//               value: Codec.vorbisWebM,
+//               child: Text('Vorbis/WebM '),
+//             ),
+//           ],
+//         ),
+//       ],
+//     );
+//
+//     return Padding(
+//       padding: const EdgeInsets.all(8.0),
+//       child: Column(
+//         mainAxisAlignment: MainAxisAlignment.start,
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         children: <Widget>[
+//           Padding(
+//             padding: const EdgeInsets.only(bottom: 16.0),
+//             child: mediaDropdown,
+//           ),
+//           codecDropdown,
+//         ],
+//       ),
+//     );
+//   }
+//
+//   void Function() onPauseResumePlayerPressed() {
+//     if (playerModule == null) return null;
+//     if (playerModule.isPaused || playerModule.isPlaying) {
+//       return pauseResumePlayer;
+//     }
+//     return null;
+//   }
+//
   void Function() onPauseResumeRecorderPressed() {
     if (recorderModule == null) return null;
     if (recorderModule.isPaused || recorderModule.isRecording) {
@@ -838,42 +838,42 @@ class _MyAppState extends State<Demo> {
     }
     return null;
   }
-
-  void Function() onStopPlayerPressed() {
-    if (playerModule == null) return null;
-    return (playerModule.isPlaying || playerModule.isPaused)
-        ? stopPlayer
-        : null;
-  }
-
-  void Function() onStartPlayerPressed() {
-    if (playerModule == null) return null;
-    if (_media == Media.buffer && kIsWeb) {
-      return null;
-    }
-    if (_media == Media.file ||
-        _media == Media.stream ||
-        _media == Media.buffer) // A file must be already recorded to play it
-        {
-      if (_path[_codec.index] == null) return null;
-    }
-
-    if (_media == Media.stream && _codec != Codec.pcm16) {
-      return null;
-    }
-
-    if (_media == Media.stream && _isAudioPlayer) {
-      return null;
-    }
-
-    // Disable the button if the selected codec is not supported
-    if (!(_decoderSupported || _codec == Codec.pcm16)) {
-      return null;
-    }
-
-    return (playerModule.isStopped) ? startPlayer : null;
-  }
-
+//
+//   void Function() onStopPlayerPressed() {
+//     if (playerModule == null) return null;
+//     return (playerModule.isPlaying || playerModule.isPaused)
+//         ? stopPlayer
+//         : null;
+//   }
+//
+//   void Function() onStartPlayerPressed() {
+//     if (playerModule == null) return null;
+//     if (_media == Media.buffer && kIsWeb) {
+//       return null;
+//     }
+//     if (_media == Media.file ||
+//         _media == Media.stream ||
+//         _media == Media.buffer) // A file must be already recorded to play it
+//         {
+//       if (_path[_codec.index] == null) return null;
+//     }
+//
+//     if (_media == Media.stream && _codec != Codec.pcm16) {
+//       return null;
+//     }
+//
+//     if (_media == Media.stream && _isAudioPlayer) {
+//       return null;
+//     }
+//
+//     // Disable the button if the selected codec is not supported
+//     if (!(_decoderSupported || _codec == Codec.pcm16)) {
+//       return null;
+//     }
+//
+//     return (playerModule.isStopped) ? startPlayer : null;
+//   }
+//
   void startStopRecorder() {
     if (recorderModule.isRecording || recorderModule.isPaused) {
       stopRecorder();
@@ -881,7 +881,7 @@ class _MyAppState extends State<Demo> {
       startRecorder();
     }
   }
-
+//
   void Function() onStartRecorderPressed() {
     // Disable the button if the selected codec is not supported
     if (recorderModule == null || !_encoderSupported) return null;
@@ -897,47 +897,47 @@ class _MyAppState extends State<Demo> {
         ? AssetImage('res/icons/ic_mic.png')
         : AssetImage('res/icons/ic_stop.png');
   }
-
-  void setCodec(Codec codec) async {
-    _encoderSupported = await recorderModule.isEncoderSupported(codec);
-    _decoderSupported = await playerModule.isDecoderSupported(codec);
-
-    setState(() {
-      _codec = codec;
-    });
-  }
-
-  void Function(bool) audioPlayerSwitchChanged() {
-    if ((!playerModule.isStopped) || (!recorderModule.isStopped)) return null;
-    return ((newVal) async {
-      try {
-        await _initializeExample(newVal);
-        setState(() {});
-      } on Exception catch (err) {
-        print(err);
-      }
-    });
-  }
+//
+//   void setCodec(Codec codec) async {
+//     _encoderSupported = await recorderModule.isEncoderSupported(codec);
+//     _decoderSupported = await playerModule.isDecoderSupported(codec);
+//
+//     setState(() {
+//       _codec = codec;
+//     });
+//   }
+//
+//   void Function(bool) audioPlayerSwitchChanged() {
+//     if ((!playerModule.isStopped) || (!recorderModule.isStopped)) return null;
+//     return ((newVal) async {
+//       try {
+//         await _initializeExample(newVal);
+//         setState(() {});
+//       } on Exception catch (err) {
+//         print(err);
+//       }
+//     });
+//   }
 
   @override
   Widget build(BuildContext context) {
-    final dropdowns = makeDropdowns(context);
-    final trackSwitch = Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(right: 4),
-          child: Text('Track Player:'),
-        ),
-        Switch(
-          value: _isAudioPlayer,
-          onChanged: audioPlayerSwitchChanged(),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(right: 4.0),
-        )
-      ]),
-    );
+    // final dropdowns = makeDropdowns(context);
+    // final trackSwitch = Padding(
+    //   padding: const EdgeInsets.all(8.0),
+    //   child: Row(children: <Widget>[
+    //     Padding(
+    //       padding: const EdgeInsets.only(right: 4),
+    //       child: Text('Track Player:'),
+    //     ),
+    //     Switch(
+    //       value: _isAudioPlayer,
+    //       onChanged: audioPlayerSwitchChanged(),
+    //     ),
+    //     Padding(
+    //       padding: const EdgeInsets.only(right: 4.0),
+    //     )
+    //   ]),
+    // );
 
     Widget recorderSection = Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -998,94 +998,94 @@ class _MyAppState extends State<Demo> {
           ),
         ]);
 
-    Widget playerSection = Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Container(
-          margin: EdgeInsets.only(top: 12.0, bottom: 16.0),
-          child: Text(
-            _playerTxt,
-            style: TextStyle(
-              fontSize: 35.0,
-              color: Colors.black,
-            ),
-          ),
-        ),
-        Row(
-          children: <Widget>[
-            Container(
-              width: 56.0,
-              height: 50.0,
-              child: ClipOval(
-                child: FlatButton(
-                  onPressed: onStartPlayerPressed(),
-                  disabledColor: Colors.white,
-                  padding: EdgeInsets.all(8.0),
-                  child: Image(
-                    image: AssetImage(onStartPlayerPressed() != null
-                        ? 'res/icons/ic_play.png'
-                        : 'res/icons/ic_play_disabled.png'),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              width: 56.0,
-              height: 50.0,
-              child: ClipOval(
-                child: FlatButton(
-                  onPressed: onPauseResumePlayerPressed(),
-                  disabledColor: Colors.white,
-                  padding: EdgeInsets.all(8.0),
-                  child: Image(
-                    width: 36.0,
-                    height: 36.0,
-                    image: AssetImage(onPauseResumePlayerPressed() != null
-                        ? 'res/icons/ic_pause.png'
-                        : 'res/icons/ic_pause_disabled.png'),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              width: 56.0,
-              height: 50.0,
-              child: ClipOval(
-                child: FlatButton(
-                  onPressed: onStopPlayerPressed(),
-                  disabledColor: Colors.white,
-                  padding: EdgeInsets.all(8.0),
-                  child: Image(
-                    width: 28.0,
-                    height: 28.0,
-                    image: AssetImage(onStopPlayerPressed() != null
-                        ? 'res/icons/ic_stop.png'
-                        : 'res/icons/ic_stop_disabled.png'),
-                  ),
-                ),
-              ),
-            ),
-          ],
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-        ),
-        Container(
-            height: 30.0,
-            child: Slider(
-                value: min(sliderCurrentPosition, maxDuration),
-                min: 0.0,
-                max: maxDuration,
-                onChanged: (value) async {
-                  await seekToPlayer(value.toInt());
-                },
-                divisions: maxDuration == 0.0 ? 1 : maxDuration.toInt())),
-        Container(
-          height: 30.0,
-          child: Text(_duration != null ? 'Duration: $_duration sec.' : ''),
-        ),
-      ],
-    );
+    // Widget playerSection = Column(
+    //   crossAxisAlignment: CrossAxisAlignment.center,
+    //   mainAxisAlignment: MainAxisAlignment.center,
+    //   children: <Widget>[
+    //     Container(
+    //       margin: EdgeInsets.only(top: 12.0, bottom: 16.0),
+    //       child: Text(
+    //         _playerTxt,
+    //         style: TextStyle(
+    //           fontSize: 35.0,
+    //           color: Colors.black,
+    //         ),
+    //       ),
+    //     ),
+    //     Row(
+    //       children: <Widget>[
+    //         Container(
+    //           width: 56.0,
+    //           height: 50.0,
+    //           child: ClipOval(
+    //             child: FlatButton(
+    //               onPressed: onStartPlayerPressed(),
+    //               disabledColor: Colors.white,
+    //               padding: EdgeInsets.all(8.0),
+    //               child: Image(
+    //                 image: AssetImage(onStartPlayerPressed() != null
+    //                     ? 'res/icons/ic_play.png'
+    //                     : 'res/icons/ic_play_disabled.png'),
+    //               ),
+    //             ),
+    //           ),
+    //         ),
+    //         Container(
+    //           width: 56.0,
+    //           height: 50.0,
+    //           child: ClipOval(
+    //             child: FlatButton(
+    //               onPressed: onPauseResumePlayerPressed(),
+    //               disabledColor: Colors.white,
+    //               padding: EdgeInsets.all(8.0),
+    //               child: Image(
+    //                 width: 36.0,
+    //                 height: 36.0,
+    //                 image: AssetImage(onPauseResumePlayerPressed() != null
+    //                     ? 'res/icons/ic_pause.png'
+    //                     : 'res/icons/ic_pause_disabled.png'),
+    //               ),
+    //             ),
+    //           ),
+    //         ),
+    //         Container(
+    //           width: 56.0,
+    //           height: 50.0,
+    //           child: ClipOval(
+    //             child: FlatButton(
+    //               onPressed: onStopPlayerPressed(),
+    //               disabledColor: Colors.white,
+    //               padding: EdgeInsets.all(8.0),
+    //               child: Image(
+    //                 width: 28.0,
+    //                 height: 28.0,
+    //                 image: AssetImage(onStopPlayerPressed() != null
+    //                     ? 'res/icons/ic_stop.png'
+    //                     : 'res/icons/ic_stop_disabled.png'),
+    //               ),
+    //             ),
+    //           ),
+    //         ),
+    //       ],
+    //       mainAxisAlignment: MainAxisAlignment.center,
+    //       crossAxisAlignment: CrossAxisAlignment.center,
+    //     ),
+    //     Container(
+    //         height: 30.0,
+    //         child: Slider(
+    //             value: min(sliderCurrentPosition, maxDuration),
+    //             min: 0.0,
+    //             max: maxDuration,
+    //             onChanged: (value) async {
+    //               await seekToPlayer(value.toInt());
+    //             },
+    //             divisions: maxDuration == 0.0 ? 1 : maxDuration.toInt())),
+    //     Container(
+    //       height: 30.0,
+    //       child: Text(_duration != null ? 'Duration: $_duration sec.' : ''),
+    //     ),
+    //   ],
+    // );
 
     return Scaffold(
       appBar: AppBar(
@@ -1094,9 +1094,9 @@ class _MyAppState extends State<Demo> {
       body: ListView(
         children: <Widget>[
           recorderSection,
-          playerSection,
-          dropdowns,
-          trackSwitch,
+          // playerSection,
+          // dropdowns,
+          // trackSwitch,
         ],
       ),
     );
