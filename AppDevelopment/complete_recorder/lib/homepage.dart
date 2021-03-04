@@ -83,6 +83,7 @@ class _HomePageState extends State<HomePage> {
                       letterSpacing: 0.5,
                       fontFamily: 'Roboto',
                       fontSize: 16,
+                      color: Colors.grey,
                     ),
                   ),
                 ),

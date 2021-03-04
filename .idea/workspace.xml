@@ -20,13 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/feature_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/feature_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/folders.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/folders.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/recording_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/recording_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/search_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/search_button.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/homepage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/homepage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/main.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

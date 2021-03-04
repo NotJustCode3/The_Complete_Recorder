@@ -22,8 +22,8 @@ class _FeatureButtonState extends State<FeatureButton> {
             },
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(10.0),
-                side: BorderSide(color: Color(0xFF8D8E98), width: 2.0)),
-            color: Color(0xFF8D8E98),
+                side: BorderSide(color: Colors.grey[700], width: 2.0)),
+            color: Colors.grey[700],
             highlightColor: Colors.red,
             child: Text(
               'All recordings',
@@ -38,11 +38,11 @@ class _FeatureButtonState extends State<FeatureButton> {
           ),
           RaisedButton(
             onPressed: () {},
-            color: Color(0xFF8D8E98),
+            color: Colors.grey[700],
             highlightColor: Colors.red,
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(10.0),
-                side: BorderSide(color: Color(0xFF8D8E98), width: 2.0)),
+                side: BorderSide(color: Colors.grey[700], width: 2.0)),
             child: Text(
               'Folders',
               style: TextStyle(
@@ -56,11 +56,11 @@ class _FeatureButtonState extends State<FeatureButton> {
           ),
           RaisedButton(
             onPressed: () {},
-            color: Color(0xFF8D8E98),
+            color: Colors.grey[700],
             highlightColor: Colors.red,
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(10.0),
-                side: BorderSide(color: Color(0xFF8D8E98), width: 2.0)),
+                side: BorderSide(color: Colors.grey[700], width: 2.0)),
             child: Text(
               'Feature 3',
               style: TextStyle(
