@@ -1,44 +1,33 @@
 PODS:
-  - Flutter (1.0.0)
-  - "flutter_sound (7.5.3+1)":
+  - audioplayers (0.0.1):
     - Flutter
-    - mobile-ffmpeg-audio (= 4.3.1.LTS)
-    - "tau_sound_core (= 7.5.3+1)"
-  - mobile-ffmpeg-audio (4.3.1.LTS)
+  - Flutter (1.0.0)
+  - flutter_audio_recorder (0.5.4):
+    - Flutter
   - path_provider (0.0.1):
     - Flutter
-  - "permission_handler (5.0.1+1)":
-    - Flutter
-  - "tau_sound_core (7.5.3+1)"
 
 DEPENDENCIES:
+  - audioplayers (from `.symlinks/plugins/audioplayers/ios`)
   - Flutter (from `Flutter`)
-  - flutter_sound (from `.symlinks/plugins/flutter_sound/ios`)
+  - flutter_audio_recorder (from `.symlinks/plugins/flutter_audio_recorder/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
-  - permission_handler (from `.symlinks/plugins/permission_handler/ios`)
-
-SPEC REPOS:
-  trunk:
-    - mobile-ffmpeg-audio
-    - tau_sound_core
 
 EXTERNAL SOURCES:
+  audioplayers:
+    :path: ".symlinks/plugins/audioplayers/ios"
   Flutter:
     :path: Flutter
-  flutter_sound:
-    :path: ".symlinks/plugins/flutter_sound/ios"
+  flutter_audio_recorder:
+    :path: ".symlinks/plugins/flutter_audio_recorder/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
-  permission_handler:
-    :path: ".symlinks/plugins/permission_handler/ios"
 
 SPEC CHECKSUMS:
+  audioplayers: 455322b54050b30ea4b1af7cd9e9d105f74efa8c
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  flutter_sound: 8e5c39a5017856de02a2a5fe71361c7a76258a4e
-  mobile-ffmpeg-audio: adc36047b8032bc0f8e5c4e6ab7cb110189d9b37
+  flutter_audio_recorder: eb998d4e75e59b39d9e3ca1818a5e0f3a82f5836
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
-  permission_handler: eac8e15b4a1a3fba55b761d19f3f4e6b005d15b6
-  tau_sound_core: d6dad8fc83230965615e53717711e0550a642702
 
 PODFILE CHECKSUM: 7368163408c647b7eb699d0d788ba6718e18fb8d
 

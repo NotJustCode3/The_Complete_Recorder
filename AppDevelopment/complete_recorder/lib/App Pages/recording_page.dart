@@ -59,11 +59,12 @@ class _RecordPageState extends State<RecordPage> {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.center,
+      alignment: Alignment.bottomCenter,
       children: [
         SizedBox(
-          width: 100,
+          width: 95,
           child: RaisedButton(
+            color: Color(0xFF960000),
             onPressed: () async {
               await _onRecordButtonPressed();
               setState(() {});
@@ -76,6 +77,7 @@ class _RecordPageState extends State<RecordPage> {
               height: 150,
               child: Icon(
                 _recordIcon,
+                color: Colors.white,
                 size: 50,
               ),
             ),
@@ -102,7 +104,7 @@ class _RecordPageState extends State<RecordPage> {
         await _stopRecording();
         _recordingState = RecordingState.Stopped;
         _recordIcon = Icons.fiber_manual_record;
-        _recordText = 'Record new one';
+        _recordText = 'Record';
         break;
 
       case RecordingState.Stopped:
