@@ -1,9 +1,9 @@
 // TODO Implement this library.
 import 'dart:io';
+import 'package:complete_recorder/App%20Pages/splash_screen_recording.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_audio_recorder/flutter_audio_recorder.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:complete_recorder/App Pages/record_list.dart';
 
 class RecordPage extends StatefulWidget {
   final Function onSaved;
@@ -58,37 +58,58 @@ class _RecordPageState extends State<RecordPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return FractionallySizedBox(
       alignment: Alignment.center,
-      children: [
-        SizedBox(
-          width: 100,
-          child: RaisedButton(
-            onPressed: () async {
-              await _onRecordButtonPressed();
-              setState(() {});
-            },
-            shape: CircleBorder(
-              //borderRadius: BorderRadius.circular(30),
-            ),
-            child: Container(
-              width: 150,
-              height: 150,
-              child: Icon(
-                _recordIcon,
-                size: 50,
+      child: Container(
+        padding: EdgeInsets.fromLTRB(0, 60, 0, 0),
+        margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
+        decoration: BoxDecoration(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(50),),
+        color: Colors.blueGrey[800],
+        ),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            SizedBox(
+              width: 100,
+              child: RaisedButton(
+                color: Colors.blueGrey[900],
+                onPressed: () async {
+                  await _onRecordButtonPressed();
+                  setState(() {});
+                },
+                shape: CircleBorder(
+                  //borderRadius: BorderRadius.circular(30),
+                  side: BorderSide(color: Colors.white, width: 2.0)
+                ),
+                child: Container(
+                  width: 150,
+                  height: 150,
+                  child: Icon(
+                    _recordIcon,
+                    size: 50,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
-          ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                child: Text(
+                  _recordText,
+                  style: TextStyle(
+                      color: Colors.orange,
+                      fontSize: 15.0,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.bold),
+                ),
+                padding: const EdgeInsets.all(8),
+              ),
+            )
+          ],
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Padding(
-            child: Text(_recordText),
-            padding: const EdgeInsets.all(8),
-          ),
-        )
-      ],
+      ),
     );
   }
 
@@ -101,7 +122,7 @@ class _RecordPageState extends State<RecordPage> {
       case RecordingState.Recording:
         await _stopRecording();
         _recordingState = RecordingState.Stopped;
-        _recordIcon = Icons.fiber_manual_record;
+        _recordIcon = Icons.mic;
         _recordText = 'Record new one';
         break;
 
@@ -157,6 +178,6 @@ class _RecordPageState extends State<RecordPage> {
     Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (context) => RecordList()));
+            builder: (context) => SplashScreenRecording()));
   }
 }

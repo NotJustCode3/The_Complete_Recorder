@@ -22,51 +22,65 @@ class _RecordListViewState extends State<RecordListView> {
 
   @override
   Widget build(BuildContext context) {
-    return (ListView.builder(
-      itemCount: widget.records.length,
-      shrinkWrap: true,
-      reverse: true,
-      itemBuilder: (BuildContext context, int i) {
-        return ExpansionTile(
-          title: Text('New recoding ${widget.records.length - i}'),
-          subtitle: Text(
-              _getDateFromFilePath(filePath: widget.records.elementAt(i))),
-          onExpansionChanged: ((newState) {
-            if (newState) {
-              setState(() {
-                _selectedIndex = i;
-              });
-            }
-          }),
-          children: [
-            Container(
-              height: 100,
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  LinearProgressIndicator(
-                    minHeight: 5,
-                    backgroundColor: Colors.black,
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-                    value: _selectedIndex == i ? _completedPercentage : 0,
-                  ),
-                  IconButton(
-                    icon: _selectedIndex == i
-                        ? _isPlaying
-                            ? Icon(Icons.pause)
-                            : Icon(Icons.play_arrow)
-                        : Icon(Icons.play_arrow),
-                    onPressed: () => _onPlay(
-                        filePath: widget.records.elementAt(i), index: i),
-                  ),
-                ],
-              ),
+    return Container(
+      color: Colors.blueGrey[700],
+      child: (ListView.builder(
+        itemCount: widget.records.length,
+        shrinkWrap: true,
+        reverse: true,
+        itemBuilder: (BuildContext context, int i) {
+          return ExpansionTile(
+            backgroundColor: Colors.blueGrey[800],
+            title: Text(
+                'New Recording ${widget.records.length - i}',
+                style: TextStyle(
+                  color: Colors.orange,
+                  fontWeight: FontWeight.bold,
+                ),
             ),
-          ],
-        );
-      },
-    ));
+            subtitle: Text(
+                _getDateFromFilePath(filePath: widget.records.elementAt(i)),
+                style: TextStyle(
+                  color: Colors.orange,
+                ),
+            ),
+            onExpansionChanged: ((newState) {
+              if (newState) {
+                setState(() {
+                  _selectedIndex = i;
+                });
+              }
+            }),
+            children: [
+              Container(
+                height: 100,
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    LinearProgressIndicator(
+                      minHeight: 5,
+                      backgroundColor: Colors.white,
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                      value: _selectedIndex == i ? _completedPercentage : 0,
+                    ),
+                    IconButton(
+                      icon: _selectedIndex == i
+                          ? _isPlaying
+                              ? Icon(Icons.pause)
+                              : Icon(Icons.play_arrow)
+                          : Icon(Icons.play_arrow),
+                      onPressed: () => _onPlay(
+                          filePath: widget.records.elementAt(i), index: i),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          );
+        },
+      )),
+    );
   }
 
   Future<void> _onPlay({@required String filePath, @required int index}) async {

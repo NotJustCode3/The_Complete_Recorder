@@ -16,6 +16,8 @@ class _FoldersState extends State<Folders> {
         margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
         padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
         decoration: BoxDecoration(
+          color: Colors.blueGrey[800],
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20), bottom: Radius.circular(20),),
           border: Border(
             top: BorderSide(width: 1.0, color: Colors.grey),
             bottom: BorderSide(width: 1.0, color: Colors.grey),
@@ -76,7 +78,7 @@ class _FoldersState extends State<Folders> {
                   Text(
                     'Choir!',
                     style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.orange,
                         fontSize: 15.0,
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.bold),
@@ -84,7 +86,7 @@ class _FoldersState extends State<Folders> {
                   Text(
                     'School',
                     style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.orange,
                         fontSize: 15.0,
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.bold),
@@ -92,7 +94,7 @@ class _FoldersState extends State<Folders> {
                   Text(
                     'Anything',
                     style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.orange,
                         fontSize: 15.0,
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.bold),

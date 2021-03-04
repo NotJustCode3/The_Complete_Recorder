@@ -61,6 +61,7 @@ flutter:
     - res/icons/ic_play.png
     - res/icons/ic_stop_disabled.png
     - res/icons/ic_mic.png
+    - res/images/splash.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

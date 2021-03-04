@@ -7,7 +7,6 @@ import 'package:complete_recorder/App Pages/search_button.dart';
 import 'package:complete_recorder/App Pages/feature_button.dart';
 import 'package:complete_recorder/App Pages/folders.dart';
 import 'package:complete_recorder/App Pages/recording_page.dart';
-import 'package:complete_recorder/App Pages/record_list.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -50,7 +49,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor:
-      Colors.white, //the background color of the scaffold is white
+      Colors.blueGrey[900], //the background color of the scaffold is white
       body: SafeArea(
         //creating a sfe area to start drawing elements on to the scaffold widget
         child: Column(
@@ -68,7 +67,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.all(6.0),
               child: const Divider(
-                color: Colors.grey,
+                color: Colors.white,
               ),
             ),
 
@@ -81,6 +80,7 @@ class _HomePageState extends State<HomePage> {
                   child: Text(
                     'Most Recent',
                     style: TextStyle(
+                      color: Colors.white,
                       letterSpacing: 0.5,
                       fontFamily: 'Roboto',
                       fontSize: 16,
@@ -93,27 +93,6 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               flex: 0,
               child: Folders(),
-            ),
-
-            Expanded(
-              flex: 0,
-              child: RaisedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => RecordList()));
-                },
-                child: Text(
-                  'LIST',
-                  style: TextStyle(
-                      color: Colors.black,
-                      //fontSize: 20.0,
-                      // fontWeight: FontWeight.bold,
-                      fontFamily: 'Roboto',
-                      letterSpacing: 0.5),
-                ),
-              ),
             ),
 
             Expanded(

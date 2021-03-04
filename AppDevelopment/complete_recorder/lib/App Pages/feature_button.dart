@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:complete_recorder/App Pages/record_list.dart';
 
 class FeatureButton extends StatefulWidget {
   @override
@@ -16,33 +17,38 @@ class _FeatureButtonState extends State<FeatureButton> {
             onPressed: () {},
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(10.0),
-                side: BorderSide(color: Colors.white, width: 2.0)),
-            color: Colors.white,
+                side: BorderSide(color: Colors.blueGrey[700], width: 2.0)),
+            color: Colors.blueGrey[700],
             highlightColor: Colors.red,
             child: Text(
               'Feature 1',
               style: TextStyle(
-                  color: Colors.black,
-                  //fontSize: 20.0,
-                  // fontWeight: FontWeight.bold,
+                  color: Colors.orange,
+                  //fontSize: 15.0,
+                  fontWeight: FontWeight.bold,
                   fontFamily: 'Roboto',
                   letterSpacing: 0.5),
             ),
             padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
           ),
           RaisedButton(
-            onPressed: () {},
-            color: Colors.white,
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => RecordList()));
+            },
+            color: Colors.blueGrey[700],
             highlightColor: Colors.red,
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(10.0),
-                side: BorderSide(color: Colors.white, width: 2.0)),
+                side: BorderSide(color: Colors.blueGrey[700], width: 2.0)),
             child: Text(
-              'Feature 2',
+              'List',
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.orange,
                   //fontSize: 20.0,
-                  //fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.bold,
                   fontFamily: 'Roboto',
                   letterSpacing: 0.5),
             ),
@@ -50,17 +56,17 @@ class _FeatureButtonState extends State<FeatureButton> {
           ),
           RaisedButton(
             onPressed: () {},
-            color: Colors.white,
+            color: Colors.blueGrey[700],
             highlightColor: Colors.red,
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(10.0),
-                side: BorderSide(color: Colors.white, width: 2.0)),
+                side: BorderSide(color: Colors.blueGrey[700], width: 2.0)),
             child: Text(
               'Feature 3',
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.orange,
                   //fontSize: 20.0,
-                  //fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.bold,
                   fontFamily: 'Roboto',
                   letterSpacing: 0.5),
             ),
