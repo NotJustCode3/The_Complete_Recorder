@@ -11,10 +11,10 @@ class _SearchButtonState extends State<SearchButton> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.grey[700],
       //creating a child relationship with the safe area to include our card widget
       //card widget properties
       elevation: 3.0, //this gives it a slight drop shadow effect
-      color: Colors.white,
       margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
       //creating another child to draw elements onto the card widget
       child: ListTile(

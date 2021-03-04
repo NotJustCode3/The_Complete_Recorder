@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:complete_recorder/App Pages/record_list.dart';
 
 class FeatureButton extends StatefulWidget {
   @override
@@ -13,14 +14,19 @@ class _FeatureButtonState extends State<FeatureButton> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           RaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => RecordList()));
+            },
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(10.0),
-                side: BorderSide(color: Colors.white, width: 2.0)),
-            color: Colors.white,
+                side: BorderSide(color: Colors.grey[700], width: 2.0)),
+            color: Colors.grey[700],
             highlightColor: Colors.red,
             child: Text(
-              'Feature 1',
+              'All recordings',
               style: TextStyle(
                   color: Colors.black,
                   //fontSize: 20.0,
@@ -32,13 +38,13 @@ class _FeatureButtonState extends State<FeatureButton> {
           ),
           RaisedButton(
             onPressed: () {},
-            color: Colors.white,
+            color: Colors.grey[700],
             highlightColor: Colors.red,
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(10.0),
-                side: BorderSide(color: Colors.white, width: 2.0)),
+                side: BorderSide(color: Colors.grey[700], width: 2.0)),
             child: Text(
-              'Feature 2',
+              'Folders',
               style: TextStyle(
                   color: Colors.black,
                   //fontSize: 20.0,
@@ -50,11 +56,11 @@ class _FeatureButtonState extends State<FeatureButton> {
           ),
           RaisedButton(
             onPressed: () {},
-            color: Colors.white,
+            color: Colors.grey[700],
             highlightColor: Colors.red,
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(10.0),
-                side: BorderSide(color: Colors.white, width: 2.0)),
+                side: BorderSide(color: Colors.grey[700], width: 2.0)),
             child: Text(
               'Feature 3',
               style: TextStyle(
