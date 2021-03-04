@@ -133,7 +133,7 @@ class _FoldersState extends State<Folders> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Text(
-                    'Choir!',
+                    'Music',
                     style: TextStyle(
                         color: Colors.grey,
                         fontSize: 15.0,
@@ -149,7 +149,7 @@ class _FoldersState extends State<Folders> {
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    'Anything',
+                    'Grocery',
                     style: TextStyle(
                         color: Colors.grey,
                         fontSize: 15.0,

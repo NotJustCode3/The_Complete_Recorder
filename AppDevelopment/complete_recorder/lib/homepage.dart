@@ -49,8 +49,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-      Colors.white, //the background color of the scaffold is white
+      backgroundColor: Color(0xFF0A0E21), //Colors.white, //the background color of the scaffold is white
       body: SafeArea(
         //creating a sfe area to start drawing elements on to the scaffold widget
         child: Column(
@@ -93,27 +92,6 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               flex: 0,
               child: Folders(),
-            ),
-
-            Expanded(
-              flex: 0,
-              child: RaisedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => RecordList()));
-                },
-                child: Text(
-                  'LIST',
-                  style: TextStyle(
-                      color: Colors.black,
-                      //fontSize: 20.0,
-                      // fontWeight: FontWeight.bold,
-                      fontFamily: 'Roboto',
-                      letterSpacing: 0.5),
-                ),
-              ),
             ),
 
             Expanded(
