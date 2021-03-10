@@ -48,8 +48,15 @@ class _RecordListState extends State<RecordList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey[900],
-        title: Text('Record List'),
+          centerTitle: true,
+          title: Text("Record List"),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.purple[800], Colors.red[800]],
+              ),
+            ),
+          ),
       ),
       body: Column(
         children: [

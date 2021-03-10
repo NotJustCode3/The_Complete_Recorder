@@ -48,60 +48,65 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:
-      Colors.blueGrey[900], //the background color of the scaffold is white
-      body: SafeArea(
-        //creating a sfe area to start drawing elements on to the scaffold widget
-        child: Column(
-          children: [
-            Expanded(
-              flex: 0,
-              child: SearchButton(),
-            ),
-            Expanded(
-              flex: 0,
-              child: FeatureButton(),
-            ),
-
-            // LINE DIVIDER
-            Padding(
-              padding: const EdgeInsets.all(6.0),
-              child: const Divider(
-                color: Colors.white,
+      body: Container(
+        decoration: new BoxDecoration(
+          gradient: new LinearGradient(
+            colors: [Colors.purple[600], Colors.pink, Colors. red[600]],
+          ),
+        ),
+        child: SafeArea(
+          //creating a sfe area to start drawing elements on to the scaffold widget
+          child: Column(
+            children: [
+              Expanded(
+                flex: 0,
+                child: SearchButton(),
               ),
-            ),
+              Expanded(
+                flex: 0,
+                child: FeatureButton(),
+              ),
 
-            //Row 2 'Most recent'
-            Padding(
-              padding: const EdgeInsets.fromLTRB(21, 1, 1, 1),
-              child: Container(
-                child: Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    'Most Recent',
-                    style: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: 0.5,
-                      fontFamily: 'Roboto',
-                      fontSize: 16,
+              // LINE DIVIDER
+              Padding(
+                padding: const EdgeInsets.all(6.0),
+                child: const Divider(
+                  color: Colors.white,
+                ),
+              ),
+
+              //Row 2 'Most recent'
+              Padding(
+                padding: const EdgeInsets.fromLTRB(21, 1, 1, 10),
+                child: Container(
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Most Recent',
+                      style: TextStyle(
+                        color: Colors.white,
+                        letterSpacing: 0.5,
+                        fontFamily: 'Roboto',
+                        fontSize: 16,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
 
-            Expanded(
-              flex: 0,
-              child: Folders(),
-            ),
+              Expanded(
+                flex: 0,
+                child: Folders(),
+              ),
 
-            Expanded(
-                flex: 2,
-                child: RecordPage(
-                  onSaved: _onRecordComplete,
-                ),
-            ),
-          ],
+              Expanded(
+                  flex: 2,
+                  child: RecordPage(
+                    onSaved: _onRecordComplete,
+                  ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,6 +1,5 @@
 // TODO Implement this library.
 import 'dart:io';
-import 'package:complete_recorder/App%20Pages/splash_screen_recording.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_audio_recorder/flutter_audio_recorder.dart';
 import 'package:path_provider/path_provider.dart';
@@ -61,34 +60,55 @@ class _RecordPageState extends State<RecordPage> {
     return FractionallySizedBox(
       alignment: Alignment.center,
       child: Container(
-        padding: EdgeInsets.fromLTRB(0, 60, 0, 0),
-        margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
+        //padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+        margin: EdgeInsets.fromLTRB(0, 140, 0, 0),
         decoration: BoxDecoration(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(50),),
-        color: Colors.blueGrey[800],
-        ),
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(50),
+            ),
+            gradient: new LinearGradient(
+              colors: [Colors.purple[800], Colors.red[800]],
+            ),
+            boxShadow: [
+              BoxShadow(
+                offset: const Offset(3.0, 3.0),
+                blurRadius: 7.0,
+                spreadRadius: 3.0,
+              ),
+            ]),
         child: Stack(
           alignment: Alignment.center,
           children: [
             SizedBox(
               width: 100,
-              child: RaisedButton(
-                color: Colors.blueGrey[900],
-                onPressed: () async {
-                  await _onRecordButtonPressed();
-                  setState(() {});
-                },
-                shape: CircleBorder(
-                  //borderRadius: BorderRadius.circular(30),
-                  side: BorderSide(color: Colors.white, width: 2.0)
-                ),
-                child: Container(
-                  width: 150,
-                  height: 150,
-                  child: Icon(
-                    _recordIcon,
-                    size: 50,
-                    color: Colors.white,
+              child: Container(
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.white,
+                        blurRadius: 7.0,
+                        spreadRadius: 4.0,
+                      ),
+                    ]),
+                child: RaisedButton(
+                  color: Colors.red,
+                  onPressed: () async {
+                    await _onRecordButtonPressed();
+                    setState(() {});
+                  },
+                  shape: CircleBorder(
+                      //borderRadius: BorderRadius.circular(30),
+                      //side: BorderSide(color: Colors.white, width: 2.0)
+                      ),
+                  child: Container(
+                    width: 150,
+                    height: 150,
+                    child: Icon(
+                      _recordIcon,
+                      size: 50,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -99,12 +119,12 @@ class _RecordPageState extends State<RecordPage> {
                 child: Text(
                   _recordText,
                   style: TextStyle(
-                      color: Colors.orange,
+                      color: Colors.white,
                       fontSize: 15.0,
                       fontFamily: 'Roboto',
                       fontWeight: FontWeight.bold),
                 ),
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.fromLTRB(0, 20, 0, 5)
               ),
             )
           ],
@@ -175,9 +195,7 @@ class _RecordPageState extends State<RecordPage> {
   _stopRecording() async {
     await audioRecorder.stop();
     widget.onSaved();
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => SplashScreenRecording()));
+    //Navigator.push(context,
+    //    MaterialPageRoute(builder: (context) => SplashScreenRecording()));
   }
 }

@@ -10,22 +10,19 @@ class _SearchButtonState extends State<SearchButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-
-      ),
       child: Card(
         //creating a child relationship with the safe area to include our card widget
         //card widget properties
         elevation: 3.0, //this gives it a slight drop shadow effect
-        color: Colors.blueGrey[800],
-        margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+        color: Colors.transparent,
+        margin: EdgeInsets.symmetric(vertical: 20.0, horizontal: 25.0),
         //creating another child to draw elements onto the card widget
         child: ListTile(
           //this widget houses the elements inside the card widget
           leading: IconButton(
               icon: Icon(Icons.menu),
               //iconSize: 30.0,
-              color: Colors.orange,
+              color: Colors.white,
               //highlightColor: Colors.grey,
               onPressed: () {
                 Navigator.push(
@@ -36,7 +33,7 @@ class _SearchButtonState extends State<SearchButton> {
           title: Text(
             'Search',
             style: TextStyle(
-                color: Colors.orange,
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Roboto',
                 letterSpacing: 0.5),
@@ -44,7 +41,7 @@ class _SearchButtonState extends State<SearchButton> {
           trailing: IconButton(
             icon: Icon(Icons.create_new_folder_outlined),
             //iconSize: 30.0,
-            color: Colors.orange,
+            color: Colors.white,
             //highlightColor: Colors.grey,
             onPressed: () {
               //Navigator.push(context,MaterialPageRoute(builder: (context) => Folder()));

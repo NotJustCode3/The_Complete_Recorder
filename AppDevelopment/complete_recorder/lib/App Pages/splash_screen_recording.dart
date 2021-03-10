@@ -21,7 +21,7 @@ class _SplashScreenRecordingState extends State<SplashScreenRecording> {
   }
 
   _loadWidget() async {
-    var _duration = Duration(seconds: 3);
+    var _duration = Duration(seconds: 2);
     return Timer(_duration, navigationPage);
   }
 
@@ -32,26 +32,35 @@ class _SplashScreenRecordingState extends State<SplashScreenRecording> {
 
   @override
   Widget build(BuildContext context) {
-    
+
     return Scaffold(
-      backgroundColor: Colors.blueGrey[800],
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircularProgressIndicator(),
-            SizedBox(
-              height: 40,
-            ),
-            Text(
-              'Saving',
-              style: TextStyle(
-                  color: Colors.orange,
+      body: Container(
+        decoration: new BoxDecoration(
+          gradient: new LinearGradient(
+            colors: [Colors.purple[600], Colors.pink, Colors. red[600]],
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircularProgressIndicator(
+                valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
+              ),
+              SizedBox(
+                height: 40.0,
+                width: 40.0,
+              ),
+              Text(
+                'Saving',
+                style: TextStyle(
+                  color: Colors.white,
                   fontSize: 20.0,
                   fontFamily: 'Roboto',
-                  fontWeight: FontWeight.bold),
-            ),
-          ],
+                  fontWeight: FontWeight.bold,),
+                ),
+            ],
+          ),
         ),
       ),
     );
