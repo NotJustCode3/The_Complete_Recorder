@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_audio_recorder/flutter_audio_recorder.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:complete_recorder/App%20Pages/splash_screen_recording.dart';
 
 class RecordPage extends StatefulWidget {
   final Function onSaved;
@@ -195,7 +196,7 @@ class _RecordPageState extends State<RecordPage> {
   _stopRecording() async {
     await audioRecorder.stop();
     widget.onSaved();
-    //Navigator.push(context,
-    //    MaterialPageRoute(builder: (context) => SplashScreenRecording()));
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => SplashScreenRecording()));
   }
 }

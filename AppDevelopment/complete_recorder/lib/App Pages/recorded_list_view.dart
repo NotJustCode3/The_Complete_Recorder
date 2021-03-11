@@ -39,14 +39,19 @@ class _RecordListViewState extends State<RecordListView> {
           final records = widget.records[i];
           return Dismissible(
             key: Key(records),
-            onDismissed: (direction) {
+            onDismissed: (DismissDirection direction) {
+              if (direction == DismissDirection.startToEnd) {
+              print("Add to favorite");
+              } else {
+                print('Remove item');
+              }
               setState(() {
                 widget.records.removeAt(i);
               });
               Scaffold.of(context).showSnackBar(
                   SnackBar(
                     content: Text(
-                      "Recording Removed",
+                      "Recording Moved",
                       style: TextStyle(
                         fontSize: 15.0,
                         fontWeight: FontWeight.bold,
@@ -56,25 +61,87 @@ class _RecordListViewState extends State<RecordListView> {
               );
             },
             background: Container(
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(left: 15.0),
               color: Colors.greenAccent[700],
-              child: Icon(
-                Icons.check_circle,
-                color: Colors.white,
-                size: 40.0,
+              child: Padding(
+                padding: EdgeInsets.only(left: 15.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget> [
+                    Icon(
+                      Icons.check_circle,
+                      color: Colors.white,
+                      size: 40.0,
+                    ),
+                    Text(
+                        ' Move to Library',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15.0,
+                        )
+                    ),
+                  ],
+                ),
               ),
             ),
             secondaryBackground: Container(
-              alignment: Alignment.centerRight,
-              padding: EdgeInsets.only(right: 15.0),
               color: Colors.redAccent[700],
-              child: Icon(
-                  Icons.delete,
-                  color: Colors.white,
-                  size: 40.0,
+              child: Padding(
+                padding: EdgeInsets.only(right: 15.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget> [
+                    Text(
+                        'Delete ',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15.0,
+                        )
+                    ),
+                    Icon(
+                      Icons.delete,
+                      color: Colors.white,
+                      size: 40.0,
+                    ),
+                  ],
+                ),
               ),
             ),
+            confirmDismiss: (DismissDirection direction) async {
+              return await showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: const Text("Remove Confirmation"),
+                    content: const Text(
+                        "Are You Sure You Want to Move This Recording?"),
+                    actions: <Widget>[
+                      FlatButton(
+                          onPressed: () => Navigator.of(context).pop(true),
+                          child: const Text(
+                              "Delete",
+                              style: TextStyle(
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                          )
+                      ),
+                      FlatButton(
+                        onPressed: () => Navigator.of(context).pop(false),
+                        child: const Text(
+                            "Cancel",
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
             child: ExpansionTile(
               backgroundColor: Colors.purple[400],
               title: Text(

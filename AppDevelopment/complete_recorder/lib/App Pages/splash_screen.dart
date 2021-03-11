@@ -43,15 +43,6 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CircularProgressIndicator(
-                valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
-              ),
-              SizedBox(
-                height: 40,
-                width: 40.0,
-              ),
-            ],
           ),
         ),
       ),
