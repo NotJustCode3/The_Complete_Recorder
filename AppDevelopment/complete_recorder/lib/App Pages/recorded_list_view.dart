@@ -1,5 +1,6 @@
 // TODO Implement this library.
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
@@ -69,7 +70,7 @@ class _RecordListViewState extends State<RecordListView> {
               padding: EdgeInsets.only(right: 15.0),
               color: Colors.redAccent[700],
               child: Icon(
-                  Icons.cancel,
+                  Icons.delete,
                   color: Colors.white,
                   size: 40.0,
               ),
