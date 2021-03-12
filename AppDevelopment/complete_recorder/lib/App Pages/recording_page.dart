@@ -93,7 +93,7 @@ class _RecordPageState extends State<RecordPage> {
                       ),
                     ]),
                 child: RaisedButton(
-                  color: Colors.red,
+                  color: Colors.red[700],
                   onPressed: () async {
                     await _onRecordButtonPressed();
                     setState(() {});

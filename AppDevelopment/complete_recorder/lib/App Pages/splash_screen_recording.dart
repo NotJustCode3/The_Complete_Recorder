@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:complete_recorder/App%20Pages/record_list.dart';
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class SplashScreenRecording extends StatefulWidget {
   final Color backgroundColor = Colors.white;

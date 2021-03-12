@@ -26,6 +26,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
+  animated_text_kit: ^3.1.2
 
 
 dev_dependencies:
@@ -55,6 +56,10 @@ flutter:
     - family: Roboto
       fonts:
         - asset: fonts/Roboto-Regular.ttf
+
+    - family: Libre Barcode 39 Text
+      fonts:
+        - asset: fonts/LibreBarcode39Text-Regular.ttf
 
   assets:
     - res/icons/ic_pause_disabled.png
