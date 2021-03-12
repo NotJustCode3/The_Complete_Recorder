@@ -22,7 +22,7 @@ class _SplashScreenRecordingState extends State<SplashScreenRecording> {
   }
 
   _loadWidget() async {
-    var _duration = Duration(seconds: 2);
+    var _duration = Duration(seconds: 3);
     return Timer(_duration, navigationPage);
   }
 
@@ -45,21 +45,16 @@ class _SplashScreenRecordingState extends State<SplashScreenRecording> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircularProgressIndicator(
-                valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
-              ),
-              SizedBox(
-                height: 40.0,
-                width: 40.0,
-              ),
-              Text(
-                'Saving',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.bold,),
+              WavyAnimatedTextKit(
+                textStyle: TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.bold
                 ),
+                text: [
+                  "Saving...",
+                ],
+                isRepeatingAnimation: true,
+              ),
             ],
           ),
         ),

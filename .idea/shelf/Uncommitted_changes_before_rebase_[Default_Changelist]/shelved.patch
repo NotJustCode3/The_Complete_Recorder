@@ -1,0 +1,49 @@
+Index: AppDevelopment/complete_recorder/lib/App Pages/splash_screen_recording.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import 'dart:async';\r\nimport 'package:complete_recorder/App%20Pages/record_list.dart';\r\nimport 'package:flutter/material.dart';\r\nimport 'package:animated_text_kit/animated_text_kit.dart';\r\n\r\nclass SplashScreenRecording extends StatefulWidget {\r\n  final Color backgroundColor = Colors.white;\r\n  final TextStyle styleTextUnderTheLoader = TextStyle(\r\n      fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black);\r\n\r\n  @override\r\n  _SplashScreenRecordingState createState() => _SplashScreenRecordingState();\r\n}\r\n\r\nclass _SplashScreenRecordingState extends State<SplashScreenRecording> {\r\n\r\n  @override\r\n  void initState() {\r\n    super.initState();\r\n\r\n    _loadWidget();\r\n  }\r\n\r\n  _loadWidget() async {\r\n    var _duration = Duration(seconds: 2);\r\n    return Timer(_duration, navigationPage);\r\n  }\r\n\r\n  void navigationPage() {\r\n    Navigator.pushReplacement(context,\r\n        MaterialPageRoute(builder: (BuildContext context) => RecordList()));\r\n  }\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n\r\n    return Scaffold(\r\n      body: Container(\r\n        decoration: new BoxDecoration(\r\n          gradient: new LinearGradient(\r\n            colors: [Colors.purple[600], Colors.pink, Colors. red[600]],\r\n          ),\r\n        ),\r\n        child: Center(\r\n          child: Column(\r\n            mainAxisAlignment: MainAxisAlignment.center,\r\n            children: [\r\n              CircularProgressIndicator(\r\n                valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),\r\n              ),\r\n              SizedBox(\r\n                height: 40.0,\r\n                width: 40.0,\r\n              ),\r\n              Text(\r\n                'Saving',\r\n                style: TextStyle(\r\n                  color: Colors.white,\r\n                  fontSize: 20.0,\r\n                  fontFamily: 'Roboto',\r\n                  fontWeight: FontWeight.bold,),\r\n                ),\r\n            ],\r\n          ),\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- AppDevelopment/complete_recorder/lib/App Pages/splash_screen_recording.dart	(revision 34e9ae7412e37119e4ddf4bbbb90a7d11c5631a0)
++++ AppDevelopment/complete_recorder/lib/App Pages/splash_screen_recording.dart	(date 1615507687088)
+@@ -22,7 +22,7 @@
+   }
+ 
+   _loadWidget() async {
+-    var _duration = Duration(seconds: 2);
++    var _duration = Duration(seconds: 3);
+     return Timer(_duration, navigationPage);
+   }
+ 
+@@ -45,21 +45,16 @@
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: [
+-              CircularProgressIndicator(
+-                valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
+-              ),
+-              SizedBox(
+-                height: 40.0,
+-                width: 40.0,
++              WavyAnimatedTextKit(
++                textStyle: TextStyle(
++                    fontSize: 30.0,
++                    fontWeight: FontWeight.bold
++                ),
++                text: [
++                  "Saving...",
++                ],
++                isRepeatingAnimation: true,
+               ),
+-              Text(
+-                'Saving',
+-                style: TextStyle(
+-                  color: Colors.white,
+-                  fontSize: 20.0,
+-                  fontFamily: 'Roboto',
+-                  fontWeight: FontWeight.bold,),
+-                ),
+             ],
+           ),
+         ),
