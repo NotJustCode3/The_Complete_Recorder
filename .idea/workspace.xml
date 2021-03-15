@@ -19,12 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="recording play/pause/stop buttons + functionality&#10;slider to interact with recording&#10;time: position + duration">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/main.dart" afterDir="false" />
-    </list>
+    <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="Dark mode theme in the splash screen" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615824807697</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Dark mode theme in the splash screen">
+      <created>1615841839967</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615841839967</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -125,7 +127,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="recording play/pause/stop buttons + functionality&#10;slider to interact with recording&#10;time: position + duration" />
-    <option name="LAST_COMMIT_MESSAGE" value="recording play/pause/stop buttons + functionality&#10;slider to interact with recording&#10;time: position + duration" />
+    <MESSAGE value="Dark mode theme in the splash screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dark mode theme in the splash screen" />
   </component>
   <component name="WindowStateProjectService">
     <state x="100" y="108" width="1336" height="624" key="AVDManager" timestamp="1615837463141">
