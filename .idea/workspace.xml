@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="">
+    <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="recording play/pause/stop buttons + functionality&#10;slider to interact with recording&#10;time: position + duration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/recorded_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/recorded_list_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/homepage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/homepage.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +77,14 @@
       <option name="presentableId" value="Default" />
       <updated>1614587758437</updated>
     </task>
+    <task id="LOCAL-00001" summary="recording play/pause/stop buttons + functionality&#10;slider to interact with recording&#10;time: position + duration">
+      <created>1615824807697</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615824807697</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,6 +98,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="recording play/pause/stop buttons + functionality&#10;slider to interact with recording&#10;time: position + duration" />
+    <option name="LAST_COMMIT_MESSAGE" value="recording play/pause/stop buttons + functionality&#10;slider to interact with recording&#10;time: position + duration" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1287" height="214" key="GridCell.Tab.0.bottom" timestamp="1615810523352">
