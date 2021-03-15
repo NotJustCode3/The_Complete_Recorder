@@ -19,11 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="">
+    <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="recording play/pause/stop buttons + functionality&#10;slider to interact with recording&#10;time: position + duration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/feature_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/feature_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/search_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/search_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/homepage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/homepage.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -79,6 +77,14 @@
       <option name="presentableId" value="Default" />
       <updated>1614587758437</updated>
     </task>
+    <task id="LOCAL-00001" summary="recording play/pause/stop buttons + functionality&#10;slider to interact with recording&#10;time: position + duration">
+      <created>1615824807697</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615824807697</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,26 +99,34 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="recording play/pause/stop buttons + functionality&#10;slider to interact with recording&#10;time: position + duration" />
+    <option name="LAST_COMMIT_MESSAGE" value="recording play/pause/stop buttons + functionality&#10;slider to interact with recording&#10;time: position + duration" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1487" height="225" key="GridCell.Tab.0.bottom" timestamp="1614679211359">
-      <screen x="1280" y="25" width="1920" height="1055" />
+    <state width="1287" height="214" key="GridCell.Tab.0.bottom" timestamp="1615810523352">
+      <screen x="1280" y="25" width="1920" height="999" />
     </state>
+    <state width="1287" height="214" key="GridCell.Tab.0.bottom/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1615803054971" />
     <state width="1487" height="225" key="GridCell.Tab.0.bottom/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1614679211359" />
-    <state width="1289" height="225" key="GridCell.Tab.0.bottom/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1614589523861" />
-    <state width="1487" height="225" key="GridCell.Tab.0.center" timestamp="1614679211358">
-      <screen x="1280" y="25" width="1920" height="1055" />
+    <state width="1287" height="214" key="GridCell.Tab.0.bottom/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1615810523352" />
+    <state width="1287" height="214" key="GridCell.Tab.0.center" timestamp="1615810523351">
+      <screen x="1280" y="25" width="1920" height="999" />
     </state>
+    <state width="1287" height="214" key="GridCell.Tab.0.center/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1615803054969" />
     <state width="1487" height="225" key="GridCell.Tab.0.center/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1614679211358" />
-    <state width="1289" height="225" key="GridCell.Tab.0.center/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1614589523859" />
-    <state width="1487" height="225" key="GridCell.Tab.0.left" timestamp="1614679211358">
-      <screen x="1280" y="25" width="1920" height="1055" />
+    <state width="1287" height="214" key="GridCell.Tab.0.center/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1615810523351" />
+    <state width="1287" height="214" key="GridCell.Tab.0.left" timestamp="1615810523351">
+      <screen x="1280" y="25" width="1920" height="999" />
     </state>
+    <state width="1287" height="214" key="GridCell.Tab.0.left/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1615803054968" />
     <state width="1487" height="225" key="GridCell.Tab.0.left/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1614679211358" />
-    <state width="1289" height="225" key="GridCell.Tab.0.left/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1614589523856" />
-    <state width="1487" height="225" key="GridCell.Tab.0.right" timestamp="1614679211359">
-      <screen x="1280" y="25" width="1920" height="1055" />
+    <state width="1287" height="214" key="GridCell.Tab.0.left/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1615810523351" />
+    <state width="1287" height="214" key="GridCell.Tab.0.right" timestamp="1615810523352">
+      <screen x="1280" y="25" width="1920" height="999" />
     </state>
+    <state width="1287" height="214" key="GridCell.Tab.0.right/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1615803054970" />
     <state width="1487" height="225" key="GridCell.Tab.0.right/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1614679211359" />
-    <state width="1289" height="225" key="GridCell.Tab.0.right/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1614589523860" />
+    <state width="1287" height="214" key="GridCell.Tab.0.right/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1615810523352" />
   </component>
 </project>

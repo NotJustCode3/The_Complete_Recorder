@@ -32,10 +32,11 @@ class _HomePageState extends State<HomePage> {
       appDirectory.list().listen((onData) {
         records.add(onData.path);
       }).onDone(() {
-        records = records.reversed.toList();
+        records = records.toList();
         setState(() {});
       });
     });
+    print(appDirectory);
   }
 
   @override
