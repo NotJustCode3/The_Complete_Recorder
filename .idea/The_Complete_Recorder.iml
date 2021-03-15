@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/build" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/audioplayers/.pub" />

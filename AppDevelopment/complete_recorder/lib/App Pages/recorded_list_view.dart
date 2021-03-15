@@ -78,22 +78,113 @@ class _RecordListViewState extends State<RecordListView> {
       reverse: true,
       itemBuilder: (BuildContext context, int i) {
         // widget.records.sort((a, b)=> a['expiry'].compareTo(b['expiry']));
-        return PopupMenuButton(
-          itemBuilder: (BuildContext bc) => [
-            PopupMenuItem(
-              child: Row(children: <Widget>[
-                Text("Rename  "),
-                Icon(Icons.drive_file_rename_outline),
-              ]),
+        final records = widget.records[i];
+        return Dismissible(
+            key: Key(records),
+            onDismissed: (DismissDirection direction) {
+              if (direction == DismissDirection.startToEnd) {
+                print("Add to favorite");
+              } else {
+                print('Remove item');
+              }
+              setState(() {
+                widget.records.removeAt(i);
+              });
+              Scaffold.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    "Recording Moved",
+                    style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              );
+            },
+            background: Container(
+              color: Colors.greenAccent[700],
+              child: Padding(
+                padding: EdgeInsets.only(left: 15.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget> [
+                    Icon(
+                      Icons.check_circle,
+                      color: Colors.white,
+                      size: 40.0,
+                    ),
+                    Text(
+                        ' Move to Library',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15.0,
+                        )
+                    ),
+                  ],
+                ),
+              ),
             ),
-            PopupMenuItem(
-              child: Row(children: <Widget>[
-                Text("Delete  "),
-                Icon(Icons.delete_forever_rounded),
-              ]),
+            secondaryBackground: Container(
+              color: Colors.redAccent[700],
+              child: Padding(
+                padding: EdgeInsets.only(right: 15.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget> [
+                    Text(
+                        'Delete ',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15.0,
+                        )
+                    ),
+                    Icon(
+                      Icons.delete,
+                      color: Colors.white,
+                      size: 40.0,
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ],
-          child: ExpansionTile(
+            confirmDismiss: (DismissDirection direction) async {
+              return await showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: const Text("Remove Confirmation"),
+                    content: const Text(
+                        "Are You Sure You Want to Move This Recording?"),
+                    actions: <Widget>[
+                      FlatButton(
+                          onPressed: () => Navigator.of(context).pop(true),
+                          child: const Text(
+                            "Delete",
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )
+                      ),
+                      FlatButton(
+                        onPressed: () => Navigator.of(context).pop(false),
+                        child: const Text(
+                          "Cancel",
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+            child: ExpansionTile(
             title: Text('New Recording ${widget.records.length - i}'),
             subtitle: Text(
                 _getDateFromFilePath(filePath: widget.records.elementAt(i))),
