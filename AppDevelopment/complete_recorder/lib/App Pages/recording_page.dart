@@ -5,10 +5,6 @@ import 'package:flutter_audio_recorder/flutter_audio_recorder.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:complete_recorder/App Pages/record_list.dart';
 
-import 'package:flutter_audio_recorder/flutter_audio_recorder.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:complete_recorder/App Pages/record_list.dart';
-
 class RecordPage extends StatefulWidget {
   final Function onSaved;
 
