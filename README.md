@@ -16,6 +16,7 @@ about 15 recordings a week, sifting through a pile of recordings and playing eac
   - Vlog 2 - [November Progress](https://github.com/NotJustCode3/The_Complete_Recorder/tree/master/Vlogs/Vlog_%232)
   - Vlog 3 - [End of Year Progress](https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Vlogs/Vlog_%233)
   - Vlog 4 - [February Progress](https://github.com/NotJustCode3/The_Complete_Recorder/tree/master/Vlogs/Vlog_%234)
+  - Vlog 5 - [March Progress](https://github.com/NotJustCode3/The_Complete_Recorder/tree/master/Vlogs/Vlog_%235)
 
 **2. Scrum Reports :scroll:**
   - Scrum 1 - [Project Initiation, Initial Constraints](https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Scrums/Scrum%20Report%20Out%20%231.pdf)
