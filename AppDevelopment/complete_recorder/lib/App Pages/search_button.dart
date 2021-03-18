@@ -18,7 +18,7 @@ class _SearchButtonState extends State<SearchButton> {
         //creating a child relationship with the safe area to include our card widget
         //card widget properties
         elevation: 3.0, //this gives it a slight drop shadow effect
-        color: Colors.white,
+        color: Colors.grey.withOpacity(0.3),
         margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
         //creating another child to draw elements onto the card widget
         child: ListTile(
@@ -26,7 +26,7 @@ class _SearchButtonState extends State<SearchButton> {
           leading: IconButton(
               icon: Icon(Icons.menu),
               //iconSize: 30.0,
-              color: Colors.grey,
+              color: Colors.white,
               //highlightColor: Colors.grey,
               onPressed: () {
                 Navigator.push(context,
@@ -35,12 +35,12 @@ class _SearchButtonState extends State<SearchButton> {
           title: Text(
             'Search',
             style: TextStyle(
-                color: Colors.grey, fontFamily: 'Roboto', letterSpacing: 0.5),
+                color: Colors.white, fontFamily: 'Roboto', letterSpacing: 0.5),
           ),
           trailing: IconButton(
             icon: Icon(Icons.create_new_folder_outlined),
             //iconSize: 30.0,
-            color: Colors.grey,
+            color: Colors.white,
             //highlightColor: Colors.grey,
             onPressed: () {
               print('Folder clicked');
