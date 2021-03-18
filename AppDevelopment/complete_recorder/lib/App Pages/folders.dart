@@ -16,11 +16,13 @@ class _FoldersState extends State<Folders> {
         margin: EdgeInsets.fromLTRB(20, 5, 20, 5),
         padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
         decoration: BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20),bottom: Radius.circular(20),),
           border: Border(
-            top: BorderSide(width: 1.0, color: Colors.grey),
-            bottom: BorderSide(width: 1.0, color: Colors.grey),
-            right: BorderSide(width: 1.0, color: Colors.grey),
-            left: BorderSide(width: 1.0, color: Colors.grey),
+            top: BorderSide(width: 3.0, color: Colors.white70),
+            bottom: BorderSide(width: 3.0, color: Colors.white70),
+            right: BorderSide(width: 3.0, color: Colors.white70),
+            left: BorderSide(width: 3.0, color: Colors.white70),
           ),
         ),
         child: Column(
@@ -29,27 +31,7 @@ class _FoldersState extends State<Folders> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 IconButton(
-                  icon: PopupMenuButton(
-                      itemBuilder: (BuildContext bc) => [
-                        PopupMenuItem(child:
-                        Row(
-                            children: <Widget>[
-                              Text("Rename  "),
-                              Icon(Icons.drive_file_rename_outline),
-                            ]
-                        ),
-                        ),
-                        PopupMenuItem(child:
-                        Row(
-                            children: <Widget>[
-                              Text("Delete  "),
-                              Icon(Icons.delete_forever_rounded),
-                            ]
-                        ),
-                        ),
-                      ],
-                      child: Icon(Icons.folder_rounded)
-                  ),
+                  icon: Icon(Icons.folder_rounded),
                   iconSize: 80.0,
                   color: Colors.blue[500],
                   //highlightColor: Colors.grey,
@@ -62,27 +44,7 @@ class _FoldersState extends State<Folders> {
                   },
                 ),
                 IconButton(
-                  icon: PopupMenuButton(
-                      itemBuilder: (BuildContext bc) => [
-                        PopupMenuItem(child:
-                        Row(
-                            children: <Widget>[
-                              Text("Rename  "),
-                              Icon(Icons.drive_file_rename_outline),
-                            ]
-                        ),
-                        ),
-                        PopupMenuItem(child:
-                        Row(
-                            children: <Widget>[
-                              Text("Delete  "),
-                              Icon(Icons.delete_forever_rounded),
-                            ]
-                        ),
-                        ),
-                      ],
-                      child: Icon(Icons.folder_rounded)
-                  ),
+                  icon: Icon(Icons.folder_rounded),
                   iconSize: 80.0,
                   color: Colors.blue[500],
                   //highlightColor: Colors.grey,
@@ -95,26 +57,7 @@ class _FoldersState extends State<Folders> {
                   },
                 ),
                 IconButton(
-                  icon: PopupMenuButton(
-                      itemBuilder: (BuildContext bc) => [
-                        PopupMenuItem(child:
-                        Row(
-                            children: <Widget>[
-                              Text("Rename  "),
-                              Icon(Icons.drive_file_rename_outline),
-                            ]
-                        ),
-                        ),
-                        PopupMenuItem(child:
-                        Row(
-                            children: <Widget>[
-                              Text("Delete  "),
-                              Icon(Icons.delete_forever_rounded),
-                            ]
-                        ),
-                        ),
-                      ],
-                      child: Icon(Icons.folder_rounded)),
+                  icon: Icon(Icons.folder_rounded),
                   iconSize: 80.0,
                   color: Colors.blue[500],
                   //highlightColor: Colors.grey,
@@ -133,9 +76,9 @@ class _FoldersState extends State<Folders> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Text(
-                    'Music',
+                    'Choir!',
                     style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.white,
                         fontSize: 15.0,
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.bold),
@@ -143,15 +86,15 @@ class _FoldersState extends State<Folders> {
                   Text(
                     'School',
                     style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.white,
                         fontSize: 15.0,
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    'Grocery',
+                    'Anything',
                     style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.white,
                         fontSize: 15.0,
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.bold),
@@ -161,6 +104,5 @@ class _FoldersState extends State<Folders> {
         ),
       ),
     );
-
   }
 }

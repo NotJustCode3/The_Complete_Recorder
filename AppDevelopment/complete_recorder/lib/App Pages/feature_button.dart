@@ -22,13 +22,13 @@ class _FeatureButtonState extends State<FeatureButton> {
             },
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(10.0),
-                side: BorderSide(color: Colors.grey[700], width: 2.0)),
-            color: Colors.grey[700],
+                side: BorderSide(color: Colors.white70, width: 2.0)),
+            color: Colors.grey.withOpacity(0.3),
             highlightColor: Colors.red,
             child: Text(
               'All recordings',
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   //fontSize: 20.0,
                   // fontWeight: FontWeight.bold,
                   fontFamily: 'Roboto',
@@ -38,15 +38,15 @@ class _FeatureButtonState extends State<FeatureButton> {
           ),
           RaisedButton(
             onPressed: () {},
-            color: Colors.grey[700],
+            color: Colors.grey.withOpacity(0.3),
             highlightColor: Colors.red,
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(10.0),
-                side: BorderSide(color: Colors.grey[700], width: 2.0)),
+                side: BorderSide(color: Colors.white70, width: 2.0)),
             child: Text(
               'Folders',
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   //fontSize: 20.0,
                   //fontWeight: FontWeight.bold,
                   fontFamily: 'Roboto',
@@ -56,15 +56,15 @@ class _FeatureButtonState extends State<FeatureButton> {
           ),
           RaisedButton(
             onPressed: () {},
-            color: Colors.grey[700],
+            color: Colors.grey.withOpacity(0.3),
             highlightColor: Colors.red,
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(10.0),
-                side: BorderSide(color: Colors.grey[700], width: 2.0)),
+                side: BorderSide(color: Colors.white70, width: 2.0)),
             child: Text(
               'Feature 3',
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   //fontSize: 20.0,
                   //fontWeight: FontWeight.bold,
                   fontFamily: 'Roboto',
