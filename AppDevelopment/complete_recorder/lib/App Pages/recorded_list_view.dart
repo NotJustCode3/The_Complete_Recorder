@@ -185,12 +185,12 @@ class _RecordListViewState extends State<RecordListView> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget> [
                       Icon(
-                        Icons.edit,
+                        Icons.check_circle_rounded,
                         color: Colors.white,
                         size: 40.0,
                       ),
                       Text(
-                          ' Edit',
+                          ' Add to Library',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
