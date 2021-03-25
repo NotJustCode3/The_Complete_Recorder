@@ -26,15 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="Updating the recording page record button with a container. I also changed the container for the folders to be more rounded. Last but not least, I changed the search bar card onto any other color other than white.">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/new_folder.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/feature_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/feature_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/folders.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/folders.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/record_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/record_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/recording_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/recording_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/search_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/search_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/homepage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/homepage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/recorded_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/recorded_list_view.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +51,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1p9GBf2yFiEGP1ZTuTiklOGIFh3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

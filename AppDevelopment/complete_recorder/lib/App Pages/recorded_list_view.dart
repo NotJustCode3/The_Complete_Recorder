@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart'; //for datetime formatting
+import 'package:complete_recorder/App Pages/new_folder.dart';
 
 enum PlayerState { stopped, playing, paused }
 enum PlayingRouteState { speakers, earpiece }
@@ -84,23 +85,45 @@ class _RecordListViewState extends State<RecordListView> {
             onDismissed: (DismissDirection direction) {
               if (direction == DismissDirection.startToEnd) {
                 print("Add to favorite");
-              } else {
-                print('Remove item');
-              }
-              setState(() {
-                widget.records.removeAt(i);
-              });
-              Scaffold.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(
-                    "Recording Moved",
-                    style: TextStyle(
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.bold,
+                setState(() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NewPage(),
+                      settings: RouteSettings(
+                        arguments: widget.records[i],
+                      ),
+                    ),
+                  );
+                });
+                Scaffold.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      "Recording Moved",
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ),
-              );
+                );
+              } else {
+                print('Remove item');
+                setState(() {
+                  widget.records.removeAt(i);
+                  Scaffold.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        "Recording Removed",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  );
+                });
+              }
             },
             background: Container(
               color: Colors.greenAccent[700],
@@ -162,7 +185,7 @@ class _RecordListViewState extends State<RecordListView> {
                       FlatButton(
                           onPressed: () => Navigator.of(context).pop(true),
                           child: const Text(
-                            "Delete",
+                            "Yes",
                             style: TextStyle(
                               fontSize: 15.0,
                               fontWeight: FontWeight.bold,
