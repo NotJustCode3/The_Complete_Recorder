@@ -16,7 +16,7 @@ class _NewPageState extends State<NewPage> {
       appBar: new AppBar(
         title: new Text("Favorites"),
       ),
-      body: ExpansionTile(title: Text("New Recording 5", style: TextStyle(fontFamily: "Roboto", fontSize: 15.0,),),
+      body: ExpansionTile(title: Text("New Recording", style: TextStyle(fontFamily: "Roboto", fontSize: 15.0,),),
         subtitle: Text(
             "2021-03-24 02:58:56 PM"),
         children: [
