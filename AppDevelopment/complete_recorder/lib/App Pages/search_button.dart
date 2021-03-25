@@ -1,6 +1,10 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 import 'package:complete_recorder/homepage.dart';
 import 'package:complete_recorder/App Pages/search_brain.dart';
+import 'package:complete_recorder/App Pages/record_list.dart';
+import 'package:complete_recorder/App Pages/Search_brain_test.dart';
 
 class SearchButton extends StatefulWidget {
   @override
@@ -8,11 +12,16 @@ class SearchButton extends StatefulWidget {
 }
 
 class _SearchButtonState extends State<SearchButton> {
+  Stream<UnmodifiableListView<RecordList>> records; //need to revisit this
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        showSearch(context: context, delegate: DataSearch());
+        showSearch(
+          context: context,
+          delegate: DataSearch(records), //need to revisit this
+        );
       },
       child: Card(
         //creating a child relationship with the safe area to include our card widget

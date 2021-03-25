@@ -5,6 +5,8 @@ import 'package:path_provider/path_provider.dart';
 import 'package:complete_recorder/App Pages/recorded_list_view.dart';
 
 class RecordList extends StatefulWidget {
+  String get title => null; //need to revisit this
+
   // final String _title;
 
   // const RecordList({Key key, @required String title})
@@ -61,11 +63,10 @@ class _RecordListState extends State<RecordList> {
       body: Column(
         children: [
           Expanded(
-            child: RecordListView(
-              records: records,
-            )
-          ),
-          ],
+              child: RecordListView(
+            records: records,
+          )),
+        ],
       ),
     );
   }
