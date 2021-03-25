@@ -19,7 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="Dark mode theme in the splash screen" />
+    <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="Dark mode theme in the splash screen">
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/record_folders.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/record_name.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/The_Complete_Recorder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/The_Complete_Recorder.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/record_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/record_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/recorded_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/recorded_list_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/recording_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/recording_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,33 +148,45 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="100" y="108" width="1336" height="624" key="AVDManager/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1615837463141" />
-    <state width="1480" height="199" key="GridCell.Tab.0.bottom" timestamp="1615841219239">
+    <state x="1835" y="246" key="FileChooserDialogImpl" timestamp="1616262956342">
+      <screen x="1280" y="25" width="1920" height="999" />
+    </state>
+    <state x="1835" y="246" key="FileChooserDialogImpl/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1616262956342" />
+    <state width="1507" height="307" key="GridCell.Tab.0.bottom" timestamp="1616697325579">
       <screen x="1280" y="25" width="1920" height="1055" />
     </state>
     <state width="1287" height="214" key="GridCell.Tab.0.bottom/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1615803054971" />
-    <state width="1480" height="199" key="GridCell.Tab.0.bottom/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1615841219239" />
+    <state width="1507" height="307" key="GridCell.Tab.0.bottom/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1616697325579" />
     <state width="1287" height="214" key="GridCell.Tab.0.bottom/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1615810523352" />
+    <state width="1398" height="213" key="GridCell.Tab.0.bottom/0.25.1440.819@0.25.1440.819" timestamp="1616316558747" />
+    <state width="1398" height="260" key="GridCell.Tab.0.bottom/0.25.1440.875@0.25.1440.875" timestamp="1616663936766" />
     <state width="1491" height="208" key="GridCell.Tab.0.bottom/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1615839647751" />
-    <state width="1480" height="199" key="GridCell.Tab.0.center" timestamp="1615841219232">
+    <state width="1507" height="307" key="GridCell.Tab.0.center" timestamp="1616697325577">
       <screen x="1280" y="25" width="1920" height="1055" />
     </state>
     <state width="1287" height="214" key="GridCell.Tab.0.center/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1615803054969" />
-    <state width="1480" height="199" key="GridCell.Tab.0.center/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1615841219232" />
+    <state width="1507" height="307" key="GridCell.Tab.0.center/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1616697325577" />
     <state width="1287" height="214" key="GridCell.Tab.0.center/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1615810523351" />
+    <state width="1398" height="213" key="GridCell.Tab.0.center/0.25.1440.819@0.25.1440.819" timestamp="1616316558746" />
+    <state width="1398" height="260" key="GridCell.Tab.0.center/0.25.1440.875@0.25.1440.875" timestamp="1616663936766" />
     <state width="1491" height="208" key="GridCell.Tab.0.center/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1615839647751" />
-    <state width="1480" height="199" key="GridCell.Tab.0.left" timestamp="1615841219229">
+    <state width="1507" height="307" key="GridCell.Tab.0.left" timestamp="1616697325576">
       <screen x="1280" y="25" width="1920" height="1055" />
     </state>
     <state width="1287" height="214" key="GridCell.Tab.0.left/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1615803054968" />
-    <state width="1480" height="199" key="GridCell.Tab.0.left/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1615841219229" />
+    <state width="1507" height="307" key="GridCell.Tab.0.left/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1616697325576" />
     <state width="1287" height="214" key="GridCell.Tab.0.left/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1615810523351" />
+    <state width="1398" height="213" key="GridCell.Tab.0.left/0.25.1440.819@0.25.1440.819" timestamp="1616316558746" />
+    <state width="1398" height="260" key="GridCell.Tab.0.left/0.25.1440.875@0.25.1440.875" timestamp="1616663936766" />
     <state width="1491" height="208" key="GridCell.Tab.0.left/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1615839647751" />
-    <state width="1480" height="199" key="GridCell.Tab.0.right" timestamp="1615841219235">
+    <state width="1507" height="307" key="GridCell.Tab.0.right" timestamp="1616697325578">
       <screen x="1280" y="25" width="1920" height="1055" />
     </state>
     <state width="1287" height="214" key="GridCell.Tab.0.right/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1615803054970" />
-    <state width="1480" height="199" key="GridCell.Tab.0.right/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1615841219235" />
+    <state width="1507" height="307" key="GridCell.Tab.0.right/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1616697325578" />
     <state width="1287" height="214" key="GridCell.Tab.0.right/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1615810523352" />
+    <state width="1398" height="213" key="GridCell.Tab.0.right/0.25.1440.819@0.25.1440.819" timestamp="1616316558747" />
+    <state width="1398" height="260" key="GridCell.Tab.0.right/0.25.1440.875@0.25.1440.875" timestamp="1616663936766" />
     <state width="1491" height="208" key="GridCell.Tab.0.right/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1615839647751" />
     <state x="511" y="125" key="git4idea.branch.GitSmartOperationDialog" timestamp="1615837641651">
       <screen x="0" y="0" width="1536" height="824" />

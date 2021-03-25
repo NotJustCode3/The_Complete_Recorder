@@ -5,13 +5,6 @@ import 'package:path_provider/path_provider.dart';
 import 'package:complete_recorder/App Pages/recorded_list_view.dart';
 
 class RecordList extends StatefulWidget {
-  // final String _title;
-
-  // const RecordList({Key key, @required String title})
-  //     : assert(title != null),
-  //       _title = title,
-  //       super(key: key);
-
   @override
   _RecordListState createState() => _RecordListState();
 }
