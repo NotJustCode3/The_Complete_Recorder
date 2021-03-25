@@ -25,6 +25,7 @@ about 15 recordings a week, sifting through a pile of recordings and playing eac
   - Scrum 4 - [Scrum Report Out #4](https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Scrums/Scrum%20Report%20Out%20%234.pdf)
   - Scrum 5 - [Scrum Report Out #5 - Bazaar](https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Scrums/Scrum%20Report%20Out%20%235%20-%20Bazaar.pdf)
   - Scrum 6 - [Scrum Report Out #6](https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Scrums/Scrum%20Report%20Out%20%236.pdf)
+  - Scrum 7 - [Scrum Report Out #7 - Bazaar](https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Scrums/Scrum%20Report%20Out%20%237%20-%20Bazaar.pdf)
   
 **3. Github IO :spider_web:**
   - Fancy [IO Webpage](https://zainshafiq.github.io/NotJustCode/) Webpage.
