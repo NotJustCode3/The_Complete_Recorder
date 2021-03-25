@@ -110,7 +110,7 @@ class _RecordListViewState extends State<RecordListView> {
               } else {
                 print('Remove item');
                 setState(() {
-                  widget.records.removeAt(i);
+                  widget.records.remove(i);
                   Scaffold.of(context).showSnackBar(
                     SnackBar(
                       content: Text(
