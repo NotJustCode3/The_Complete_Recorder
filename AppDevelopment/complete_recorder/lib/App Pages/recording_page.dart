@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_audio_recorder/flutter_audio_recorder.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:intl/intl.dart'; //for datetime formatting
 import 'package:complete_recorder/App Pages/record_list.dart';
 
 class RecordPage extends StatefulWidget {
@@ -179,10 +180,15 @@ class _RecordPageState extends State<RecordPage> {
 
   _initRecorder() async {
     Directory appDirectory = await getApplicationDocumentsDirectory();
-    String filePath = appDirectory.path +
-        '/' +
-        DateTime.now().millisecondsSinceEpoch.toString() +
-        '.aac';
+    final currentDateTime = DateTime.now().millisecondsSinceEpoch.toString();
+    DateTime recordedDate = DateTime.fromMillisecondsSinceEpoch(int.parse(currentDateTime));
+    final DateFormat formatter = DateFormat('yyyy-MMM-dd-hh:mm:ss');
+    final String formatted = formatter.format(recordedDate);
+    // print('What do you want to name your recording?');
+    // String recordName = stdin.readLineSync();
+    String filePath = appDirectory.path + '/' + currentDateTime + '-' + currentDateTime + '.aac';
+    // File(appDirectory.path + '/' + currentDateTime + '.aac')
+    // .rename(appDirectory.path + '/' + 'testrename.aac');
 
     audioRecorder =
         FlutterAudioRecorder(filePath, audioFormat: AudioFormat.AAC);
