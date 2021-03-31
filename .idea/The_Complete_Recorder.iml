@@ -6,16 +6,22 @@
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/build" />
+      <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/audioplayers/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/audioplayers/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/audioplayers/build" />
+      <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/audioplayers/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/audioplayers/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/audioplayers/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/flutter_audio_recorder/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/flutter_audio_recorder/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/flutter_audio_recorder/build" />
+      <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/flutter_audio_recorder/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/flutter_audio_recorder/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/flutter_audio_recorder/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/path_provider/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/path_provider/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/path_provider/build" />
+      <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/path_provider/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/path_provider/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/AppDevelopment/complete_recorder/ios/.symlinks/plugins/path_provider/example/build" />
     </content>
