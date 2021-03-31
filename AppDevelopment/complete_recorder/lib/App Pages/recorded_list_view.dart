@@ -299,8 +299,7 @@ class _RecordListViewState extends State<RecordListView> {
                 child: ExpansionTile(
                   title: Text('${(((widget.records.elementAt(i)).split('-').last).split('.').first)}'),
                   // title:  Text(titleController.text),//Text('New Recording ${widget.records.length - i}'),
-                  subtitle: Text(
-                      _getDateFromFilePath(filePath: widget.records.elementAt(i))),
+                  // subtitle: Text(_getDateFromFilePath(filePath: widget.records.elementAt(i))),
                   onExpansionChanged: ((newState) {
                     if (newState) {
                       setState(() {
@@ -386,15 +385,15 @@ class _RecordListViewState extends State<RecordListView> {
     );
   }
 
-  String _getDateFromFilePath({@required String filePath}) {
-    String fromEpoch = filePath.substring(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('-'));
-    DateTime recordedDate = DateTime.fromMillisecondsSinceEpoch(int.parse(fromEpoch));
-
-    final DateFormat formatter = DateFormat('yyyy-MM-dd hh:mm:ss a');
-    final String formatted = formatter.format(recordedDate);
-
-    return (formatted); //('$year-$month-$day $hour:$minute:$second');
-  }
+  // String _getDateFromFilePath({@required String filePath}) {
+  //   String fromEpoch = filePath.substring(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('-'));
+  //   DateTime recordedDate = DateTime.fromMillisecondsSinceEpoch(int.parse(fromEpoch));
+  //
+  //   final DateFormat formatter = DateFormat('yyyy-MM-dd hh:mm:ss a');
+  //   final String formatted = formatter.format(recordedDate);
+  //
+  //   return (formatted); //('$year-$month-$day $hour:$minute:$second');
+  // }
 
   void _initAudioPlayer() {
     _audioPlayer = AudioPlayer(mode: mode);

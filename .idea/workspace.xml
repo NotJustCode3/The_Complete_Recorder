@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="Adding to library dismissable">
-      <change beforePath="$PROJECT_DIR$/.idea/The_Complete_Recorder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/The_Complete_Recorder.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="fixing red background in the recording list">
       <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/recorded_list_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/recorded_list_view.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616699309014</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixing red background in the recording list">
+      <created>1617231437768</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1617231437768</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,7 +146,8 @@
     <MESSAGE value="recording play/pause/stop buttons + functionality&#10;slider to interact with recording&#10;time: position + duration" />
     <MESSAGE value="Dark mode theme in the splash screen" />
     <MESSAGE value="Updating the recording page record button with a container. I also changed the container for the folders to be more rounded. Last but not least, I changed the search bar card onto any other color other than white." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating the recording page record button with a container. I also changed the container for the folders to be more rounded. Last but not least, I changed the search bar card onto any other color other than white." />
+    <MESSAGE value="fixing red background in the recording list" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing red background in the recording list" />
   </component>
   <component name="WindowStateProjectService">
     <state x="100" y="108" width="1336" height="624" key="AVDManager" timestamp="1616084648432">
