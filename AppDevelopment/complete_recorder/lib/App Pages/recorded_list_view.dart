@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:focused_menu/focused_menu.dart';
 import 'package:focused_menu/modals.dart';
 import 'package:intl/intl.dart'; //for datetime formatting
+import 'package:complete_recorder/App Pages/record_list.dart';
 import 'package:path_provider/path_provider.dart';
 
 enum PlayerState { stopped, playing, paused }
@@ -84,12 +85,10 @@ class _RecordListViewState extends State<RecordListView> {
       child: (ListView.builder(
         itemCount: widget.records.length,
         shrinkWrap: true,
-        reverse: true,
+        // reverse: true,
         itemBuilder: (BuildContext context, int i) {
-
           final records = widget.records[i];
           return GestureDetector(
-            // onLongPress: ,
             child: FocusedMenuHolder(
               onPressed: (){},
               menuItems: <FocusedMenuItem>[
@@ -132,22 +131,32 @@ class _RecordListViewState extends State<RecordListView> {
                                 onPressed: () {
                                   if (_keyDialogForm.currentState.validate()) {
                                     _keyDialogForm.currentState.save();
-                                    //   final dir = Directory(widget.records[i]);
-                                    //   dir.deleteSync(recursive:true);
 
-                                    // var file = (appDirectory.path + '/' + titleController.text + '.aac');
-                                    // return dir.renameSync(file);
+                                    // setState(() {
+                                    //   MaterialPageRoute(
+                                    //       builder: (context) => RecordList());
+                                    // });
 
                                     Navigator.pop(context);
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => RecordList()));
                                   }
-
+                                  // setState(() {
+                                  //   final path = (Directory(widget.records[i]).path);
+                                  //   print('Original path: $path');
+                                  //   var lastSeparator = path.lastIndexOf('-');
+                                  //   var newPath = path.substring(0, lastSeparator + 1) + (titleController.text).toString() +'.aac';
+                                  //   print('Original path: $newPath');
+                                  //   File(widget.records[i]).renameSync(newPath);
+                                  // });
                                   final path = (Directory(widget.records[i]).path);
                                   print('Original path: $path');
                                   var lastSeparator = path.lastIndexOf('-');
                                   var newPath = path.substring(0, lastSeparator + 1) + (titleController.text).toString() +'.aac';
                                   print('Original path: $newPath');
-                                  setState(() {});
-                                  return File(widget.records[i]).renameSync(newPath);
+                                  File(widget.records[i]).renameSync(newPath);
 
                                 },
 
@@ -299,7 +308,7 @@ class _RecordListViewState extends State<RecordListView> {
                 child: ExpansionTile(
                   title: Text('${(((widget.records.elementAt(i)).split('-').last).split('.').first)}'),
                   // title:  Text(titleController.text),//Text('New Recording ${widget.records.length - i}'),
-                  // subtitle: Text(_getDateFromFilePath(filePath: widget.records.elementAt(i))),
+                  subtitle: Text(_getDateFromFilePath(filePath: widget.records.elementAt(i))),
                   onExpansionChanged: ((newState) {
                     if (newState) {
                       setState(() {
@@ -385,15 +394,15 @@ class _RecordListViewState extends State<RecordListView> {
     );
   }
 
-  // String _getDateFromFilePath({@required String filePath}) {
-  //   String fromEpoch = filePath.substring(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('-'));
-  //   DateTime recordedDate = DateTime.fromMillisecondsSinceEpoch(int.parse(fromEpoch));
-  //
-  //   final DateFormat formatter = DateFormat('yyyy-MM-dd hh:mm:ss a');
-  //   final String formatted = formatter.format(recordedDate);
-  //
-  //   return (formatted); //('$year-$month-$day $hour:$minute:$second');
-  // }
+  String _getDateFromFilePath({@required String filePath}) {
+    String fromEpoch = filePath.substring(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('-'));
+    DateTime recordedDate = DateTime.fromMillisecondsSinceEpoch(int.parse(fromEpoch));
+
+    final DateFormat formatter = DateFormat('yyyy-MM-dd hh:mm:ss a');
+    final String formatted = formatter.format(recordedDate);
+
+    return (formatted); //('$year-$month-$day $hour:$minute:$second');
+  }
 
   void _initAudioPlayer() {
     _audioPlayer = AudioPlayer(mode: mode);
