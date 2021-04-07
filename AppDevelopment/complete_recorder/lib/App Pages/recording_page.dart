@@ -5,6 +5,7 @@ import 'package:flutter_audio_recorder/flutter_audio_recorder.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:intl/intl.dart'; //for datetime formatting
 import 'package:complete_recorder/App Pages/record_list.dart';
+import 'package:complete_recorder/App Pages/recorded_list_view.dart';
 
 class RecordPage extends StatefulWidget {
   final Function onSaved;
