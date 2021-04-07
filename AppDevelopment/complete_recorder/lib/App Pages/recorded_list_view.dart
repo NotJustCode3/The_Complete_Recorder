@@ -18,8 +18,11 @@ class RecordListView extends StatefulWidget {
   final PlayerMode mode;
 
   const RecordListView({
-    Key key, this.mode = PlayerMode.MEDIA_PLAYER, this.records, children,})
-      : super(key: key);
+    Key key,
+    this.mode = PlayerMode.MEDIA_PLAYER,
+    this.records,
+    children,
+  }) : super(key: key);
 
   @override
   _RecordListViewState createState() {
@@ -35,7 +38,6 @@ class _RecordListViewState extends State<RecordListView> {
   List<String> finalRecords = [];
   List<String> finale = [];
   Directory appDirectory;
-
 
   final TextEditingController titleController = new TextEditingController();
   final GlobalKey<FormState> _keyDialogForm = new GlobalKey<FormState>();
@@ -82,7 +84,9 @@ class _RecordListViewState extends State<RecordListView> {
         items = records;
         records = records.toList();
         records.sort((b, a) => a.compareTo(b));
-        finalRecords = records.map((f) => f.split('-').last).toList();  //f.split("/1")[0]).toList();
+        finalRecords = records
+            .map((f) => f.split('-').last)
+            .toList(); //f.split("/1")[0]).toList();
         finale = finalRecords;
       });
     });
@@ -101,12 +105,13 @@ class _RecordListViewState extends State<RecordListView> {
   }
 
   void filterSearchResults(String query) {
-    if(query.isNotEmpty) {
+    if (query.isNotEmpty) {
       setState(() {
-        finale = (finalRecords).where((u) => (u.toLowerCase().contains(query.toLowerCase()))).toList();
+        finale = (finalRecords)
+            .where((u) => (u.toLowerCase().contains(query.toLowerCase())))
+            .toList();
       });
-    }
-    else{
+    } else {
       setState(() {
         finale = finalRecords;
       });
@@ -127,50 +132,26 @@ class _RecordListViewState extends State<RecordListView> {
       child: Container(
         child: Column(
           children: <Widget>[
-            Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              onChanged: (value) {
-                filterSearchResults(value);
-                // finalRecords = widget.records.map((f) => f.split('-').last).toList();  //f.split("/1")[0]).toList();
-                // if(value.isNotEmpty) {
-                //   setState(() {
-                //     finale = (finalRecords).where((u) => (u.toLowerCase().contains(value.toLowerCase()))).toList();
-                //     print(finale);
-                //   });
-                // }
-                // else{
-                //   setState(() {
-                //     finale = finalRecords;
-                //   });
-                // }
-                // return finale;
-              },
-              controller: editingController,
-              decoration: InputDecoration(
-                  labelText: "Search",
-                  hintText: "Search",
-                  prefixIcon: Icon(Icons.search),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(25.0)))),
-            ),
-          ),
+            Padding(padding: const EdgeInsets.all(8.0), child: Search()),
             Expanded(
               child: ListView.builder(
                 itemCount: finale.length,
                 shrinkWrap: true,
                 // reverse: true,
                 itemBuilder: (BuildContext context, int i) {
-                  final records = finale[i];//widget.records[i];
+                  final records = finale[i]; //widget.records[i];
                   return GestureDetector(
                     child: FocusedMenuHolder(
-                      onPressed: (){},
+                      onPressed: () {},
                       menuItems: <FocusedMenuItem>[
                         FocusedMenuItem(
-                          title: Text("Rename", style: TextStyle(color: Colors.white),),
+                          title: Text(
+                            "Rename",
+                            style: TextStyle(color: Colors.white),
+                          ),
                           trailingIcon: Icon(Icons.edit),
                           backgroundColor: Colors.grey,
-                          onPressed: () async{
+                          onPressed: () async {
                             return await showDialog(
                                 context: context,
                                 builder: (BuildContext context) {
@@ -203,22 +184,31 @@ class _RecordListViewState extends State<RecordListView> {
                                     actions: <Widget>[
                                       FlatButton(
                                         onPressed: () {
-                                          if (_keyDialogForm.currentState.validate()) {
+                                          if (_keyDialogForm.currentState
+                                              .validate()) {
                                             _keyDialogForm.currentState.save();
                                             Navigator.pop(context);
                                             Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
-                                                    builder: (context) => RecordList()));
+                                                    builder: (context) =>
+                                                        RecordList()));
                                           }
-                                          final path = (Directory(widget.records[i]).path);
+                                          final path =
+                                              (Directory(widget.records[i])
+                                                  .path);
                                           print('Original path: $path');
-                                          var lastSeparator = path.lastIndexOf('-');
-                                          var newPath = path.substring(0, lastSeparator + 1) + (titleController.text).toString() +'.aac';
+                                          var lastSeparator =
+                                              path.lastIndexOf('-');
+                                          var newPath = path.substring(
+                                                  0, lastSeparator + 1) +
+                                              (titleController.text)
+                                                  .toString() +
+                                              '.aac';
                                           print('Original path: $newPath');
-                                          File(widget.records[i]).renameSync(newPath);
+                                          File(widget.records[i])
+                                              .renameSync(newPath);
                                         },
-
                                         child: Text('Save'),
                                         color: Colors.blue,
                                       ),
@@ -230,7 +220,8 @@ class _RecordListViewState extends State<RecordListView> {
                                     ],
                                   );
                                 });
-                          },),
+                          },
+                        ),
                       ],
                       child: Dismissible(
                         key: Key(records),
@@ -253,20 +244,18 @@ class _RecordListViewState extends State<RecordListView> {
                             padding: EdgeInsets.only(left: 15.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
-                              children: <Widget> [
+                              children: <Widget>[
                                 Icon(
                                   Icons.check_circle_rounded,
                                   color: Colors.white,
                                   size: 40.0,
                                 ),
-                                Text(
-                                    ' Add to Library',
+                                Text(' Add to Library',
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15.0,
-                                    )
-                                ),
+                                    )),
                               ],
                             ),
                           ),
@@ -277,15 +266,13 @@ class _RecordListViewState extends State<RecordListView> {
                             padding: EdgeInsets.only(right: 15.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
-                              children: <Widget> [
-                                Text(
-                                    'Delete ',
+                              children: <Widget>[
+                                Text('Delete ',
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 15.0,
-                                    )
-                                ),
+                                    )),
                                 Icon(
                                   Icons.delete,
                                   color: Colors.white,
@@ -296,21 +283,22 @@ class _RecordListViewState extends State<RecordListView> {
                           ),
                         ),
                         confirmDismiss: (direction) async {
-                          if (direction == DismissDirection.endToStart)  {
+                          if (direction == DismissDirection.endToStart) {
                             return await showDialog(
                                 context: context,
                                 builder: (BuildContext context) {
                                   return AlertDialog(
                                     title: const Text("Remove Confirmation"),
                                     content: Text(
-                                        "Are you sure you want to delete this recording?"),//widget.records.removeAt(i), ${widget.records[i]}
+                                        "Are you sure you want to delete this recording?"), //widget.records.removeAt(i), ${widget.records[i]}
                                     actions: <Widget>[
                                       FlatButton(
                                         child: Text(
                                           "Cancel",
                                           style: TextStyle(color: Colors.black),
                                         ),
-                                        onPressed: () => Navigator.of(context).pop(),
+                                        onPressed: () =>
+                                            Navigator.of(context).pop(),
                                       ),
                                       FlatButton(
                                         child: Text(
@@ -319,8 +307,9 @@ class _RecordListViewState extends State<RecordListView> {
                                         ),
                                         onPressed: () {
                                           // TODO: Delete the item from DB etc..
-                                          final dir = Directory(widget.records[i]);
-                                          dir.deleteSync(recursive:true);
+                                          final dir =
+                                              Directory(widget.records[i]);
+                                          dir.deleteSync(recursive: true);
                                           setState(() {
                                             widget.records.removeAt(i);
                                           });
@@ -338,18 +327,14 @@ class _RecordListViewState extends State<RecordListView> {
                                     title: Form(
                                       key: _keyDialogForm,
                                       child: Column(
-                                        children: <Widget>[
-
-                                        ],
+                                        children: <Widget>[],
                                       ),
                                     ),
                                     actions: <Widget>[
                                       FlatButton(
                                         onPressed: () {
-                                            Navigator.pop(context);
-
+                                          Navigator.pop(context);
                                         },
-
                                         child: Text('Move'),
                                         color: Colors.blue,
                                       ),
@@ -366,8 +351,10 @@ class _RecordListViewState extends State<RecordListView> {
                         },
                         child: ExpansionTile(
                           // title: Text('${(((finale.elementAt(i)).split('-').last).split('.').first)}'),
-                          title:  Text('${(finale[i]).split('.').first}'),//Text('New Recording ${widget.records.length - i}'),
-                          subtitle: Text(_getDateFromFilePath(filePath: widget.records.elementAt(i))),
+                          title: Text(
+                              '${(finale[i]).split('.').first}'), //Text('New Recording ${widget.records.length - i}'),
+                          subtitle: Text(_getDateFromFilePath(
+                              filePath: widget.records.elementAt(i))),
                           onExpansionChanged: ((newState) {
                             if (newState) {
                               setState(() {
@@ -381,7 +368,11 @@ class _RecordListViewState extends State<RecordListView> {
                               children: [
                                 IconButton(
                                   key: Key('play_button'),
-                                  onPressed: _isPlaying ? null : () => _play(filePath: widget.records.elementAt(i), index: i),
+                                  onPressed: _isPlaying
+                                      ? null
+                                      : () => _play(
+                                          filePath: widget.records.elementAt(i),
+                                          index: i),
                                   iconSize: 64.0,
                                   icon: Icon(Icons.play_arrow),
                                   color: Colors.cyan,
@@ -395,7 +386,9 @@ class _RecordListViewState extends State<RecordListView> {
                                 ),
                                 IconButton(
                                   key: Key('stop_button'),
-                                  onPressed: _isPlaying || _isPaused ? () => _stop() : null,
+                                  onPressed: _isPlaying || _isPaused
+                                      ? () => _stop()
+                                      : null,
                                   iconSize: 64.0,
                                   icon: Icon(Icons.stop),
                                   color: Colors.cyan,
@@ -419,15 +412,18 @@ class _RecordListViewState extends State<RecordListView> {
                                     children: [
                                       Slider(
                                         onChanged: (v) {
-                                          final Position = v * _duration.inMilliseconds;
-                                          _audioPlayer
-                                              .seek(Duration(milliseconds: Position.round()));
+                                          final Position =
+                                              v * _duration.inMilliseconds;
+                                          _audioPlayer.seek(Duration(
+                                              milliseconds: Position.round()));
                                         },
                                         value: (_position != null &&
-                                            _duration != null &&
-                                            _position.inMilliseconds > 0 &&
-                                            _position.inMilliseconds < _duration.inMilliseconds)
-                                            ? _position.inMilliseconds / _duration.inMilliseconds
+                                                _duration != null &&
+                                                _position.inMilliseconds > 0 &&
+                                                _position.inMilliseconds <
+                                                    _duration.inMilliseconds)
+                                            ? _position.inMilliseconds /
+                                                _duration.inMilliseconds
                                             : 0.0,
                                       ),
                                     ],
@@ -437,8 +433,8 @@ class _RecordListViewState extends State<RecordListView> {
                                   _position != null
                                       ? '${_positionText ?? ''} / ${_durationText ?? ''}'
                                       : _duration != null
-                                      ? _durationText
-                                      : '',
+                                          ? _durationText
+                                          : '',
                                   style: TextStyle(fontSize: 24.0),
                                 ),
                               ],
@@ -458,13 +454,43 @@ class _RecordListViewState extends State<RecordListView> {
   }
 
   String _getDateFromFilePath({@required String filePath}) {
-    String fromEpoch = filePath.substring(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('-'));
-    DateTime recordedDate = DateTime.fromMillisecondsSinceEpoch(int.parse(fromEpoch));
+    String fromEpoch = filePath.substring(
+        filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('-'));
+    DateTime recordedDate =
+        DateTime.fromMillisecondsSinceEpoch(int.parse(fromEpoch));
 
     final DateFormat formatter = DateFormat('yyyy-MM-dd hh:mm:ss a');
     final String formatted = formatter.format(recordedDate);
 
     return (formatted); //('$year-$month-$day $hour:$minute:$second');
+  }
+
+  Widget Search() {
+    return TextField(
+      onChanged: (value) {
+        filterSearchResults(value);
+        // finalRecords = widget.records.map((f) => f.split('-').last).toList();  //f.split("/1")[0]).toList();
+        // if(value.isNotEmpty) {
+        //   setState(() {
+        //     finale = (finalRecords).where((u) => (u.toLowerCase().contains(value.toLowerCase()))).toList();
+        //     print(finale);
+        //   });
+        // }
+        // else{
+        //   setState(() {
+        //     finale = finalRecords;
+        //   });
+        // }
+        // return finale;
+      },
+      controller: editingController,
+      decoration: InputDecoration(
+          labelText: "Search",
+          hintText: "Search",
+          prefixIcon: Icon(Icons.search),
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(25.0)))),
+    );
   }
 
   void _initAudioPlayer() {
@@ -496,16 +522,16 @@ class _RecordListViewState extends State<RecordListView> {
 
     _positionSubscription =
         _audioPlayer.onAudioPositionChanged.listen((p) => setState(() {
-          _position = p;
-        }));
+              _position = p;
+            }));
 
     _playerCompleteSubscription =
         _audioPlayer.onPlayerCompletion.listen((event) {
-          _stop();
-          setState(() {
-            _position = _duration;
-          });
-        });
+      _stop();
+      setState(() {
+        _position = _duration;
+      });
+    });
 
     _playerErrorSubscription = _audioPlayer.onPlayerError.listen((msg) {
       print('audioPlayer error : $msg');
@@ -518,8 +544,8 @@ class _RecordListViewState extends State<RecordListView> {
 
     _playerControlCommandSubscription =
         _audioPlayer.onPlayerCommand.listen((command) {
-          print('command');
-        });
+      print('command');
+    });
 
     // _audioPlayer.onPlayerStateChanged.listen((state) {
     //   if (!mounted) return;
@@ -538,12 +564,13 @@ class _RecordListViewState extends State<RecordListView> {
 
   Future<int> _play({@required String filePath, @required int index}) async {
     final playPosition = (_position != null &&
-        _duration != null &&
-        _position.inMilliseconds > 0 &&
-        _position.inMilliseconds < _duration.inMilliseconds)
+            _duration != null &&
+            _position.inMilliseconds > 0 &&
+            _position.inMilliseconds < _duration.inMilliseconds)
         ? _position
         : null;
-    final result = await _audioPlayer.play(filePath, isLocal: true, position: playPosition);
+    final result = await _audioPlayer.play(filePath,
+        isLocal: true, position: playPosition);
     if (result == 1) setState(() => _playerState = PlayerState.playing);
 
     // default playback rate is 1.0
@@ -570,7 +597,4 @@ class _RecordListViewState extends State<RecordListView> {
     }
     return result;
   }
-
-
 }
-

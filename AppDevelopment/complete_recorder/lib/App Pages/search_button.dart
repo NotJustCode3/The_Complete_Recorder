@@ -1,8 +1,10 @@
-import 'package:complete_recorder/App%20Pages/recorded_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:complete_recorder/homepage.dart';
 import 'package:complete_recorder/App Pages/search_brain.dart';
 import 'package:complete_recorder/App Pages/record_list.dart';
+import 'package:complete_recorder/App Pages/recorded_list_view.dart';
+
+//Search search = Search();
 
 class SearchButton extends StatefulWidget {
   @override
@@ -14,8 +16,8 @@ class _SearchButtonState extends State<SearchButton> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => RecordList()));
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => RecordList()));
       },
       child: Card(
         //creating a child relationship with the safe area to include our card widget

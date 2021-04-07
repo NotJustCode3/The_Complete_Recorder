@@ -17,10 +17,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   //object declaration
   Directory
-  appDirectory; //we may need this to store the recordings in a directory
+      appDirectory; //we may need this to store the recordings in a directory
   Stream<FileSystemEntity> fileStream; //we may this to play back recordings
   List<String>
-  records; //this looks like an array that we may use to give recording names
+      records; //this looks like an array that we may use to give recording names
 
   //not too sure what they do yet
   @override
@@ -50,7 +50,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF0A0E21), //Colors.white, //the background color of the scaffold is white
+      backgroundColor: Color(
+          0xFF0A0E21), //Colors.white, //the background color of the scaffold is white
       body: SafeArea(
         //creating a sfe area to start drawing elements on to the scaffold widget
         child: Column(
@@ -78,7 +79,7 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                 child: Align(
                   alignment: Alignment.topLeft,
-                  child: Text(
+                  /*child: Text(
                     'Most Recent',
                     style: TextStyle(
                       letterSpacing: 0.5,
@@ -86,21 +87,21 @@ class _HomePageState extends State<HomePage> {
                       fontSize: 16,
                       color: Colors.white,
                     ),
-                  ),
+                  ),*/
                 ),
               ),
             ),
 
-            Expanded(
+            /*Expanded(
               flex: 0,
               child: Folders(),
-            ),
+            ),*/
 
             Expanded(
-                flex: 2,
-                child: RecordPage(
-                  onSaved: _onRecordComplete,
-                ),
+              flex: 2,
+              child: RecordPage(
+                onSaved: _onRecordComplete,
+              ),
             ),
           ],
         ),
