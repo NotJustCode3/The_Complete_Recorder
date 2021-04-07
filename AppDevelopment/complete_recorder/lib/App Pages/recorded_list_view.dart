@@ -115,344 +115,317 @@ class _RecordListViewState extends State<RecordListView> {
 
   @override
   Widget build(BuildContext context) {
-    // finalRecords = widget.records.map((f) => f.split('-').last).toList();  //f.split("/1")[0]).toList();
-    // setState(() {
-    //   finale = finalRecords;
-    // });
-    // print(finale);
-    // print(finale);
-    // finale.clear();
-    // print(finalRecords);
-    return Center(
-      child: Container(
-        child: Column(
-          children: <Widget>[
-            Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              onChanged: (value) {
-                filterSearchResults(value);
-                // finalRecords = widget.records.map((f) => f.split('-').last).toList();  //f.split("/1")[0]).toList();
-                // if(value.isNotEmpty) {
-                //   setState(() {
-                //     finale = (finalRecords).where((u) => (u.toLowerCase().contains(value.toLowerCase()))).toList();
-                //     print(finale);
-                //   });
-                // }
-                // else{
-                //   setState(() {
-                //     finale = finalRecords;
-                //   });
-                // }
-                // return finale;
-              },
-              controller: editingController,
-              decoration: InputDecoration(
-                  labelText: "Search",
-                  hintText: "Search",
-                  prefixIcon: Icon(Icons.search),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(25.0)))),
-            ),
+    return Container(
+      child: Column(
+        children: <Widget>[
+          Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: TextField(
+            onChanged: (value) {
+              filterSearchResults(value);
+            },
+            controller: editingController,
+            decoration: InputDecoration(
+                labelText: "Search",
+                hintText: "Search",
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(25.0)))),
           ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: finale.length,
-                shrinkWrap: true,
-                // reverse: true,
-                itemBuilder: (BuildContext context, int i) {
-                  final records = finale[i];//widget.records[i];
-                  return GestureDetector(
-                    child: FocusedMenuHolder(
-                      onPressed: (){},
-                      menuItems: <FocusedMenuItem>[
-                        FocusedMenuItem(
-                          title: Text("Rename", style: TextStyle(color: Colors.white),),
-                          trailingIcon: Icon(Icons.edit),
-                          backgroundColor: Colors.grey,
-                          onPressed: () async{
-                            return await showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    title: Form(
-                                      key: _keyDialogForm,
-                                      child: Column(
-                                        children: <Widget>[
-                                          TextFormField(
-                                            decoration: const InputDecoration(
-                                              icon: Icon(Icons.ac_unit),
-                                            ),
-                                            maxLength: 30,
-                                            textAlign: TextAlign.center,
-                                            onSaved: (val) {
-                                              titleController.text = val;
-                                              setState(() {});
-                                            },
-                                            autovalidate: true,
-                                            validator: (value) {
-                                              if (value.isEmpty) {
-                                                return 'Enter Title Name';
-                                              }
-                                              return null;
-                                            },
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                    actions: <Widget>[
-                                      FlatButton(
-                                        onPressed: () {
-                                          if (_keyDialogForm.currentState.validate()) {
-                                            _keyDialogForm.currentState.save();
-                                            Navigator.pop(context);
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) => RecordList()));
+        ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: finale.length,
+              shrinkWrap: true,
+              // reverse: true,
+              itemBuilder: (BuildContext context, int i) {
+                final records = finale[i];//widget.records[i];
+                return FocusedMenuHolder(
+                  onPressed: (){},
+                  menuItems: <FocusedMenuItem>[
+                    FocusedMenuItem(
+                      title: Text("Rename", style: TextStyle(color: Colors.white),),
+                      trailingIcon: Icon(Icons.edit),
+                      backgroundColor: Colors.grey,
+                      onPressed: () async{
+                        return await showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Form(
+                                  key: _keyDialogForm,
+                                  child: Column(
+                                    children: <Widget>[
+                                      TextFormField(
+                                        decoration: const InputDecoration(
+                                          icon: Icon(Icons.ac_unit),
+                                        ),
+                                        maxLength: 30,
+                                        textAlign: TextAlign.center,
+                                        onSaved: (val) {
+                                          titleController.text = val;
+                                          setState(() {});
+                                        },
+                                        autovalidate: true,
+                                        validator: (value) {
+                                          if (value.isEmpty) {
+                                            return 'Enter Title Name';
                                           }
-                                          final path = (Directory(widget.records[i]).path);
-                                          print('Original path: $path');
-                                          var lastSeparator = path.lastIndexOf('-');
-                                          var newPath = path.substring(0, lastSeparator + 1) + (titleController.text).toString() +'.aac';
-                                          print('Original path: $newPath');
-                                          File(widget.records[i]).renameSync(newPath);
+                                          return null;
                                         },
-
-                                        child: Text('Save'),
-                                        color: Colors.blue,
-                                      ),
-                                      FlatButton(
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                          },
-                                          child: Text('Cancel')),
-                                    ],
-                                  );
-                                });
-                          },),
-                      ],
-                      child: Dismissible(
-                        key: Key(records),
-                        onDismissed: (DismissDirection direction) {
-                          Scaffold.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                "Change Complete",
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                        background: Container(
-                          color: Colors.greenAccent[700],
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 15.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: <Widget> [
-                                Icon(
-                                  Icons.check_circle_rounded,
-                                  color: Colors.white,
-                                  size: 40.0,
-                                ),
-                                Text(
-                                    ' Add to Library',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15.0,
-                                    )
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        secondaryBackground: Container(
-                          color: Colors.redAccent[700],
-                          child: Padding(
-                            padding: EdgeInsets.only(right: 15.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: <Widget> [
-                                Text(
-                                    'Delete ',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15.0,
-                                    )
-                                ),
-                                Icon(
-                                  Icons.delete,
-                                  color: Colors.white,
-                                  size: 40.0,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        confirmDismiss: (direction) async {
-                          if (direction == DismissDirection.endToStart)  {
-                            return await showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    title: const Text("Remove Confirmation"),
-                                    content: Text(
-                                        "Are you sure you want to delete this recording?"),//widget.records.removeAt(i), ${widget.records[i]}
-                                    actions: <Widget>[
-                                      FlatButton(
-                                        child: Text(
-                                          "Cancel",
-                                          style: TextStyle(color: Colors.black),
-                                        ),
-                                        onPressed: () => Navigator.of(context).pop(),
-                                      ),
-                                      FlatButton(
-                                        child: Text(
-                                          "Delete",
-                                          style: TextStyle(color: Colors.red),
-                                        ),
-                                        onPressed: () {
-                                          // TODO: Delete the item from DB etc..
-                                          final dir = Directory(widget.records[i]);
-                                          dir.deleteSync(recursive:true);
-                                          setState(() {
-                                            widget.records.removeAt(i);
-                                          });
-                                          Navigator.of(context).pop();
-                                        },
-                                      ),
-                                    ],
-                                  );
-                                });
-                          } else {
-                            return await showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    title: Form(
-                                      key: _keyDialogForm,
-                                      child: Column(
-                                        children: <Widget>[
-
-                                        ],
-                                      ),
-                                    ),
-                                    actions: <Widget>[
-                                      FlatButton(
-                                        onPressed: () {
-                                            Navigator.pop(context);
-
-                                        },
-
-                                        child: Text('Move'),
-                                        color: Colors.blue,
-                                      ),
-                                      FlatButton(
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                          },
-                                          child: Text('Cancel')),
-                                    ],
-                                  );
-                                });
-                            // return res;
-                          }
-                        },
-                        child: ExpansionTile(
-                          // title: Text('${(((finale.elementAt(i)).split('-').last).split('.').first)}'),
-                          title:  Text('${(finale[i]).split('.').first}'),//Text('New Recording ${widget.records.length - i}'),
-                          subtitle: Text(_getDateFromFilePath(filePath: widget.records.elementAt(i))),
-                          onExpansionChanged: ((newState) {
-                            if (newState) {
-                              setState(() {
-                                _selectedIndex = i;
-                              });
-                            }
-                          }),
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                IconButton(
-                                  key: Key('play_button'),
-                                  onPressed: _isPlaying ? null : () => _play(filePath: widget.records.elementAt(i), index: i),
-                                  iconSize: 64.0,
-                                  icon: Icon(Icons.play_arrow),
-                                  color: Colors.cyan,
-                                ),
-                                IconButton(
-                                  key: Key('pause_button'),
-                                  onPressed: _isPlaying ? () => _pause() : null,
-                                  iconSize: 64.0,
-                                  icon: Icon(Icons.pause),
-                                  color: Colors.cyan,
-                                ),
-                                IconButton(
-                                  key: Key('stop_button'),
-                                  onPressed: _isPlaying || _isPaused ? () => _stop() : null,
-                                  iconSize: 64.0,
-                                  icon: Icon(Icons.stop),
-                                  color: Colors.cyan,
-                                ),
-                                // IconButton(
-                                //   onPressed: _earpieceOrSpeakersToggle,
-                                //   iconSize: 64.0,
-                                //   icon: _isPlayingThroughEarpiece
-                                //       ? Icon(Icons.volume_up)
-                                //       : Icon(Icons.hearing),
-                                //   color: Colors.cyan,
-                                // ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.all(12.0),
-                                  child: Stack(
-                                    children: [
-                                      Slider(
-                                        onChanged: (v) {
-                                          final Position = v * _duration.inMilliseconds;
-                                          _audioPlayer
-                                              .seek(Duration(milliseconds: Position.round()));
-                                        },
-                                        value: (_position != null &&
-                                            _duration != null &&
-                                            _position.inMilliseconds > 0 &&
-                                            _position.inMilliseconds < _duration.inMilliseconds)
-                                            ? _position.inMilliseconds / _duration.inMilliseconds
-                                            : 0.0,
-                                      ),
+                                      )
                                     ],
                                   ),
                                 ),
-                                Text(
-                                  _position != null
-                                      ? '${_positionText ?? ''} / ${_durationText ?? ''}'
-                                      : _duration != null
-                                      ? _durationText
-                                      : '',
-                                  style: TextStyle(fontSize: 24.0),
-                                ),
-                              ],
+                                actions: <Widget>[
+                                  FlatButton(
+                                    onPressed: () {
+                                      if (_keyDialogForm.currentState.validate()) {
+                                        _keyDialogForm.currentState.save();
+                                        Navigator.pop(context);
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => RecordList()));
+                                      }
+                                      final path = (Directory(widget.records[i]).path);
+                                      print('Original path: $path');
+                                      var lastSeparator = path.lastIndexOf('-');
+                                      var newPath = path.substring(0, lastSeparator + 1) + (titleController.text).toString() +'.aac';
+                                      print('Original path: $newPath');
+                                      File(widget.records[i]).renameSync(newPath);
+                                    },
+
+                                    child: Text('Save'),
+                                    color: Colors.blue,
+                                  ),
+                                  FlatButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text('Cancel')),
+                                ],
+                              );
+                            });
+                      },),
+                  ],
+                  child: Dismissible(
+                    key: Key(records),
+                    onDismissed: (DismissDirection direction) {
+                      Scaffold.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            "Change Complete",
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                    background: Container(
+                      color: Colors.greenAccent[700],
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 15.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget> [
+                            Icon(
+                              Icons.check_circle_rounded,
+                              color: Colors.white,
+                              size: 40.0,
+                            ),
+                            Text(
+                                ' Add to Library',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15.0,
+                                )
                             ),
                           ],
                         ),
                       ),
                     ),
-                  );
-                },
-              ),
-            )
-          ],
-        ),
+                    secondaryBackground: Container(
+                      color: Colors.redAccent[700],
+                      child: Padding(
+                        padding: EdgeInsets.only(right: 15.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget> [
+                            Text(
+                                'Delete ',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15.0,
+                                )
+                            ),
+                            Icon(
+                              Icons.delete,
+                              color: Colors.white,
+                              size: 40.0,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    confirmDismiss: (direction) async {
+                      if (direction == DismissDirection.endToStart)  {
+                        return await showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: const Text("Remove Confirmation"),
+                                content: Text(
+                                    "Are you sure you want to delete this recording?"),//widget.records.removeAt(i), ${widget.records[i]}
+                                actions: <Widget>[
+                                  FlatButton(
+                                    child: Text(
+                                      "Cancel",
+                                      style: TextStyle(color: Colors.black),
+                                    ),
+                                    onPressed: () => Navigator.of(context).pop(),
+                                  ),
+                                  FlatButton(
+                                    child: Text(
+                                      "Delete",
+                                      style: TextStyle(color: Colors.red),
+                                    ),
+                                    onPressed: () {
+                                      // TODO: Delete the item from DB etc..
+                                      final dir = Directory(widget.records[i]);
+                                      dir.deleteSync(recursive:true);
+                                      setState(() {
+                                        finale.removeAt(i);
+                                      });
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                ],
+                              );
+                            });
+                      } else {
+                        return await showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Form(
+                                  key: _keyDialogForm,
+                                  child: Column(
+                                    children: <Widget>[
+
+                                    ],
+                                  ),
+                                ),
+                                actions: <Widget>[
+                                  FlatButton(
+                                    onPressed: () {
+                                        Navigator.pop(context);
+
+                                    },
+
+                                    child: Text('Move'),
+                                    color: Colors.blue,
+                                  ),
+                                  FlatButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text('Cancel')),
+                                ],
+                              );
+                            });
+                        // return res;
+                      }
+                    },
+                    child: ExpansionTile(
+                      // title: Text('${(((finale.elementAt(i)).split('-').last).split('.').first)}'),
+                      title:  Text('${(finale[i]).split('.').first}'),//Text('New Recording ${widget.records.length - i}'),
+                      subtitle: Text(_getDateFromFilePath(filePath: widget.records.elementAt(i))),
+                      onExpansionChanged: ((newState) {
+                        if (newState) {
+                          setState(() {
+                            _selectedIndex = i;
+                          });
+                        }
+                      }),
+                      children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              key: Key('play_button'),
+                              onPressed: _isPlaying ? null : () => _play(filePath: widget.records.elementAt(i), index: i),
+                              iconSize: 64.0,
+                              icon: Icon(Icons.play_arrow),
+                              color: Colors.cyan,
+                            ),
+                            IconButton(
+                              key: Key('pause_button'),
+                              onPressed: _isPlaying ? () => _pause() : null,
+                              iconSize: 64.0,
+                              icon: Icon(Icons.pause),
+                              color: Colors.cyan,
+                            ),
+                            IconButton(
+                              key: Key('stop_button'),
+                              onPressed: _isPlaying || _isPaused ? () => _stop() : null,
+                              iconSize: 64.0,
+                              icon: Icon(Icons.stop),
+                              color: Colors.cyan,
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              iconSize: 64.0,
+                              icon: Icon(Icons.more_horiz),
+                              color: Colors.cyan,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.all(12.0),
+                              child: Stack(
+                                children: [
+                                  Slider(
+                                    onChanged: (v) {
+                                      final Position = v * _duration.inMilliseconds;
+                                      _audioPlayer
+                                          .seek(Duration(milliseconds: Position.round()));
+                                    },
+                                    value: (_position != null &&
+                                        _duration != null &&
+                                        _position.inMilliseconds > 0 &&
+                                        _position.inMilliseconds < _duration.inMilliseconds)
+                                        ? _position.inMilliseconds / _duration.inMilliseconds
+                                        : 0.0,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Text(
+                              _position != null
+                                  ? '${_positionText ?? ''} / ${_durationText ?? ''}'
+                                  : _duration != null
+                                  ? _durationText
+                                  : '',
+                              style: TextStyle(fontSize: 24.0),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          )
+        ],
       ),
     );
   }
@@ -570,7 +543,6 @@ class _RecordListViewState extends State<RecordListView> {
     }
     return result;
   }
-
 
 }
 
