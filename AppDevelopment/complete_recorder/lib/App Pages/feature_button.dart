@@ -1,3 +1,4 @@
+import 'package:complete_recorder/App%20Pages/speech_text.dart';
 import 'package:flutter/material.dart';
 import 'package:complete_recorder/App Pages/record_list.dart';
 
@@ -55,14 +56,19 @@ class _FeatureButtonState extends State<FeatureButton> {
             padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
           ),
           RaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SpeechText()));
+            },
             color: Colors.grey.withOpacity(0.3),
             highlightColor: Colors.red,
             shape: new RoundedRectangleBorder(
                 borderRadius: new BorderRadius.circular(10.0),
                 side: BorderSide(color: Colors.white70, width: 2.0)),
             child: Text(
-              'Feature 3',
+              'Speech',
               style: TextStyle(
                   color: Colors.white,
                   //fontSize: 20.0,

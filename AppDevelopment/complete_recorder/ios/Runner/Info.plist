@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>complete_recorder</string>
+	<string>Complete Recorder</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -44,5 +44,10 @@
 
     <key>NSMicrophoneUsageDescription</key>
     <string>Allow access to your Microphone?</string>
+
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Recognize and display speech input</string>
+   	<key>NSMicrophoneUsageDescription</key>
+   	<string>Detect speech input</string>
 </dict>
 </plist>

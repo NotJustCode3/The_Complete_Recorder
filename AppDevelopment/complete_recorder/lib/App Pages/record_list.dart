@@ -30,9 +30,11 @@ class _RecordListState extends State<RecordList> {
       appDirectory.list().listen((onData) {
         records.add(onData.path);
       }).onDone(() {
-        records = records.reversed.toList();
+        records = records.toList();
+        records.sort((b, a) => a.compareTo(b));
         setState(() {});
       });
+      print(appDirectory);
     });
   }
 
