@@ -19,6 +19,9 @@ about 15 recordings a week, sifting through a pile of recordings and playing eac
   - Vlog 5 - [March Progress](https://github.com/NotJustCode3/The_Complete_Recorder/tree/master/Vlogs/Vlog_%235)
   - Vlog 6 - [Final Progress](https://github.com/NotJustCode3/The_Complete_Recorder/tree/master/Vlogs/Vlog_%236)
 
+  ### Project Commercial - Watch it [here :tv:](https://www.youtube.com/watch?v=scClSkvNnjc&list=PLYe3W-KlyGmhn3UW-h5u9xt7_pnBl_03l&index=8&ab_channel=NotAToaster94)
+[<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Miscellaneous/Commercial.png" width="500" height="350">](https://www.youtube.com/watch?v=scClSkvNnjc&list=PLYe3W-KlyGmhn3UW-h5u9xt7_pnBl_03l&index=8&ab_channel=NotAToaster94)
+
 **2. Scrum Reports :scroll:**
   - Scrum 1 - [Project Initiation, Initial Constraints](https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Scrums/Scrum%20Report%20Out%20%231.pdf)
   - Scrum 2 - [Scrum Report Out #2](https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Scrums/Scrum%20Report%20Out%20%232.pdf)
