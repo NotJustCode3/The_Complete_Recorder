@@ -25,17 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="fixed the following bugs:&#10;- automatic refresh of recording list&#10;- order recordings descending by create date&#10;- list shows starting from the top">
-      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/speech_text.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/android/app/src/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/android/app/src/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/feature_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/feature_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/pubspec.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="Speech to Text Plugin" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,7 +129,28 @@
       <option name="project" value="LOCAL" />
       <updated>1617231784297</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Speech to Text Plugin">
+      <created>1617845609228</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1617845609229</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Speech to Text Plugin">
+      <created>1617845722777</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1617845722777</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Speech to Text Plugin">
+      <created>1617845867101</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1617845867101</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,7 +183,8 @@
     <MESSAGE value="Updating the recording page record button with a container. I also changed the container for the folders to be more rounded. Last but not least, I changed the search bar card onto any other color other than white." />
     <MESSAGE value="fixing red background in the recording list" />
     <MESSAGE value="try 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="try 2" />
+    <MESSAGE value="Speech to Text Plugin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Speech to Text Plugin" />
   </component>
   <component name="WindowStateProjectService">
     <state x="100" y="108" width="1336" height="624" key="AVDManager" timestamp="1617834814459">
