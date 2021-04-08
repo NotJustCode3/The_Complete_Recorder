@@ -28,6 +28,9 @@ dependencies:
   cupertino_icons: ^1.0.0
   animated_text_kit: ^3.1.2
   focused_menu: ^1.0.0
+  speech_to_text: ^2.3.0
+  highlight_text: ^0.7.2
+  avatar_glow: ^1.2.0
 
 dev_dependencies:
   flutter_test:
@@ -36,7 +39,6 @@ dev_dependencies:
   flutter_audio_recorder: ^0.5.5
   audioplayers: ^0.17.3
   focused_menu: ^1.0.2
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -9,7 +9,7 @@
 
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="complete_recorder"
+        android:label="Complete Recorder"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
