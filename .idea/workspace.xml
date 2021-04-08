@@ -25,7 +25,70 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="Speech to Text Plugin" />
+    <list default="true" id="01679228-470b-47f8-8124-aec3d4e1256a" name="Default Changelist" comment="Speech to Text Plugin">
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/1024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/120.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/167.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/172.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/196.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/216.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/256.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/55.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/80.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/87.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/_/88.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/speech_text.dart" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/lib/App Pages/speech_text.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDevelopment/complete_recorder/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/AppDevelopment/complete_recorder/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +118,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -150,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617845867101</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Speech to Text Plugin">
+      <created>1617846001199</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1617846001199</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,6 +249,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="recording play/pause/stop buttons + functionality&#10;slider to interact with recording&#10;time: position + duration" />
     <MESSAGE value="Dark mode theme in the splash screen" />
     <MESSAGE value="Updating the recording page record button with a container. I also changed the container for the folders to be more rounded. Last but not least, I changed the search bar card onto any other color other than white." />
@@ -191,38 +263,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="100" y="108" width="1336" height="624" key="AVDManager/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1617834814459" />
-    <state width="1476" height="200" key="GridCell.Tab.0.bottom" timestamp="1617843934519">
+    <state width="1491" height="200" key="GridCell.Tab.0.bottom" timestamp="1617851035475">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1287" height="214" key="GridCell.Tab.0.bottom/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1615803054971" />
     <state width="1461" height="196" key="GridCell.Tab.0.bottom/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1617796096791" />
     <state width="1481" height="180" key="GridCell.Tab.0.bottom/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1617270626241" />
     <state width="1398" height="180" key="GridCell.Tab.0.bottom/0.25.1440.875@0.25.1440.875" timestamp="1617274850416" />
-    <state width="1476" height="200" key="GridCell.Tab.0.bottom/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1617843934519" />
-    <state width="1476" height="200" key="GridCell.Tab.0.center" timestamp="1617843934519">
+    <state width="1491" height="200" key="GridCell.Tab.0.bottom/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1617851035475" />
+    <state width="1491" height="200" key="GridCell.Tab.0.center" timestamp="1617851035475">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1287" height="214" key="GridCell.Tab.0.center/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1615803054969" />
     <state width="1461" height="196" key="GridCell.Tab.0.center/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1617796096790" />
     <state width="1481" height="180" key="GridCell.Tab.0.center/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1617270626240" />
     <state width="1398" height="180" key="GridCell.Tab.0.center/0.25.1440.875@0.25.1440.875" timestamp="1617274850415" />
-    <state width="1476" height="200" key="GridCell.Tab.0.center/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1617843934519" />
-    <state width="1476" height="200" key="GridCell.Tab.0.left" timestamp="1617843934519">
+    <state width="1491" height="200" key="GridCell.Tab.0.center/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1617851035475" />
+    <state width="1491" height="200" key="GridCell.Tab.0.left" timestamp="1617851035474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1287" height="214" key="GridCell.Tab.0.left/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1615803054968" />
     <state width="1461" height="196" key="GridCell.Tab.0.left/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1617796096790" />
     <state width="1481" height="180" key="GridCell.Tab.0.left/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1617270626238" />
     <state width="1398" height="180" key="GridCell.Tab.0.left/0.25.1440.875@0.25.1440.875" timestamp="1617274850414" />
-    <state width="1476" height="200" key="GridCell.Tab.0.left/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1617843934519" />
-    <state width="1476" height="200" key="GridCell.Tab.0.right" timestamp="1617843934519">
+    <state width="1491" height="200" key="GridCell.Tab.0.left/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1617851035474" />
+    <state width="1491" height="200" key="GridCell.Tab.0.right" timestamp="1617851035475">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1287" height="214" key="GridCell.Tab.0.right/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1615803054970" />
     <state width="1461" height="196" key="GridCell.Tab.0.right/0.25.1280.719/1280.25.1920.1055@1280.25.1920.1055" timestamp="1617796096791" />
     <state width="1481" height="180" key="GridCell.Tab.0.right/0.25.1280.775/1280.25.1920.999@1280.25.1920.999" timestamp="1617270626240" />
     <state width="1398" height="180" key="GridCell.Tab.0.right/0.25.1440.875@0.25.1440.875" timestamp="1617274850415" />
-    <state width="1476" height="200" key="GridCell.Tab.0.right/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1617843934519" />
+    <state width="1491" height="200" key="GridCell.Tab.0.right/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1617851035475" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1617846209206">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1617846209206" />
     <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617845585789">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

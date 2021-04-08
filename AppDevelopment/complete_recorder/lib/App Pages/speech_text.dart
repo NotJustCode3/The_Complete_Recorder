@@ -44,20 +44,31 @@ class _SpeechTextState extends State<SpeechText> {
         duration: const Duration(milliseconds: 20000),
         repeatPauseDuration: const Duration(milliseconds: 100),
         repeat: true,
-        child: RaisedButton(
-          color: Colors.red[700],
-          onPressed: _listen,
-          shape: CircleBorder(
-            //borderRadius: BorderRadius.circular(30),
-            //side: BorderSide(color: Colors.white, width: 2.0)
-          ),
-          child: Container(
-            width: 100,
-            height: 100,
-            child: Icon(
-              _isListening ? Icons.stop : Icons.mic,
-              size: 50,
-              color: Colors.white,
+        child: Container(
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.white,
+                  blurRadius: 5.0,
+                  spreadRadius: 4.0,
+                ),
+              ]),
+          child: RaisedButton(
+            color: Colors.red[700],
+            onPressed: _listen,
+            shape: CircleBorder(
+              //borderRadius: BorderRadius.circular(30),
+              //side: BorderSide(color: Colors.white, width: 2.0)
+            ),
+            child: Container(
+              width: 100,
+              height: 100,
+              child: Icon(
+                _isListening ? Icons.stop : Icons.mic,
+                size: 50,
+                color: Colors.white,
+              ),
             ),
           ),
         ),
