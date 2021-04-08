@@ -64,7 +64,7 @@ class _RecordPageState extends State<RecordPage> {
       alignment: Alignment.center,
       child: Container(
         //padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-        margin: EdgeInsets.fromLTRB(0, 140, 0, 0),
+        margin: EdgeInsets.fromLTRB(0, 340, 0, 0),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(50),
@@ -86,15 +86,13 @@ class _RecordPageState extends State<RecordPage> {
             SizedBox(
               width: 100,
               child: Container(
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.white,
-                        blurRadius: 5.0,
-                        spreadRadius: 4.0,
-                      ),
-                    ]),
+                decoration: BoxDecoration(shape: BoxShape.circle, boxShadow: [
+                  BoxShadow(
+                    color: Colors.white,
+                    blurRadius: 5.0,
+                    spreadRadius: 4.0,
+                  ),
+                ]),
                 child: RaisedButton(
                   color: Colors.red[700],
                   onPressed: () async {
@@ -102,9 +100,9 @@ class _RecordPageState extends State<RecordPage> {
                     setState(() {});
                   },
                   shape: CircleBorder(
-                    //borderRadius: BorderRadius.circular(30),
-                    //side: BorderSide(color: Colors.white, width: 2.0)
-                  ),
+                      //borderRadius: BorderRadius.circular(30),
+                      //side: BorderSide(color: Colors.white, width: 2.0)
+                      ),
                   child: Container(
                     width: 150,
                     height: 150,
@@ -128,8 +126,7 @@ class _RecordPageState extends State<RecordPage> {
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.bold),
                   ),
-                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 5)
-              ),
+                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 5)),
             )
           ],
         ),
@@ -182,12 +179,18 @@ class _RecordPageState extends State<RecordPage> {
   _initRecorder() async {
     Directory appDirectory = await getApplicationDocumentsDirectory();
     final currentDateTime = DateTime.now().millisecondsSinceEpoch.toString();
-    DateTime recordedDate = DateTime.fromMillisecondsSinceEpoch(int.parse(currentDateTime));
+    DateTime recordedDate =
+        DateTime.fromMillisecondsSinceEpoch(int.parse(currentDateTime));
     final DateFormat formatter = DateFormat('yyyy-MMM-dd-hh:mm:ss');
     final String formatted = formatter.format(recordedDate);
     // print('What do you want to name your recording?');
     // String recordName = stdin.readLineSync();
-    String filePath = appDirectory.path + '/' + currentDateTime + '-' + currentDateTime + '.aac';
+    String filePath = appDirectory.path +
+        '/' +
+        currentDateTime +
+        '-' +
+        currentDateTime +
+        '.aac';
     // File(appDirectory.path + '/' + currentDateTime + '.aac')
     // .rename(appDirectory.path + '/' + 'testrename.aac');
 
@@ -205,8 +208,6 @@ class _RecordPageState extends State<RecordPage> {
     await audioRecorder.stop();
     widget.onSaved();
     Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => RecordList()));
+        context, MaterialPageRoute(builder: (context) => RecordList()));
   }
 }
