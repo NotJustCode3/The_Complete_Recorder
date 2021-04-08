@@ -1,4 +1,4 @@
-# Vlog #6 - March Progress :movie_camera:
+# Vlog #6 - Final Progress :movie_camera:
 
 ## Videos :clapper:
 
