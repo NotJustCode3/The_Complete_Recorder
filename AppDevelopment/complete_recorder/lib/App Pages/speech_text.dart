@@ -52,8 +52,8 @@ class _SpeechTextState extends State<SpeechText> {
             //side: BorderSide(color: Colors.white, width: 2.0)
           ),
           child: Container(
-            width: 150,
-            height: 150,
+            width: 100,
+            height: 100,
             child: Icon(
               _isListening ? Icons.mic : Icons.mic_none,
               size: 50,
