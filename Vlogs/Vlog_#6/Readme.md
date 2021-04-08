@@ -6,6 +6,6 @@
 [<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/develop/Miscellaneous/vlog6_thumbnail.png" width="500" height="350">](https://www.youtube.com/watch?v=4BNwrW2FClQ&ab_channel=NotAToaster94)
 
 
-## Vlog #5 Transcript :scroll:
+## Vlog #6 Transcript :scroll:
 
-### Project progress vlog #5 requirements
+### Project progress vlog #6 requirements
