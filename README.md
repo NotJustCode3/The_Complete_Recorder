@@ -1,5 +1,6 @@
 # The Complete Recorder :studio_microphone:
 A sound recording app with organizational features for easy access and search.
+ [<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/develop/Miscellaneous/Commercial.png" width="500" height="350">](https://www.youtube.com/watch?v=72oQbTF8Z2M&list=PLYe3W-KlyGmhn3UW-h5u9xt7_pnBl_03l&index=7&ab_channel=NotAToaster94)
 
 ## Check out our [NotJustCode IO](https://zainshafiq.github.io/NotJustCode/) Webpage
 
@@ -18,8 +19,6 @@ about 15 recordings a week, sifting through a pile of recordings and playing eac
   - Vlog 4 - [February Progress](https://github.com/NotJustCode3/The_Complete_Recorder/tree/master/Vlogs/Vlog_%234)
   - Vlog 5 - [March Progress](https://github.com/NotJustCode3/The_Complete_Recorder/tree/master/Vlogs/Vlog_%235)
   - Vlog 6 - [Final Progress](https://github.com/NotJustCode3/The_Complete_Recorder/tree/master/Vlogs/Vlog_%236)
-
-  [<img src="https://github.com/NotJustCode3/The_Complete_Recorder/blob/develop/Miscellaneous/Commercial.png" width="500" height="350">](https://www.youtube.com/watch?v=72oQbTF8Z2M&list=PLYe3W-KlyGmhn3UW-h5u9xt7_pnBl_03l&index=7&ab_channel=NotAToaster94)
 
 **2. Scrum Reports :scroll:**
   - Scrum 1 - [Project Initiation, Initial Constraints](https://github.com/NotJustCode3/The_Complete_Recorder/blob/master/Scrums/Scrum%20Report%20Out%20%231.pdf)
