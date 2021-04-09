@@ -344,7 +344,7 @@ class _RecordListViewState extends State<RecordListView> {
                     child: ExpansionTile(
                       // title: Text('${(((finale.elementAt(i)).split('-').last).split('.').first)}'),
                       title:  Text('${(finale[i]).split('.').first}'),//Text('New Recording ${widget.records.length - i}'),
-                      subtitle: Text(_getDateFromFilePath(filePath: widget.records.elementAt(i))),
+                      //subtitle: Text(_getDateFromFilePath(filePath: widget.records.elementAt(i))),
                       onExpansionChanged: ((newState) {
                         if (newState) {
                           setState(() {
