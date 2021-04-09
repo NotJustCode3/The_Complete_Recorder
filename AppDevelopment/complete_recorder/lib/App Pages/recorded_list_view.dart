@@ -260,8 +260,6 @@ class _RecordListViewState extends State<RecordListView> {
                             });
                     },
                     child: ExpansionTile(
-                      title:  Text('${(finale[i]).split('.').first}'),
-                      subtitle: Text(_getDateFromFilePath(filePath: widget.records.elementAt(i))),
                       onExpansionChanged: ((newState) {
                         if (newState) {
                           setState(() {

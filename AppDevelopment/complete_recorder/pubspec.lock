@@ -15,13 +15,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.5.0"
+  audio_wave:
+    dependency: "direct main"
+    description:
+      name: audio_wave
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.3"
   audioplayers:
     dependency: "direct dev"
     description:
       name: audioplayers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.17.3"
+    version: "0.17.4"
   avatar_glow:
     dependency: "direct main"
     description:
@@ -315,6 +322,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  wave_generator:
+    dependency: "direct main"
+    description:
+      name: wave_generator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.0"
   win32:
     dependency: transitive
     description:

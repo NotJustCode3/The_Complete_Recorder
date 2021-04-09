@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:audio_wave/audio_wave.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'package:flutter/material.dart';
@@ -70,7 +71,6 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.grey,
               ),
             ),
-
             Expanded(
               flex: 2,
               child: RecordPage(
