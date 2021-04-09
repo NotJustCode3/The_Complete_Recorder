@@ -5,9 +5,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:complete_recorder/App Pages/search_button.dart';
 import 'package:complete_recorder/App Pages/feature_button.dart';
-import 'package:complete_recorder/App Pages/folders.dart';
 import 'package:complete_recorder/App Pages/recording_page.dart';
-import 'package:complete_recorder/App Pages/record_list.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -72,30 +70,6 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.grey,
               ),
             ),
-
-            //Row 2 'Most recent'
-            /*Padding(
-              padding: const EdgeInsets.fromLTRB(21, 1, 1, 1),
-              child: Container(
-                child: Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    'Most Recent',
-                    style: TextStyle(
-                      letterSpacing: 0.5,
-                      fontFamily: 'Roboto',
-                      fontSize: 16,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ),*/
-
-            /*Expanded(
-              flex: 0,
-               child: Folders(),
-            ),*/
 
             Expanded(
               flex: 2,
