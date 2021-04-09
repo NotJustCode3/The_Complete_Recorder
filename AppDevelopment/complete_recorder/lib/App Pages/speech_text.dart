@@ -58,8 +58,6 @@ class _SpeechTextState extends State<SpeechText> {
             color: Colors.red[700],
             onPressed: _listen,
             shape: CircleBorder(
-              //borderRadius: BorderRadius.circular(30),
-              //side: BorderSide(color: Colors.white, width: 2.0)
             ),
             child: Container(
               width: 100,
