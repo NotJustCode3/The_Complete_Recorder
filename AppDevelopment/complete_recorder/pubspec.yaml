@@ -35,6 +35,8 @@ dependencies:
   pdf: ^2.0.0
   flutter_full_pdf_viewer: ^1.0.6
   open_file: ^3.1.0
+  audio_wave: ^0.0.3
+  wave_generator: ^0.1.0
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +75,7 @@ flutter:
     - res/icons/ic_play.png
     - res/icons/ic_stop_disabled.png
     - res/icons/ic_mic.png
+    - res/wave.png
 #    - PDFs/
 
   # An image asset can refer to one or more resolution-specific "variants", see
