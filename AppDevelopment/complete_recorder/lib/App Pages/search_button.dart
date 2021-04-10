@@ -25,10 +25,29 @@ class _SearchButtonState extends State<SearchButton> {
         margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
         //creating another child to draw elements onto the card widget
         child: ListTile(
+          leading: IconButton(
+              icon: Icon(Icons.search),
+              //iconSize: 30.0,
+              color: Colors.grey,
+              //highlightColor: Colors.grey,
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              }),
           title: Text(
             'Search',
             style: TextStyle(
                 color: Colors.grey, fontFamily: 'Roboto', letterSpacing: 0.5),
+          ),
+          trailing: IconButton(
+            icon: Icon(Icons.create_new_folder_outlined),
+            //iconSize: 30.0,
+            color: Colors.white,
+            //highlightColor: Colors.grey,
+            onPressed: () {
+              print('Folder clicked');
+              //Navigator.push(context,MaterialPageRoute(builder: (context) => Folder()));
+            },
           ),
         ),
       ),
