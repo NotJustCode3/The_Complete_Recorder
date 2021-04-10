@@ -115,13 +115,13 @@ class _RecordPageState extends State<RecordPage> {
                     //   ),
                     // ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(0, 50, 0, 0),
+                      margin: EdgeInsets.fromLTRB(0, 70, 0, 0),
                       child:
                       AudioWave(
                         height: 80,
                         width: 350,
                         alignment: 'bottom',
-                        spacing: 3,
+                        spacing: 4,
                         beatRate: Duration(milliseconds: _waveDuration),
                         bars: [
                           AudioWaveBar(height: 100, color: Colors.grey[800]),
@@ -150,16 +150,6 @@ class _RecordPageState extends State<RecordPage> {
                           AudioWaveBar(height: 120, color: Colors.grey[700]),
                           AudioWaveBar(height: 100, color: Colors.grey[800]),
                           AudioWaveBar(height: 120, color: Colors.grey[850]),
-                          AudioWaveBar(height: 100, color: Colors.grey[800]),
-                          AudioWaveBar(height: 75, color: Colors.grey[900]),
-                          AudioWaveBar(height: 100, color: Colors.grey[800]),
-                          AudioWaveBar(height: 120, color: Colors.grey[850]),
-                          AudioWaveBar(height: 100, color: Colors.grey[800]),
-                          AudioWaveBar(height: 75, color: Colors.grey[700]),
-                          AudioWaveBar(height: 75, color: Colors.grey[800]),
-                          AudioWaveBar(height: 100, color: Colors.grey[850]),
-                          AudioWaveBar(height: 120, color: Colors.grey[700]),
-                          AudioWaveBar(height: 100, color: Colors.grey[900]),
                         ],
                       ),
                     ),
@@ -222,7 +212,7 @@ class _RecordPageState extends State<RecordPage> {
                                 setState(() {
                                   _hasBeenPressed = !_hasBeenPressed;
                                   if(_hasBeenPressed == true){
-                                    return _soundOpacity = 1.0;
+                                    return _soundOpacity = 0.0;
                                   }
                                   else if(_hasBeenPressed == false){
                                     return _soundOpacity = 1.0;
