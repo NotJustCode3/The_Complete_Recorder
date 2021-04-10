@@ -4,6 +4,10 @@ PODS:
   - Flutter (1.0.0)
   - flutter_audio_recorder (0.5.4):
     - Flutter
+  - flutter_full_pdf_viewer (1.0.1):
+    - Flutter
+  - open_file (0.0.1):
+    - Flutter
   - path_provider (0.0.1):
     - Flutter
   - speech_to_text (0.0.1):
@@ -15,6 +19,8 @@ DEPENDENCIES:
   - audioplayers (from `.symlinks/plugins/audioplayers/ios`)
   - Flutter (from `Flutter`)
   - flutter_audio_recorder (from `.symlinks/plugins/flutter_audio_recorder/ios`)
+  - flutter_full_pdf_viewer (from `.symlinks/plugins/flutter_full_pdf_viewer/ios`)
+  - open_file (from `.symlinks/plugins/open_file/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - speech_to_text (from `.symlinks/plugins/speech_to_text/ios`)
 
@@ -29,6 +35,10 @@ EXTERNAL SOURCES:
     :path: Flutter
   flutter_audio_recorder:
     :path: ".symlinks/plugins/flutter_audio_recorder/ios"
+  flutter_full_pdf_viewer:
+    :path: ".symlinks/plugins/flutter_full_pdf_viewer/ios"
+  open_file:
+    :path: ".symlinks/plugins/open_file/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
   speech_to_text:
@@ -38,6 +48,8 @@ SPEC CHECKSUMS:
   audioplayers: 455322b54050b30ea4b1af7cd9e9d105f74efa8c
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   flutter_audio_recorder: eb998d4e75e59b39d9e3ca1818a5e0f3a82f5836
+  flutter_full_pdf_viewer: 1b65139fc3236cde300ba6bea2a72669cb07f2e6
+  open_file: 02eb5cb6b21264bd3a696876f5afbfb7ca4f4b7d
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   speech_to_text: b43a7d99aef037bd758ed8e45d79bbac035d2dfe
   Try: 5ef669ae832617b3cee58cb2c6f99fb767a4ff96

@@ -46,6 +46,7 @@ class _RecordListViewState extends State<RecordListView> {
   Duration _position;
 
   PlayerState _playerState = PlayerState.stopped;
+  PlayingRouteState _playingRouteState = PlayingRouteState.speakers;
   StreamSubscription _durationSubscription;
   StreamSubscription _positionSubscription;
   StreamSubscription _playerCompleteSubscription;
@@ -135,7 +136,7 @@ class _RecordListViewState extends State<RecordListView> {
                                     children: <Widget>[
                                       TextFormField(
                                         decoration: const InputDecoration(
-                                          icon: Icon(Icons.ac_unit),
+                                          icon: Icon(Icons.edit),
                                         ),
                                         maxLength: 30,
                                         textAlign: TextAlign.center,
@@ -146,7 +147,7 @@ class _RecordListViewState extends State<RecordListView> {
                                         autovalidate: true,
                                         validator: (value) {
                                           if (value.isEmpty) {
-                                            return 'Enter Title Name';
+                                            return 'Enter New Title';
                                           }
                                           return null;
                                         },

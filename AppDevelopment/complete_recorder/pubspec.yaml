@@ -31,6 +31,10 @@ dependencies:
   speech_to_text: ^2.3.0
   highlight_text: ^0.7.2
   avatar_glow: ^1.2.0
+  clipboard: ^0.1.2+8
+  pdf: ^2.0.0
+  flutter_full_pdf_viewer: ^1.0.6
+  open_file: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +73,7 @@ flutter:
     - res/icons/ic_play.png
     - res/icons/ic_stop_disabled.png
     - res/icons/ic_mic.png
+#    - PDFs/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
