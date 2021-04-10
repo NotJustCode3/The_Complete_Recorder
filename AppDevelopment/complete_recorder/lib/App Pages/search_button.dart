@@ -1,3 +1,4 @@
+import 'package:complete_recorder/App%20Pages/folders.dart';
 import 'package:complete_recorder/App%20Pages/recorded_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:complete_recorder/homepage.dart';
@@ -45,7 +46,8 @@ class _SearchButtonState extends State<SearchButton> {
             color: Colors.white,
             //highlightColor: Colors.grey,
             onPressed: () {
-              print('Folder clicked');
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Folders()));
               //Navigator.push(context,MaterialPageRoute(builder: (context) => Folder()));
             },
           ),
