@@ -76,89 +76,10 @@ class _RecordPageState extends State<RecordPage> {
                 Stack(
                   children: [
                     Container(
-                      margin: EdgeInsets.fromLTRB(0, 140, 0, 0),
-                      child: AudioWave(
-                        height: 80,
-                        width: 350,
-                        alignment: 'top',
-                        spacing: 3,
-                        beatRate: Duration(milliseconds: _waveDuration),
-                        bars: [
-                          AudioWaveBar(height: 20, color: Colors.grey[800]),
-                          AudioWaveBar(height: 50, color: Colors.grey[800]),
-                          AudioWaveBar(height: 70, color: Colors.grey[800]),
-                          AudioWaveBar(height: 50, color: Colors.grey[800]),
-                          AudioWaveBar(height: 35, color: Colors.grey[800]),
-                          AudioWaveBar(height: 20, color: Colors.grey[800]),
-                          AudioWaveBar(height: 35, color: Colors.grey[800]),
-                          AudioWaveBar(height: 50, color: Colors.grey[800]),
-                          AudioWaveBar(height: 70, color: Colors.grey[800]),
-                          AudioWaveBar(height: 50, color: Colors.grey[800]),
-                          AudioWaveBar(height: 35, color: Colors.grey[800]),
-                          AudioWaveBar(height: 20, color: Colors.grey[800]),
-                          AudioWaveBar(height: 70, color: Colors.grey[800]),
-                          AudioWaveBar(height: 50, color: Colors.grey[800]),
-                          AudioWaveBar(height: 70, color: Colors.grey[800]),
-                          AudioWaveBar(height: 50, color: Colors.grey[800]),
-                          AudioWaveBar(height: 35, color: Colors.grey[800]),
-                          AudioWaveBar(height: 20, color: Colors.grey[800]),
-                          AudioWaveBar(height: 10, color: Colors.grey[800]),
-                          AudioWaveBar(height: 50, color: Colors.grey[800]),
-                          AudioWaveBar(height: 30, color: Colors.grey[800]),
-                          AudioWaveBar(height: 50, color: Colors.grey[800]),
-                          AudioWaveBar(height: 35, color: Colors.grey[800]),
-                          AudioWaveBar(height: 20, color: Colors.grey[800]),
-                          AudioWaveBar(height: 10, color: Colors.grey[800]),
-                          AudioWaveBar(height: 50, color: Colors.grey[800]),
-                          AudioWaveBar(height: 70, color: Colors.grey[800]),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(0, 50, 0, 0),
-                      child:
-                      AudioWave(
-                        height: 80,
-                        width: 350,
-                        alignment: 'bottom',
-                        spacing: 3,
-                        beatRate: Duration(milliseconds: _waveDuration),
-                        bars: [
-                          AudioWaveBar(height: 50, color: Colors.deepOrange),
-                          AudioWaveBar(height: 100, color: Colors.grey[200]),
-                          AudioWaveBar(height: 120, color: Colors.grey[300]),
-                          AudioWaveBar(height: 100, color: Colors.grey[400]),
-                          AudioWaveBar(height: 75, color: Colors.grey[500]),
-                          AudioWaveBar(height: 50, color: Colors.deepOrange),
-                          AudioWaveBar(height: 75, color: Colors.grey[400]),
-                          AudioWaveBar(height: 100, color: Colors.grey[300]),
-                          AudioWaveBar(height: 120, color: Colors.grey[200]),
-                          AudioWaveBar(height: 100, color: Colors.grey[300]),
-                          AudioWaveBar(height: 75, color: Colors.grey[400]),
-                          AudioWaveBar(height: 50, color: Colors.deepOrange),
-                          AudioWaveBar(height: 120, color: Colors.grey[500]),
-                          AudioWaveBar(height: 100, color: Colors.grey[400]),
-                          AudioWaveBar(height: 120, color: Colors.grey[300]),
-                          AudioWaveBar(height: 100, color: Colors.grey[200]),
-                          AudioWaveBar(height: 75, color: Colors.grey[300]),
-                          AudioWaveBar(height: 50, color: Colors.deepOrange),
-                          AudioWaveBar(height: 40, color: Colors.grey[400]),
-                          AudioWaveBar(height: 100, color: Colors.grey[500]),
-                          AudioWaveBar(height: 120, color: Colors.grey[400]),
-                          AudioWaveBar(height: 100, color: Colors.grey[300]),
-                          AudioWaveBar(height: 75, color: Colors.grey[200]),
-                          AudioWaveBar(height: 50, color: Colors.grey[300]),
-                          AudioWaveBar(height: 40, color: Colors.deepOrange),
-                          AudioWaveBar(height: 100, color: Colors.grey[200]),
-                          AudioWaveBar(height: 120, color: Colors.grey[300]),
-                        ],
-                      ),
-                    ),
-                    Container(
                         alignment: Alignment.center,
                         margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
                         height: 220,
-                        width: 350,
+                        width: 370,
                         child: AnimatedOpacity(
                           opacity: _soundOpacity,
                           duration: Duration(milliseconds: 0),
@@ -213,7 +134,7 @@ class _RecordPageState extends State<RecordPage> {
                                 setState(() {
                                   _hasBeenPressed = !_hasBeenPressed;
                                   if(_hasBeenPressed == true){
-                                    return _soundOpacity = 0.0;
+                                    return _soundOpacity = 1.0;
                                   }
                                   else if(_hasBeenPressed == false){
                                     return _soundOpacity = 1.0;
