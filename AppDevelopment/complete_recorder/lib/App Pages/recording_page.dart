@@ -1,4 +1,3 @@
-// TODO Implement this library.
 import 'dart:io';
 import 'package:audio_wave/audio_wave.dart';
 import 'package:flutter/material.dart';
