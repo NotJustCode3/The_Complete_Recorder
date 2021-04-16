@@ -54,14 +54,12 @@ class _SpeechTextState extends State<SpeechText> {
                 await FlutterClipboard.copy(_text);
                 Scaffold.of(context).showSnackBar(
                   SnackBar(
-                    content: Text('✓   Copied to Clipboard'),),
-                  // backgroundColor: Color(0xFF0A0E21),),
+                    content: Text('✓   Copied to Clipboard'),),                 
                 );
               },
             ),
           ),
-          Builder(
-            // child: pw.Text(_text),
+          Builder(           
             builder: (context) => IconButton(
               icon: Icon(Icons.picture_as_pdf_outlined),
               onPressed: () async {
@@ -88,8 +86,7 @@ class _SpeechTextState extends State<SpeechText> {
                 final file = File('${output.path}/example.pdf');
                 await file.writeAsBytes(await pdf.save());
                 print(file.toString());
-                print(file.path);
-                // OpenFile.open(file.toString());
+                print(file.path);                
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -101,10 +98,7 @@ class _SpeechTextState extends State<SpeechText> {
         ],
         flexibleSpace: Container(
           decoration: BoxDecoration(
-            color: Color(0xFF111328),
-            // gradient: LinearGradient(
-            //   colors: [Colors.indigo[800], Colors.purple[800], Colors.indigo[800]],
-            // ),
+            color: Color(0xFF111328),            
           ),
         ),
       ),
