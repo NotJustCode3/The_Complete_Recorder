@@ -74,46 +74,7 @@ class _RecordPageState extends State<RecordPage> {
             child: Column(
               children: [
                 Stack(
-                  children: [
-                    // Container(
-                    //   margin: EdgeInsets.fromLTRB(0, 140, 0, 0),
-                    //   child: AudioWave(
-                    //     height: 80,
-                    //     width: 350,
-                    //     alignment: 'top',
-                    //     spacing: 3,
-                    //     beatRate: Duration(milliseconds: _waveDuration),
-                    //     bars: [
-                    //       AudioWaveBar(height: 20, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 50, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 70, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 50, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 35, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 20, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 35, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 50, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 70, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 50, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 35, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 20, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 70, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 50, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 70, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 50, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 35, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 20, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 10, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 50, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 30, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 50, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 35, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 20, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 10, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 50, color: Colors.grey[800]),
-                    //       AudioWaveBar(height: 70, color: Colors.grey[800]),
-                    //     ],
-                    //   ),
-                    // ),
+                  children: [                    
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 80, 0, 0),
                       child:
@@ -176,8 +137,7 @@ class _RecordPageState extends State<RecordPage> {
                   ],
                 ),
                 Expanded(
-                  child: Container(
-                    //padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: Container(                    
                     margin: EdgeInsets.fromLTRB(0, 100, 0, 0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.vertical(
@@ -190,10 +150,7 @@ class _RecordPageState extends State<RecordPage> {
                           blurRadius: 7.0,
                           spreadRadius: 2.0,
                         ),
-                      ],
-                      // gradient: new LinearGradient(
-                      //   colors: [Color.deepPurple[900]],
-                      // ),
+                      ],                     
                     ),
                     child: Stack(
                       alignment: Alignment.center,
@@ -222,9 +179,7 @@ class _RecordPageState extends State<RecordPage> {
                                   }
                                 });
                               },
-                              shape: CircleBorder(
-                                //borderRadius: BorderRadius.circular(30),
-                                //side: BorderSide(color: Colors.white, width: 2.0)
+                              shape: CircleBorder(                                
                               ),
                               child: Container(
                                 width: 150,
@@ -320,8 +275,7 @@ class _RecordPageState extends State<RecordPage> {
   }
 
   _startRecording() async {
-    await audioRecorder.start();
-    // await audioRecorder.current(channel: 0);
+    await audioRecorder.start();    
   }
 
   _stopRecording() async {
