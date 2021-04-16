@@ -14,7 +14,6 @@ enum PlayingRouteState { speakers, earpiece }
 
 class RecordListView extends StatefulWidget {
   final List<String> records;
-  // final String url;
   final PlayerMode mode;
 
   const RecordListView({
@@ -31,7 +30,6 @@ class _RecordListViewState extends State<RecordListView> {
   // String url;
   PlayerMode mode;
   List<String> records;
-  var items = List<String>();
   List<String> finalRecords = [];
   List<String> finale = [];
   Directory appDirectory;
@@ -44,7 +42,6 @@ class _RecordListViewState extends State<RecordListView> {
   int _selectedIndex = -1;
 
   AudioPlayer _audioPlayer;
-  AudioPlayerState _audioPlayerState;
   Duration _duration;
   Duration _position;
 
@@ -62,16 +59,12 @@ class _RecordListViewState extends State<RecordListView> {
   get _durationText => _duration?.toString()?.split('.')?.first ?? '';
   get _positionText => _position?.toString()?.split('.')?.first ?? '';
 
-  get _isPlayingThroughEarpiece =>
-      _playingRouteState == PlayingRouteState.earpiece;
-
   _RecordListViewState(this.mode);
 
   @override
   void initState() {
     super.initState();
     _initAudioPlayer();
-    // items.addAll(widget.records);
 
     records = [];
     getApplicationDocumentsDirectory().then((value) {
@@ -79,10 +72,9 @@ class _RecordListViewState extends State<RecordListView> {
       appDirectory.list().listen((onData) {
         records.add(onData.path);
       }).onDone(() {
-        items = records;
         records = records.toList();
         records.sort((b, a) => a.compareTo(b));
-        finalRecords = records.map((f) => f.split('-').last).toList();  //f.split("/1")[0]).toList();
+        finalRecords = records.map((f) => f.split('-').last).toList();
         finale = finalRecords;
       });
     });
@@ -98,19 +90,6 @@ class _RecordListViewState extends State<RecordListView> {
     _playerStateSubscription?.cancel();
     _playerControlCommandSubscription?.cancel();
     super.dispose();
-  }
-
-  void filterSearchResults(String query) {
-    if(query.isNotEmpty) {
-      setState(() {
-        finale = (finalRecords).where((u) => (u.toLowerCase().contains(query.toLowerCase()))).toList();
-      });
-    }
-    else{
-      setState(() {
-        finale = finalRecords;
-      });
-    }
   }
 
   @override
@@ -137,9 +116,8 @@ class _RecordListViewState extends State<RecordListView> {
             child: ListView.builder(
               itemCount: finale.length,
               shrinkWrap: true,
-              // reverse: true,
               itemBuilder: (BuildContext context, int i) {
-                final records = finale[i];//widget.records[i];
+                final records = finale[i];
                 return FocusedMenuHolder(
                   onPressed: (){},
                   menuItems: <FocusedMenuItem>[
@@ -158,7 +136,7 @@ class _RecordListViewState extends State<RecordListView> {
                                     children: <Widget>[
                                       TextFormField(
                                         decoration: const InputDecoration(
-                                          icon: Icon(Icons.ac_unit),
+                                          icon: Icon(Icons.edit),
                                         ),
                                         maxLength: 30,
                                         textAlign: TextAlign.center,
@@ -169,7 +147,7 @@ class _RecordListViewState extends State<RecordListView> {
                                         autovalidate: true,
                                         validator: (value) {
                                           if (value.isEmpty) {
-                                            return 'Enter Title Name';
+                                            return 'Enter New Title';
                                           }
                                           return null;
                                         },
@@ -225,30 +203,6 @@ class _RecordListViewState extends State<RecordListView> {
                       );
                     },
                     background: Container(
-                      color: Colors.greenAccent[700],
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 15.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: <Widget> [
-                            Icon(
-                              Icons.check_circle_rounded,
-                              color: Colors.white,
-                              size: 40.0,
-                            ),
-                            Text(
-                                ' Add to Library',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15.0,
-                                )
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    secondaryBackground: Container(
                       color: Colors.redAccent[700],
                       child: Padding(
                         padding: EdgeInsets.only(right: 15.0),
@@ -273,14 +227,13 @@ class _RecordListViewState extends State<RecordListView> {
                       ),
                     ),
                     confirmDismiss: (direction) async {
-                      if (direction == DismissDirection.endToStart)  {
-                        return await showDialog(
+                      return await showDialog(
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
                                 title: const Text("Remove Confirmation"),
                                 content: Text(
-                                    "Are you sure you want to delete this recording?"),//widget.records.removeAt(i), ${widget.records[i]}
+                                    "Are you sure you want to delete this recording?"),
                                 actions: <Widget>[
                                   FlatButton(
                                     child: Text(
@@ -295,7 +248,6 @@ class _RecordListViewState extends State<RecordListView> {
                                       style: TextStyle(color: Colors.red),
                                     ),
                                     onPressed: () {
-                                      // TODO: Delete the item from DB etc..
                                       final dir = Directory(widget.records[i]);
                                       dir.deleteSync(recursive:true);
                                       setState(() {
@@ -307,43 +259,9 @@ class _RecordListViewState extends State<RecordListView> {
                                 ],
                               );
                             });
-                      } else {
-                        return await showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                title: Form(
-                                  key: _keyDialogForm,
-                                  child: Column(
-                                    children: <Widget>[
-
-                                    ],
-                                  ),
-                                ),
-                                actions: <Widget>[
-                                  FlatButton(
-                                    onPressed: () {
-                                        Navigator.pop(context);
-
-                                    },
-
-                                    child: Text('Move'),
-                                    color: Colors.blue,
-                                  ),
-                                  FlatButton(
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text('Cancel')),
-                                ],
-                              );
-                            });
-                        // return res;
-                      }
                     },
                     child: ExpansionTile(
-                      // title: Text('${(((finale.elementAt(i)).split('-').last).split('.').first)}'),
-                      title:  Text('${(finale[i]).split('.').first}'),//Text('New Recording ${widget.records.length - i}'),
+                      title:  Text('${(finale[i]).split('.').first}'),
                       subtitle: Text(_getDateFromFilePath(filePath: widget.records.elementAt(i))),
                       onExpansionChanged: ((newState) {
                         if (newState) {
@@ -359,27 +277,27 @@ class _RecordListViewState extends State<RecordListView> {
                             IconButton(
                               key: Key('play_button'),
                               onPressed: _isPlaying ? null : () => _play(filePath: widget.records.elementAt(i), index: i),
-                              iconSize: 64.0,
+                              iconSize: 50.0,
                               icon: Icon(Icons.play_arrow),
                               color: Colors.cyan,
                             ),
                             IconButton(
                               key: Key('pause_button'),
                               onPressed: _isPlaying ? () => _pause() : null,
-                              iconSize: 64.0,
+                              iconSize: 50.0,
                               icon: Icon(Icons.pause),
                               color: Colors.cyan,
                             ),
                             IconButton(
                               key: Key('stop_button'),
                               onPressed: _isPlaying || _isPaused ? () => _stop() : null,
-                              iconSize: 64.0,
+                              iconSize: 50.0,
                               icon: Icon(Icons.stop),
                               color: Colors.cyan,
                             ),
                             IconButton(
                               onPressed: () {},
-                              iconSize: 64.0,
+                              iconSize: 40.0,
                               icon: Icon(Icons.more_horiz),
                               color: Colors.cyan,
                             ),
@@ -428,16 +346,6 @@ class _RecordListViewState extends State<RecordListView> {
         ],
       ),
     );
-  }
-
-  String _getDateFromFilePath({@required String filePath}) {
-    String fromEpoch = filePath.substring(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('-'));
-    DateTime recordedDate = DateTime.fromMillisecondsSinceEpoch(int.parse(fromEpoch));
-
-    final DateFormat formatter = DateFormat('yyyy-MM-dd hh:mm:ss a');
-    final String formatted = formatter.format(recordedDate);
-
-    return (formatted); //('$year-$month-$day $hour:$minute:$second');
   }
 
   void _initAudioPlayer() {
@@ -494,18 +402,6 @@ class _RecordListViewState extends State<RecordListView> {
           print('command');
         });
 
-    // _audioPlayer.onPlayerStateChanged.listen((state) {
-    //   if (!mounted) return;
-    //   setState(() {
-    //     _audioPlayerState = state;
-    //   });
-    // });
-    //
-    // _audioPlayer.onNotificationPlayerStateChanged.listen((state) {
-    //   if (!mounted) return;
-    //   setState(() => _audioPlayerState = state);
-    // });
-
     _playingRouteState = PlayingRouteState.speakers;
   }
 
@@ -544,5 +440,27 @@ class _RecordListViewState extends State<RecordListView> {
     return result;
   }
 
+  String _getDateFromFilePath({@required String filePath}) {
+    String fromEpoch = filePath.substring(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('-'));
+    DateTime recordedDate = DateTime.fromMillisecondsSinceEpoch(int.parse(fromEpoch));
+
+    final DateFormat formatter = DateFormat('yyyy-MM-dd hh:mm:ss a');
+    final String formatted = formatter.format(recordedDate);
+
+    return (formatted); //('$year-$month-$day $hour:$minute:$second');
+  }
+
+  void filterSearchResults(String query) {
+    if(query.isNotEmpty) {
+      setState(() {
+        finale = (finalRecords).where((u) => (u.toLowerCase().contains(query.toLowerCase()))).toList();
+      });
+    }
+    else{
+      setState(() {
+        finale = finalRecords;
+      });
+    }
+  }
 }
 

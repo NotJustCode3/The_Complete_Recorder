@@ -1,3 +1,4 @@
+import 'package:complete_recorder/App%20Pages/folders.dart';
 import 'package:complete_recorder/App%20Pages/recorded_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:complete_recorder/homepage.dart';
@@ -14,8 +15,8 @@ class _SearchButtonState extends State<SearchButton> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => RecordList()));
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => RecordList()));
       },
       child: Card(
         //creating a child relationship with the safe area to include our card widget
@@ -25,11 +26,10 @@ class _SearchButtonState extends State<SearchButton> {
         margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
         //creating another child to draw elements onto the card widget
         child: ListTile(
-          //this widget houses the elements inside the card widget
           leading: IconButton(
-              icon: Icon(Icons.menu),
+              icon: Icon(Icons.search),
               //iconSize: 30.0,
-              color: Colors.white,
+              color: Colors.grey,
               //highlightColor: Colors.grey,
               onPressed: () {
                 Navigator.push(context,
@@ -38,7 +38,7 @@ class _SearchButtonState extends State<SearchButton> {
           title: Text(
             'Search',
             style: TextStyle(
-                color: Colors.white, fontFamily: 'Roboto', letterSpacing: 0.5),
+                color: Colors.grey, fontFamily: 'Roboto', letterSpacing: 0.5),
           ),
           trailing: IconButton(
             icon: Icon(Icons.create_new_folder_outlined),
@@ -46,7 +46,8 @@ class _SearchButtonState extends State<SearchButton> {
             color: Colors.white,
             //highlightColor: Colors.grey,
             onPressed: () {
-              print('Folder clicked');
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Folders()));
               //Navigator.push(context,MaterialPageRoute(builder: (context) => Folder()));
             },
           ),
