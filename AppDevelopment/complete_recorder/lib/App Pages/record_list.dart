@@ -47,10 +47,7 @@ class _RecordListState extends State<RecordList> {
         title: Text("Record List"),
         flexibleSpace: Container(
           decoration: BoxDecoration(
-            color: Color(0xFF111328),
-            // gradient: LinearGradient(
-            //   colors: [Colors.indigo[800], Colors.purple[800], Colors.indigo[800]],
-            // ),
+            color: Color(0xFF111328),           
           ),
         ),
       ),
