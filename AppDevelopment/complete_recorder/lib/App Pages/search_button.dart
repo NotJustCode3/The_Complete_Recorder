@@ -27,10 +27,8 @@ class _SearchButtonState extends State<SearchButton> {
         //creating another child to draw elements onto the card widget
         child: ListTile(
           leading: IconButton(
-              icon: Icon(Icons.search),
-              //iconSize: 30.0,
-              color: Colors.grey,
-              //highlightColor: Colors.grey,
+              icon: Icon(Icons.search),             
+              color: Colors.grey,              
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => HomePage()));
@@ -41,14 +39,11 @@ class _SearchButtonState extends State<SearchButton> {
                 color: Colors.grey, fontFamily: 'Roboto', letterSpacing: 0.5),
           ),
           trailing: IconButton(
-            icon: Icon(Icons.create_new_folder_outlined),
-            //iconSize: 30.0,
-            color: Colors.white,
-            //highlightColor: Colors.grey,
+            icon: Icon(Icons.create_new_folder_outlined),           
+            color: Colors.white,            
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Folders()));
-              //Navigator.push(context,MaterialPageRoute(builder: (context) => Folder()));
+                  context, MaterialPageRoute(builder: (context) => Folders()));              
             },
           ),
         ),
